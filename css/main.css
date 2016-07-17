@@ -1,0 +1,42 @@
+.title {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.btn-rep {
+	width: 200px;
+	height: 70px;
+	margin-left: 3em;
+	margin-right: 3em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.addRep {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 4em;
+}
+
+.input-prompt {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.rep-card {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding-bottom: 2em;
+    margin: 1em !important;
+}
+.repQueues {
+    margin: 20px;
+}
+
+
+@media only screen and (max-width : 768px){
+	.title {
+		padding-bottom: 20px;
+	}
+}
