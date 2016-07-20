@@ -1,49 +1,53 @@
 $(document).ready(function() {
-       
-    //Toggles Rep Working button color from grey to green
-    $('.rep-buttons').on('click', '.btn-rep', function() {
-        $(this).toggleClass('btn-default btn-success');       
-        //assigns boolean if button is "selected"
-        var repWorking = $('.btn-rep').hasClass('btn-success') ? true : false;    
-    });//close rep button toggle
-
+ 
+//---------Settings---------    
     
-    //Toggles repQueues button from grey to green
-    $('.rep-profiles').on('click', '.repQueues', function() {
-    $(this).toggleClass('btn-default btn-success');
-    //assigns boolean if button is "selected"
-    var repQueuesWorked = $('.btn-rep').hasClass('btn-success') ? true : false;   
-    });//close queue button toggle
-    
-    
-    //Adds a Rep Working button & Rep Profile
+    //Rep Working button & Rep Profile
     $('.add-rep').click(function() {
-        //Gets Name for Rep from input value
-        var $repName = $('#addrep-name').val();
+        //Name for Rep from input value. Then assigned to variable
+        $repName = $('#addrep-name').val();
         
-        //----Rep Working Button----
-        //Rep Button stored in variable (to be added)
-        var $repButton = $('<button type="button" class="btn-rep btn btn-lg btn-default">' + $repName + '</button>');
-        //Rep Button added in rep-buttons container
-        $('.rep-buttons').append($repButton);
-        
-        //----Rep Profiles----
         //Rep Profile stored in variable (to be added)
-        var $repProfile = $('<div class="container col-sm-2 rep-card"><h3>' + $repName + '</h3>');       
+        repProfile = '<div class="container col-sm-2 rep-card"><h3>' + $repName + '</h3></div>';       
+        
+        //Rep Button stored in local variable (to be added)
+        var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + $repName + '</button>';
+        
         //Rep Profile added in rep-profile container
-        $('.rep-profiles').append($repProfile);
+        $('.rep-profiles').append(repProfile);
+        //Rep Button added in rep-buttons container
+        $('.rep-buttons').append(repButton);        
     });//close add rep
+
+       
+var queues = [];
     
-    
-    //Attempt to add Queue button to Rep Profile
+       
+    //Queue button to Rep Profile
     $('.add-queue').click(function() {
-       //Gets Name for Queue from input value
-       var $queueName = $('#addQueue-name').val();
-       //Queue button stored in variable (to be added)
-       var $repQueues = $('<button class="btn btn-lg btn-default repQueues">' + $queueName + '</button>');
-       //Adds Queue button to Rep Profile
-       $($repProfile).append($repQueues);
+        
+        //Name for Queue from input value
+        $queueName = $('#addQueue-name').val();       
+        //Queue button stored in variable (to be added)
+        repQueues = '<button class="btn btn-lg btn-default repQueues">' + $queueName + '</button>';
+        
+        queues.push(repQueues);
+      
+        $('.rep-card').append(queues);
+        
     });//close add queue
+        
+    
+//---------Button toggle---------
+    //Toggle button from grey to green on click
+    function toggleButton() {
+        $(this).toggleClass('btn-default btn-success'); 
+    }   
+    
+    //Toggles Rep Working button
+    $('.rep-buttons').on('click', '.btn-rep', toggleButton); 
+    //Toggles repQueues buttons
+    $('.rep-profiles').on('click', '.repQueues', toggleButton);
 
     
 }); //end of jQuery document
