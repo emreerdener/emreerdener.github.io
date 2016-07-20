@@ -8,7 +8,7 @@ $(document).ready(function() {
         $repName = $('#addrep-name').val();
         
         //Rep Profile stored in variable (to be added)
-        repProfile = '<div class="container col-sm-2 rep-card"><h3>' + $repName + '</h3></div>';       
+        repProfile = '<div class="container col-sm-3 rep-card"><h3 class="repProfileName">' + $repName + '</h3></div>';
         
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + $repName + '</button>';
@@ -29,7 +29,7 @@ var queues = [];
         //Name for Queue from input value
         $queueName = $('#addQueue-name').val();       
         //Queue button stored in variable (to be added)
-        repQueues = '<button class="btn btn-lg btn-default repQueues">' + $queueName + '</button>';
+        repQueues = '<button class="btn btn-lg btn-block btn-default repQueues">' + $queueName + '</button>';
         
         queues.push(repQueues);
       
@@ -48,6 +48,5 @@ var queues = [];
     $('.rep-buttons').on('click', '.btn-rep', toggleButton); 
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues', toggleButton);
-
     
 }); //end of jQuery document
