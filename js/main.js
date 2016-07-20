@@ -20,22 +20,28 @@ $(document).ready(function() {
     });//close add rep
 
        
-var queues = [];
+
     
        
     //Queue button to Rep Profile
     $('.add-queue').click(function() {
+        var queues = [];
         
         //Name for Queue from input value
         $queueName = $('#addQueue-name').val();       
         //Queue button stored in variable (to be added)
-        repQueues = '<button class="btn btn-lg btn-block btn-default repQueues">' + $queueName + '</button>';
-        
+        var repQueues = '<button class="btn btn-lg btn-block btn-default repQueues">' + $queueName + '</button>';
+    
         queues.push(repQueues);
-      
-        $('.rep-card').append(queues);
+        uniqueQueues = _.uniq(queues, false);
         
+        $('.rep-card').append(uniqueQueues);
+        
+        console.log(uniqueQueues);
+    
     });//close add queue
+    
+    
         
     
 //---------Button toggle---------
