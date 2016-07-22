@@ -7,26 +7,27 @@ $(document).ready(function() {
         //Name for Rep from input value. Then assigned to variable
         $repName = $('#addrep-name').val();
         
-        //Rep Profile stored in variable (to be added)
-        repProfile = '<div class="container col-sm-3 rep-card"><h3 class="repProfileName">' + $repName + '</h3></div>';
-        
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + $repName + '</button>';
         
+        //Rep Profile stored in variable (to be added)
+        repProfile = '<div class="container rep-card text-nowrap"><h3 class="repProfileName">' + $repName + '</h3></div>';
+        
         //Rep Profile added in rep-profile container
         $('.rep-profiles').append(repProfile);
+        
         //Rep Button added in rep-buttons container
         $('.rep-buttons').append(repButton);  
         
         
         //not currently working
-        //the attempt is to add the existing Queues from the queue array to each new Rep--without adding duplicates to the pre-existing rep Profiles
-        var i;
-        for(i = 0; i < queues.length; i++){
-            if(repQueues !== queues[i]) {
-                $('.rep-card').append(queues);
-            };
-        };
+        //attempt to add existing Queues from the queue array to each new Rep--without adding duplicates to the pre-existing rep Profiles
+      //  var i;
+        //for(i = 0; i < queues.length; i++){
+        //    if(repQueues !== queues[i]) {
+        //        $('.rep-card').append(queues);
+        //    };
+        //};
         
     });//close add rep
     

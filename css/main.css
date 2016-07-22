@@ -23,12 +23,29 @@
 }
 
 /*---Rep Profiles---*/
-.rep-card {
+.rep-profile-wrapper {
+    display: block;
+    width: 400px;
+    overflow: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.rep-profiles {
+    position: relative;
+    display: inline-block;
+}
+
+.rep-card { 
+    display: inline-block;
     border: 1px solid #000;
     border-radius: 5px;
     background-color: #f8f8f8;
     padding-bottom: 2em;
     margin: 1em !important;
+    max-width: 250px;
+    min-width: 200px;
+    height: auto;
 }
 
 .repProfileName {
