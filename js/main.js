@@ -11,23 +11,13 @@ $(document).ready(function() {
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + $repName + '</button>';
         
         //Rep Profile stored in variable (to be added)
-        repProfile = '<div class="container rep-card text-nowrap"><h3 class="repProfileName">' + $repName + '</h3></div>';
+        repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + $repName + '</h3></div>';
         
         //Rep Profile added in rep-profile container
         $('.rep-profiles').append(repProfile);
         
         //Rep Button added in rep-buttons container
         $('.rep-buttons').append(repButton);  
-        
-        
-        //not currently working
-        //attempt to add existing Queues from the queue array to each new Rep--without adding duplicates to the pre-existing rep Profiles
-      //  var i;
-        //for(i = 0; i < queues.length; i++){
-        //    if(repQueues !== queues[i]) {
-        //        $('.rep-card').append(queues);
-        //    };
-        //};
         
     });//close add rep
     
