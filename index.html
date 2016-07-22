@@ -14,27 +14,23 @@
     <script   src="js/jquery.min.js"></script>
     <script src="js/jquery-ui-1.12.0.custom/"></script>
     <!-- JavaScript -->
-    <script src="js/underscore.js"></script>
     <script src="js/main.js"></script>
 </head>
     
-<body>
-<!--Reps Working-->
-<div class="reps-working-container">
-    <!--Title-->
-    <div class="container text-center">
-        <h2 class="title">Reps Working</h2>
-    </div><!--container close-->
-    
-    <!--Rep buttons-->
-    <div class="container text-center rep-buttons">
-    </div><!--rep-buttons close-->
-</div><!--reps-working-container close-->    
+<body>    
+<!--Queue Settings-->    
+<div class="queue-settings-container text-center">   
+    <h2 class="title">Settings: Queues</h2>
+    <!--New Queue -->
+    <div class="container addQueue text-center">
+        <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
+        <button type="button" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
+    </div><!--addQueue close-->          
+</div><!--queue-settings-container close-->      
     
     
 <!--Rep Settings-->
-<div class="rep-settings-container">
-    
+<div class="rep-settings-container">    
     <h2 class="title text-center">Settings: Reps</h2>
     <!--New Rep -->
     <div class="container addRep text-center">   
@@ -49,14 +45,18 @@
     </div><!--rep-profile-wrapper close-->   
 </div><!--rep-settings close-->
    
-<!--Queue Settings-->    
-<div class="queue-settings-container text-center">   
-    <h2 class="title">Settings: Queues</h2>
-    <!--New Queue -->
-    <div class="container addQueue text-center">
-        <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
-        <button type="button" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
-    </div><!--addQueue close-->          
-</div><!--queue-settings-container close-->    
+      
+<!--Reps Working-->
+<div class="reps-working-container">
+    <!--Title-->
+    <div class="container text-center">
+        <h2 class="title">1) Reps</h2>
+    </div><!--container close-->
+    
+    <!--Rep buttons-->
+    <div class="container text-center rep-buttons">
+    </div><!--rep-buttons close-->
+</div><!--reps-working-container close-->        
+    
     </body>
 </html>

@@ -14,7 +14,7 @@ $(document).ready(function() {
         repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + $repName + '</h3></div>';
         
         //Rep Profile added in rep-profile container
-        $('.rep-profiles').append(repProfile);
+        $('.rep-profiles').prepend(repProfile);
         
         //Rep Button added in rep-buttons container
         $('.rep-buttons').append(repButton);  
