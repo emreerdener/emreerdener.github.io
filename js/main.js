@@ -21,7 +21,7 @@ $(document).ready(function() {
         
     });//close add rep
     
-       
+    
     //Queue button to Rep Profile
     $('.add-queue').click(function() {
         queues = [];

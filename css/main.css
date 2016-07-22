@@ -15,7 +15,6 @@
 .addRep {
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 4em;
 }
 
 .input-prompt {
@@ -23,13 +22,30 @@
     padding-right: 5px;
 }
 
+.reps-working-container {
+    padding-bottom: 50px;
+}
+.rep-settings-container {
+    background-color: #f8f8f8;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.queue-settings-container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
 /*---Rep Profiles---*/
-.rep-profile-wrapper {
+.rep-profiles-wrapper {
     display: block;
-    width: 400px;
     overflow: auto;
     overflow-x: scroll;
     white-space: nowrap;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: beige;
 }
 
 .rep-profiles {
@@ -38,15 +54,18 @@
 }
 
 .rep-card { 
+    background-color: #fff;
     display: inline-block;
     border: 1px solid #000;
     border-radius: 5px;
-    background-color: #f8f8f8;
     padding-bottom: 2em;
     margin: 1em !important;
     max-width: 250px;
     min-width: 200px;
     height: auto;
+}
+.rep-card:last-child {
+    margin-right: 45px !important;
 }
 
 .repProfileName {
@@ -63,4 +82,9 @@
 	.title {
 		padding-bottom: 20px;
 	}
+    .rep-profiles-wrapper {
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
 }
