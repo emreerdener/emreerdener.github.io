@@ -49,6 +49,7 @@
 }
 
 .repProfileName {
+    white-space: normal;
     padding-bottom: 10px;
 }
 
