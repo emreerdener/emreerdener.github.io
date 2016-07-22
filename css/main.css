@@ -1,6 +1,11 @@
+/*-Section Title-*/
 .title {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+.addRep {
+    padding-bottom: 30px;
 }
 
 
@@ -13,11 +18,9 @@
 	margin-bottom: 1.5em;
     white-space: normal !important;
 }
-.addRep {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
 
+
+/*-Input Box-*/
 .input-prompt {
     border: 1px solid #000;
     display: inline-block;
@@ -29,14 +32,16 @@ input[type='number'],
 textarea {
   font-size: 16px;
 }
-
 .addQueue .input-btn, .addRep .input-btn {
     padding-bottom: 3px;
     padding-top: 3px;
-    margin-top: -2px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: -3px;
 }
 
 
+/*-Section Containers-*/
 .reps-working-container {
     padding-bottom: 50px;
 }
@@ -50,6 +55,7 @@ textarea {
     padding-bottom: 50px;
 }
 
+
 /*---Rep Profiles---*/
 .rep-profiles-wrapper {
     display: block;
@@ -62,12 +68,10 @@ textarea {
     padding-bottom: 20px;
     background-color: beige;
 }
-
 .rep-profiles {
     position: relative;
     display: inline-block;
 }
-
 .rep-card { 
     background-color: #fff;
     display: inline-block;
@@ -82,17 +86,17 @@ textarea {
 .rep-card:last-child {
     margin-right: 45px !important;
 }
-
 .repProfileName {
     white-space: normal;
     padding-bottom: 10px;
 }
-
 .repQueues {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
 
+
+/*--Mobile Styles--*/
 @media only screen and (max-width : 768px){
 	.title {
 		padding-bottom: 20px;
