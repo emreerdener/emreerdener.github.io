@@ -6,10 +6,11 @@
     margin-top: -5px;
     padding-left: 4px;
 }
-.navbar-brand {
-    font-size: 23px !important;
-    color: white !important;
-    font-weight: 500 !important;
+.navbar-txt {
+    font-size: 23px;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
 }
 .fa-cog {
     color: white;
@@ -26,6 +27,13 @@
 }
 .navbar {
     margin-bottom: 0 !important;
+}
+/*Nav Button*/
+.navbar-default .navbar-toggle {
+    border-color: #fff !important;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff !important;
 }
 
 
