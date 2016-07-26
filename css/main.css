@@ -1,3 +1,35 @@
+/*--Navbar--*/
+#gp-ninja {
+    max-height: 23px;
+    width: auto;
+    display: inline-block;
+    margin-top: -4px;
+    padding-left: 4px;
+}
+.navbar-brand {
+    font-size: 24px !important;
+    color: white !important;
+    font-weight: 500 !important;
+}
+.fa-cog {
+    color: white;
+}
+.navbar-nav > li > a {
+    padding-top: 10px !important;
+    padding-bottom: 1px !important;
+    padding-right: 5px !important;
+}
+.navbar-default {
+    background-color: #00a4d8 !important;
+    border-color: #00a4d8 !important;
+    border-radius: 0 !important;    
+}
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+
+
 /*-Section Title-*/
 .title {
 	padding-top: 30px;
@@ -97,7 +129,7 @@ textarea {
     white-space: normal;
     padding-bottom: 10px;
 }
-.repQueues {
+.repQueues-btn {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
