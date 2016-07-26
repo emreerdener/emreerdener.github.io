@@ -3,11 +3,11 @@
     max-height: 23px;
     width: auto;
     display: inline-block;
-    margin-top: -4px;
+    margin-top: -5px;
     padding-left: 4px;
 }
 .navbar-brand {
-    font-size: 24px !important;
+    font-size: 23px !important;
     color: white !important;
     font-weight: 500 !important;
 }
@@ -29,12 +29,23 @@
 }
 
 
-
-/*-Section Title-*/
+/*Reps Working*/
 .title {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+#date-stamp {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+
+
+/*-Section Title-*/
+
 
 .addRep {
     padding-bottom: 30px;
@@ -72,6 +83,11 @@ textarea {
     padding-right: 25px;
     margin-top: -4px;
 }
+
+
+
+
+
 
 
 /*-Section Containers-*/

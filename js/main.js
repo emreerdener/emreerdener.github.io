@@ -59,10 +59,18 @@ $(document).ready(function() {
     function toggleButton() {
         $(this).toggleClass('btn-default btn-success'); 
     }   
-    
     //Toggles Rep Working button
     $('.rep-buttons').on('click', '.btn-rep', toggleButton); 
     //Toggles repQueues buttons
-    $('.rep-profiles').on('click', '.repQueues', toggleButton);
+    $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
+    
+
+//--------Date Stamp--------
+$('#date-stamp').append(moment().format('MMMM D, YYYY'));
     
 }); //end of jQuery document
+
+
+
+
+
