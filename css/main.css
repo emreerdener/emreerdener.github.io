@@ -48,13 +48,17 @@
     border-radius: 0 !important;
     font-weight: 500;
 }
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: #00a4d8 !important;
+}
 
 
 
 /*Reps Working*/
 .title {
-	padding-top: 30px;
-	padding-bottom: 30px;
+    margin-top: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 #date-stamp {
     display: inline-block;
@@ -72,7 +76,7 @@
 
 
 .addRep {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 
@@ -122,7 +126,6 @@ textarea {
 .queue-settings-container {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #f8f8f8;
 }
 .reps-working-container {
     padding-bottom: 50px;
@@ -178,6 +181,8 @@ textarea {
 /*--Mobile Styles--*/
 @media only screen and (max-width : 768px){
 	.title {
+        margin-top: 10px;
+        padding-top: 20px;
 		padding-bottom: 20px;
 	}
     .rep-profiles-wrapper {
@@ -186,6 +191,7 @@ textarea {
         border-radius: 0;
     }
     #gp-ninja {
+        max-height: 27px;
         margin-top: -4px;
         padding-left: 0;
     }

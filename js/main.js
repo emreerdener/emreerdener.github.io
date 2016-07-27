@@ -6,8 +6,8 @@ $(document).ready(function() {
     
 //---------Navbar----------
     //Adds spin animation to Settings "gear" in navbar 
-    $('.fa-cog').hover(function() {
-        $('.fa-cog').toggleClass('fa-spin');
+    $('.nav-cog').hover(function() {
+        $('.nav-cog').toggleClass('fa-spin');
     });
     
 //---------Settings---------    
