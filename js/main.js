@@ -44,13 +44,14 @@ $(document).ready(function() {
             $('.rep-card:contains(' + repName + ')').append(queues);
         };
         
-        //Clears input box
+        //Clears rep input field
         $('#addrep-name').val('');       
     });//close add rep    
     
     
     //Queue button to Rep Profile
-    $('.add-queue').click(function() {    
+    //$('.add-queue').click(function() {
+    $('#add-queue-form').submit(function() {
         
         //Name for Queue from input value
         $queueName = $('#addQueue-name').val();       
@@ -62,6 +63,7 @@ $(document).ready(function() {
         //Adds queues to Rep Profile card
         $('.rep-card').append(repQueues);
         
+        //Clears queue input field
         $('#addQueue-name').val('');
     });//close add queue
         

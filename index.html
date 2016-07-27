@@ -65,8 +65,12 @@
         <div class="queue-settings-container text-center">
             <!--New Queue -->
             <div class="container addQueue text-center">
-                <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
-                <button type="button" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
+                
+                <form id="add-queue-form">
+                    <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
+                    <button type="submit" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
+                </form>
+                
             </div><!--addQueue close-->          
         </div><!--queue-settings-container close-->              
     </div><!--#queues-settings close-->
