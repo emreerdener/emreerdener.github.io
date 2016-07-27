@@ -156,7 +156,7 @@ textarea {
     vertical-align: top;
 }
 .rep-card:last-child {
-    margin-right: 45px !important;
+    margin-right: 29px !important;
 }
 .rep-card-queues {
     padding-left: 15px;
@@ -199,12 +199,13 @@ textarea {
     white-space: normal !important;
 }
 .delete-rep {
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-top: 1px solid #000 !important;
 }
 
 

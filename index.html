@@ -58,13 +58,14 @@
     <li role="presentation" class="active"><a href="#qs" aria-controls="home" role="tab" data-toggle="tab">QUEUES</a></li>
     <li role="presentation"><a href="#rs" aria-controls="profile" role="tab" data-toggle="tab">REPS</a></li>
   </ul>
+    
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="qs">
         <!--Queue Settings-->    
         <div class="queue-settings-container text-center">
             <!--New Queue -->
-            <div class="container addQueue text-center">
+            <div class="container addQueue">
                 
                 <form id="add-queue-form">
                     <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
@@ -73,7 +74,7 @@
                 
             </div><!--addQueue close-->          
         </div><!--queue-settings-container close-->              
-    </div><!--#queues-settings close-->
+    </div><!--#qs close-->
     
       <div role="tabpanel" class="tab-pane" id="rs">      
         <!--Rep Settings Inner-->
@@ -89,11 +90,10 @@
             </div><!--addRep close-->
             <!--Rep Profiles-->    
             <div class="container text-center rep-profiles-wrapper">
-                <div class="container rep-profiles">
-                </div><!--rep-profiles close-->
+                <div class="container rep-profiles"></div><!--rep-profiles close-->
             </div><!--rep-profile-wrapper close-->   
-        </div><!--rep-settings inner close-->
-      </div><!--#reps-settings close-->
+        </div><!--rep-settings-container close-->
+      </div><!--#rs close-->
 </div><!--tab-content close-->   
     
 </div><!--Settings-container close-->    
@@ -108,8 +108,7 @@
     </div><!--container-fluid close-->
     
     <!--Rep buttons-->
-<!--    <div class="container text-center rep-buttons">
-    </div><!--rep-buttons close-->
+<!--    <div class="container text-center rep-buttons"></div><!--rep-buttons close-->
 <!--</div><!--reps-working-container close-->        
     
     </body>

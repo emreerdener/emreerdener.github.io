@@ -23,7 +23,7 @@ $(document).ready(function() {
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
         
         //Rep Profile stored in variable (to be added)
-        var repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3><div class="rep-card-queues"></div><div type="button" class="delete-rep btn btn-danger">Delete</div></div>';
+        var repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3><div class="rep-card-queues"></div><button type="button" class="delete-rep btn btn-danger">Delete</button></div>';
         
         //checks if repName is already in rep array. if so it's rejected. If not, it's added to reps array.
         if (reps.indexOf(repName) !== -1) {
@@ -82,6 +82,14 @@ $(document).ready(function() {
         event.preventDefault();
     });//close add queue
         
+
+//--------Delete Rep--------    
+    $('.rep-profiles').on('click', '.delete-rep', function() {
+        $(this).fadeOut(500, function() { 
+            $(this).parent().remove();
+        });
+    });
+    
     
 //---------Button toggle---------
     //Toggle button from grey to green on click
