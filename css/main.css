@@ -147,7 +147,7 @@ textarea {
     display: inline-block;
     border: 1px solid #000;
     border-radius: 5px;
-    padding-bottom: 2em;
+    padding: 0 !important;
     margin: 1em !important;
     max-width: 250px;
     min-width: 200px;
@@ -157,6 +157,10 @@ textarea {
 }
 .rep-card:last-child {
     margin-right: 45px !important;
+}
+.rep-card-queues {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .repProfileName {
     white-space: normal;
@@ -193,6 +197,14 @@ textarea {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
     white-space: normal !important;
+}
+.delete-rep {
+    margin-top: 30px;
+    width: 100%;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 

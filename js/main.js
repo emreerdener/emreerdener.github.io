@@ -17,20 +17,20 @@ $(document).ready(function() {
     $('#add-rep-form').submit(function() {
              
         //Name for Rep from input value. Then assigned to variable
-        repName = $('#addrep-name').val();
+        var repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
         
         //Rep Profile stored in variable (to be added)
-        repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3></div>';
+        var repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3><div class="rep-card-queues"></div><div type="button" class="delete-rep btn btn-danger">Delete</div></div>';
         
         //checks if repName is already in rep array. if so it's rejected. If not, it's added to reps array.
-        if(reps.indexOf(repName) !== -1) {
+        if (reps.indexOf(repName) !== -1) {
             $('#addrep-name').before('<span class="repname-duperror">Duplicate name. Please enter a different name.</span>');
             //Fade out error message
             $('.repname-duperror').delay(1200).fadeOut();
-        } else if(repName === "") {
+        } else if (repName === "") {
             $('#addrep-name').before('<span class="repname-emptyerror">Please input a name.</span>');
             //Fade out error message
             $('.repname-emptyerror').delay(1200).fadeOut();
@@ -45,11 +45,19 @@ $(document).ready(function() {
             $('.rep-buttons').append(repButton);
 
             //Adds queues array to local variable of repName
-            $('.rep-card:contains(' + repName + ')').append(queues);
-        };
+           // $('.rep-card:contains('+ repName + ')').append(queues);
+            
+            if( $('.rep-card:contains('+ repName + ')') ) {
+                  $('.rep-card-queues').append(queues);
+            };
+            
+        }//end rep array if statement
         
         //Clears rep input field
-        $('#addrep-name').val('');       
+        $('#addrep-name').val(''); 
+        
+        //Prevents default form submit, causing page reload
+        event.preventDefault();
     });//close add rep    
     
     
@@ -65,10 +73,13 @@ $(document).ready(function() {
         //Adds Queue button to array
         queues.push(repQueues);
         //Adds queues to Rep Profile card
-        $('.rep-card').append(repQueues);
+        $('.rep-card-queues').append(repQueues);
         
         //Clears queue input field
         $('#addQueue-name').val('');
+        
+        //Prevents default form submit, causing page reload
+        event.preventDefault();
     });//close add queue
         
     
