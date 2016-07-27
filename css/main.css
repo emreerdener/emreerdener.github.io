@@ -138,9 +138,6 @@ textarea {
     padding-bottom: 20px;
     background-color: beige;
 }
-.rep-profiles-wrapper:before {
-    box-shadow: inset -8px 0px 8px #888888;
-}
 .rep-profiles {
     position: relative;
     display: inline-block;
@@ -169,10 +166,18 @@ textarea {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
-.rep-name-error {
+.repname-duperror {
     color: red;
     position: absolute;
-    top: 255px;
+    top: 250px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.repname-emptyerror {
+    color: red;
+    position: absolute;
+    top: 250px;
     left: 0;
     right: 0;
     margin: 0 auto;

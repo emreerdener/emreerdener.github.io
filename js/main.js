@@ -27,9 +27,13 @@ $(document).ready(function() {
         
         //checks if repName is already in rep array. if so it's rejected. If not, it's added to reps array.
         if(reps.indexOf(repName) !== -1) {
-            $('#addrep-name').stop(false,true).before('<span class="rep-name-error">Duplicate name. Please enter a different name.</span>');
+            $('#addrep-name').before('<span class="repname-duperror">Duplicate name. Please enter a different name.</span>');
             //Fade out error message
-            $('.rep-name-error').delay(1100).fadeOut();
+            $('.repname-duperror').delay(1200).fadeOut();
+        } else if(repName === "") {
+            $('#addrep-name').before('<span class="repname-emptyerror">Please input a name.</span>');
+            //Fade out error message
+            $('.repname-emptyerror').delay(1200).fadeOut();
         } else {
             //Adds repName to reps array
             reps.push(repName);
