@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
     <!-- CSS -->
     <link href="css/main.css" rel="stylesheet">
-    <!--Bootstrap-->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
-    <script   src="js/jquery.min.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--Bootstrap-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>    
     <!-- JavaScript -->
     <script src="js/moment.js"></script>
     <script src="js/main.js"></script>
@@ -38,56 +39,70 @@
         <img alt="Gameplan Ninja" id="gp-ninja" src="images/ninja.png"/>
       </a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Collect the nav links for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a></li>
+        <li class="hidden-xs"><a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a></li>
+          <li class="visible-xs"><a href="#" id="nav-settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>    
     
+
+<!--Settings-->
+<div class="settings-container text-center">
+<h2 class="title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h2>
+  <!-- Nav tabs -->
+  <ul class="nav nav-pills nav-justified settings-nav" role="tablist">
+    <li role="presentation" class="active"><a href="#qs" aria-controls="home" role="tab" data-toggle="tab">QUEUES</a></li>
+    <li role="presentation"><a href="#rs" aria-controls="profile" role="tab" data-toggle="tab">REPS</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="qs">
+        <!--Queue Settings-->    
+        <div class="queue-settings-container text-center">
+            <!--New Queue -->
+            <div class="container addQueue text-center">
+                <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
+                <button type="button" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
+            </div><!--addQueue close-->          
+        </div><!--queue-settings-container close-->              
+    </div><!--#queues-settings close-->
     
-<!--Queue Settings-->    
-<div class="queue-settings-container text-center">   
-    <h2 class="title">Settings: Queues</h2>
-    <!--New Queue -->
-    <div class="container addQueue text-center">
-        <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
-        <button type="button" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
-    </div><!--addQueue close-->          
-</div><!--queue-settings-container close-->      
+      <div role="tabpanel" class="tab-pane" id="rs">      
+        <!--Rep Settings Inner-->
+        <div class="rep-settings-container">
+            <!--New Rep -->
+            <div class="container addRep text-center">   
+                <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
+                <button type="button" class="add-rep btn btn-sm btn-primary input-btn">ADD</button>
+            </div><!--addRep close-->
+            <!--Rep Profiles-->    
+            <div class="container text-center rep-profiles-wrapper">
+                <div class="container rep-profiles">
+                </div><!--rep-profiles close-->
+            </div><!--rep-profile-wrapper close-->   
+        </div><!--rep-settings inner close-->
+      </div><!--#reps-settings close-->
+</div><!--tab-content close-->   
     
+</div><!--Settings-container close-->    
     
-<!--Rep Settings-->
-<div class="rep-settings-container">    
-    <h2 class="title text-center">Settings: Reps</h2>
-    <!--New Rep -->
-    <div class="container addRep text-center">   
-        <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
-        <button type="button" class="add-rep btn btn-sm btn-primary input-btn">ADD</button>
-    </div><!--addRep close-->   
-    
-    <!--Rep Profiles-->    
-    <div class="container text-center rep-profiles-wrapper">
-        <div class="container rep-profiles">
-        </div><!--rep-profiles close-->
-    </div><!--rep-profile-wrapper close-->   
-</div><!--rep-settings close-->
-   
       
 <!--Reps Working-->
-<div class="reps-working-container">
+<!--<div class="reps-working-container">
     <!--Title-->
-    <div class="container-fluid text-center">
+<!--    <div class="container-fluid text-center">
         <h2 class="title">Reps</h2>
         <p id="date-stamp"></p>
     </div><!--container-fluid close-->
     
     <!--Rep buttons-->
-    <div class="container text-center rep-buttons">
+<!--    <div class="container text-center rep-buttons">
     </div><!--rep-buttons close-->
-</div><!--reps-working-container close-->        
+<!--</div><!--reps-working-container close-->        
     
     </body>
 </html>

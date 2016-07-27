@@ -3,22 +3,18 @@
     max-height: 23px;
     width: auto;
     display: inline-block;
-    margin-top: -5px;
+    margin-top: -8px;
     padding-left: 4px;
 }
 .navbar-txt {
-    font-size: 23px;
+    font-size: 24px;
     color: white;
     font-weight: 500;
     display: inline-block;
+    padding-top: 4px;
 }
-.fa-cog {
+.nav .fa-cog {
     color: white;
-}
-.navbar-nav > li > a {
-    padding-top: 10px !important;
-    padding-bottom: 1px !important;
-    padding-right: 5px !important;
 }
 .navbar-default {
     background-color: #00a4d8 !important;
@@ -28,6 +24,11 @@
 .navbar {
     margin-bottom: 0 !important;
 }
+#nav-settings {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;  
+}
 /*Nav Button*/
 .navbar-default .navbar-toggle {
     border-color: #fff !important;
@@ -35,6 +36,19 @@
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff !important;
 }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #337ab7 !important;
+}
+
+
+/*Settings*/
+.settings-nav a {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 0 !important;
+    font-weight: 500;
+}
+
 
 
 /*Reps Working*/
@@ -47,6 +61,8 @@
     font-weight: 600;
     font-size: 16px;
 }
+
+
 
 
 
@@ -100,11 +116,11 @@ textarea {
 
 /*-Section Containers-*/
 .rep-settings-container {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 .queue-settings-container {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 50px;
     background-color: #f8f8f8;
 }
@@ -170,6 +186,10 @@ textarea {
         border-radius: 0;
     }
     #gp-ninja {
+        margin-top: -4px;
         padding-left: 0;
+    }
+    .nav-pills>li+li {
+        margin-left: 0 !important;
     }
 }
