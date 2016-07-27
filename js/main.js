@@ -13,14 +13,11 @@ $(document).ready(function() {
 //---------Settings---------    
     
     //Rep Working button & Rep Profile
-    $('.add-rep').click(function() {
+    //$('#add-rep-btn').click(function() {
+    $('#add-rep-form').submit(function() {
+             
         //Name for Rep from input value. Then assigned to variable
         repName = $('#addrep-name').val();
-        
-        //find way to block adding rep if has the same name.
-        //check if repName is in rep array. if so reject it.
-        //reps.indexOf(repName)
-        //then push to rep array      
         
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
@@ -28,14 +25,27 @@ $(document).ready(function() {
         //Rep Profile stored in variable (to be added)
         repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3></div>';
         
-        //Rep Profile added in rep-profile container
-        $('.rep-profiles').prepend(repProfile);
+        //checks if repName is already in rep array. if so it's rejected. If not, it's added to reps array.
+        if(reps.indexOf(repName) !== -1) {
+            $('#addrep-name').stop(false,true).before('<span class="rep-name-error">Duplicate name. Please enter a different name.</span>');
+            //Fade out error message
+            $('.rep-name-error').delay(1100).fadeOut();
+        } else {
+            //Adds repName to reps array
+            reps.push(repName);
+            
+            //Rep Profile added in rep-profile container
+            $('.rep-profiles').prepend(repProfile);
+
+            //Rep Button added in rep-buttons container
+            $('.rep-buttons').append(repButton);
+
+            //Adds queues array to local variable of repName
+            $('.rep-card:contains(' + repName + ')').append(queues);
+        };
         
-        //Rep Button added in rep-buttons container
-        $('.rep-buttons').append(repButton);
-        
-        //Adds queues array to local variable of $repName
-        $('.rep-card:contains(' + repName + ')').append(queues);   
+        //Clears input box
+        $('#addrep-name').val('');       
     });//close add rep    
     
     
@@ -51,6 +61,8 @@ $(document).ready(function() {
         queues.push(repQueues);
         //Adds queues to Rep Profile card
         $('.rep-card').append(repQueues);
+        
+        $('#addQueue-name').val('');
     });//close add queue
         
     

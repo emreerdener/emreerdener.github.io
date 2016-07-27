@@ -42,7 +42,7 @@
     <!-- Collect the nav links for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="hidden-xs"><a href="#"><i class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a></li>
+        <li class="hidden-xs"><a class="nav-link" href="#"><i class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a></li>
           <li class="visible-xs"><a href="#" id="nav-settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -75,9 +75,13 @@
         <!--Rep Settings Inner-->
         <div class="rep-settings-container">
             <!--New Rep -->
-            <div class="container addRep text-center">   
+            <div class="container addRep text-center">  
+                
+                <form id="add-rep-form">
                 <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
-                <button type="button" class="add-rep btn btn-sm btn-primary input-btn">ADD</button>
+                <button type="button submit" id="add-rep-btn" class="btn btn-sm btn-primary input-btn">ADD</button>
+                </form>
+                
             </div><!--addRep close-->
             <!--Rep Profiles-->    
             <div class="container text-center rep-profiles-wrapper">
