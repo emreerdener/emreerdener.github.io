@@ -18,6 +18,11 @@
 .nav .fa-cog {
     color: white;
 }
+#desktop-cog {
+    float: right;
+    margin-top: 10px;
+    color: white;
+}
 .navbar-default {
     background-color: #00a4d8 !important;
     border-color: #00a4d8 !important;
@@ -27,15 +32,7 @@
     margin-bottom: 0 !important;
     border: none !important;
 }
-#nav-settings {
-    color: white;
-    font-size: 16px;
-    font-weight: 400;  
-}
-.nav-link {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
+
 /*Nav Button*/
 .navbar-default .navbar-toggle {
     border-color: #fff !important;
@@ -223,15 +220,10 @@ textarea {
     .nav-pills>li+li {
         margin-left: 0 !important;
     }
-    #navbar-links {
-        background-color: #f8f8f8 !important;
-        border-bottom: 1px solid #00a4d8;
-    }
-    #nav-settings {
-        color: #00a4d8;
-        margin-top: -4px;
-    }
-    .nav .fa-cog {
-        color: #00a4d8;
+    #mobile-cog {
+        float: right;
+        margin-right: 15px;
+        margin-top: 10px;
+        color: #fff;
     }
 }
