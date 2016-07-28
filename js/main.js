@@ -20,7 +20,7 @@ $(document).ready(function() {
         var repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
-        var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
+        repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
         
         //Rep Profile stored in variable (to be added)
         var repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3><div class="rep-card-queues"></div><button type="button" class="delete-rep btn btn-danger">Delete</button></div>';
@@ -60,6 +60,10 @@ $(document).ready(function() {
         event.preventDefault();
     });//close add rep    
     
+    
+    //Allows rep-cards to be sortable
+    $("#rep-sortable").sortable({ revert: true });
+        
     
     //Queue button to Rep Profile
     //$('.add-queue').click(function() {
