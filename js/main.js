@@ -40,7 +40,7 @@ $(document).ready(function() {
             
             //Rep Profile added in rep-profile container
             $('.rep-profiles').prepend(repProfile);
-
+            
             //Rep Button added in rep-buttons container
             $('.rep-buttons').append(repButton);
 
@@ -84,10 +84,9 @@ $(document).ready(function() {
         
 
 //--------Delete Rep--------    
+    //Removes rep-card on "delete" button click
     $('.rep-profiles').on('click', '.delete-rep', function() {
-        $(this).fadeOut(500, function() { 
             $(this).parent().remove();
-        });
     });
     
     

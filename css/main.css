@@ -75,15 +75,6 @@
 
 
 
-
-
-
-/*-Section Title-*/
-
-
-
-
-
 /*-Input Box-*/
 .input-prompt {
     border: 1px solid #000;
@@ -104,11 +95,6 @@ textarea {
     padding-right: 25px;
     margin-top: -4px;
 }
-
-
-
-
-
 
 
 /*-Section Containers-*/
@@ -136,7 +122,7 @@ textarea {
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: beige;
+    background-color: #f8f8f8;
 }
 .rep-profiles {
     position: relative;
@@ -163,6 +149,8 @@ textarea {
     padding-right: 15px;
 }
 .repProfileName {
+    padding-left: 5px;
+    padding-right: 5px;
     white-space: normal;
     padding-bottom: 10px;
 }
