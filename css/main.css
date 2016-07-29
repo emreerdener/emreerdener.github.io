@@ -207,14 +207,39 @@ textarea {
     color: white;
     margin-top: 11px;
 }
+.queuename-duperror {
+    color: red;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.queuename-emptyerror {
+    color: red;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
 .btn-circle {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   text-align: center !important;
   padding: 6px 0 !important;
   font-size: 12px !important;
   line-height: 1.428571429 !important;
   border-radius: 15px !important;
+}
+.delete-queue {
+    float: right;
+    margin-top: 8px;
+    margin-right: 11px;
+}
+.fa-trash-o {
+    margin-left: 1px;
+    color: white;
 }
 .fa-lg {
     vertical-align: 0;
@@ -228,18 +253,8 @@ textarea {
 }
 .fa-chevron-right, .fa-chevron-down {
     color: white;
-    padding-left: 10px;
+    padding-left: 5px;
 }
-.queue-delete-btn {
-    float: right;
-    margin-top: 6px;
-    margin-right: 10px;
-}
-.fa-times {
-    margin-top: 1px;
-    margin-left: 1px;
-}
-
 
 
 
@@ -274,6 +289,9 @@ textarea {
         border-left: none;
         border-right: none;
         border-radius: 0;
+    }
+    .queue-settings-container, .rep-settings-container {
+        padding-top: 45px;
     }
     #gp-ninja {
         max-height: 27px;
