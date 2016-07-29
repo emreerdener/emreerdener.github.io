@@ -11,8 +11,8 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
-    <!--<script src="js/jquery.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <script src="jquery-ui-1.12.0/jquery-ui.min.js"></script>
     <!--Bootstrap-->
     <script src="bootstrap/js/bootstrap.min.js"></script>    
@@ -27,17 +27,18 @@
 <!--Navbar-->    
 <nav class="navbar navbar-default">
   <div class="container-fluid">
+      <!--Desktop cog-->
     <a class="hidden-xs" href="#"><i id="desktop-cog" class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a>  
     <div class="navbar-header">
       <a class="navbar-brand">
         <p class="navbar-txt hidden-xs">GAMEPLAN</p>
         <img alt="Gameplan Ninja" id="gp-ninja" src="images/ninja.png"/>
       </a>
+        <!--Mobile cog-->
         <a class="visible-xs" href="#"><i id="mobile-cog" class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
-    </div>
-  </div><!-- /.container-fluid -->
-</nav>    
-    
+    </div><!--navbar-header close-->
+  </div><!--container-fluid close-->
+</nav> 
 
 <!--Settings-->
 <div class="settings-container">
@@ -50,32 +51,37 @@
     
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="qs">
-        <!--Queue Settings-->    
+      
+    <!--Queue Settings-->    
+    <div role="tabpanel" class="tab-pane active" id="qs">  
         <div class="queue-settings-container text-center">
             <!--New Queue -->
-            <div class="container addQueue">
-                
+            <div class="container addQueue">              
                 <form id="add-queue-form">
                     <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
                     <button type="submit" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
                 </form>
-                
-            </div><!--addQueue close-->          
+            </div><!--addQueue close-->  
+            
+            <!--Queue Profiles-->
+            <div class="container queue-profiles-wrapper">
+                <div class="queue-profiles" id="queue-sortable">
+                    
+                </div><!--queue-profiles close-->
+            </div><!--queue-profile-wrapper close-->
+            
         </div><!--queue-settings-container close-->              
     </div><!--#qs close-->
     
-      <div role="tabpanel" class="tab-pane" id="rs">      
-        <!--Rep Settings Inner-->
+    <!--Rep Settings-->
+    <div role="tabpanel" class="tab-pane" id="rs">      
         <div class="rep-settings-container">
             <!--New Rep -->
-            <div class="container addRep text-center">  
-                
+            <div class="container addRep text-center">             
                 <form id="add-rep-form">
                     <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
                     <button type="submit" id="add-rep-btn" class="btn btn-sm btn-primary input-btn">ADD</button>
                 </form>
-                
             </div><!--addRep close-->
             <!--Rep Profiles-->    
             <div class="container rep-profiles-wrapper">
@@ -83,8 +89,7 @@
             </div><!--rep-profile-wrapper close-->   
         </div><!--rep-settings-container close-->
       </div><!--#rs close-->
-</div><!--tab-content close-->   
-    
+</div><!--tab-content close-->    
 </div><!--Settings-container close-->    
     
       

@@ -15,9 +15,6 @@
 .navbar-brand {
     padding-top: 14px !important;
 }
-.nav .fa-cog {
-    color: white;
-}
 #desktop-cog {
     float: right;
     margin-top: 10px;
@@ -25,7 +22,6 @@
 }
 .navbar-default {
     background-color: #00a4d8 !important;
-    border-color: #00a4d8 !important;
     border-radius: 0 !important;    
 }
 .navbar {
@@ -33,19 +29,10 @@
     border: none !important;
 }
 
-/*Nav Button*/
-.navbar-default .navbar-toggle {
-    border-color: #fff !important;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff !important;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #337ab7 !important;
-}
 
 
-/*Settings*/
+/*--------Settings--------*/
+/*--Settings Nav--*/
 .settings-nav a {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
@@ -56,25 +43,21 @@
     background-color: #00a4d8 !important;
 }
 
-
-
-/*Reps Working*/
-.title {
-    margin-top: 10px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-    text-align: center;
+/*--Section Containers--*/
+.rep-settings-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
-#date-stamp {
-    display: inline-block;
-    font-weight: 600;
-    font-size: 16px;
+.queue-settings-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.reps-working-container {
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
 }
 
-
-
-
-/*-Input Box-*/
+/*--Input Box--*/
 .input-prompt {
     border: 1px solid #000;
     display: inline-block;
@@ -95,23 +78,7 @@ textarea {
     margin-top: -4px;
 }
 
-
-/*-Section Containers-*/
-.rep-settings-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.queue-settings-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.reps-working-container {
-    padding-bottom: 50px;
-    background-color: #f8f8f8;
-}
-
-
-/*---Rep Profiles---*/
+/*--Rep Profiles--*/
 .rep-profiles-wrapper {
     display: block;
     overflow: auto;
@@ -198,9 +165,100 @@ textarea {
     border-top: 1px solid #000 !important;
 }
 
+/*---------------------*/
+
+/*--------Queue Profiles--------*/
+.addQueue {
+    padding-bottom: 50px;
+}
+.queue-profiles-wrapper {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f8f8f8;
+}
+.queue-profiles {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    position: relative;
+}
+.queue-card { 
+    background-color: #337ab7;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #888888;
+    vertical-align: top;
+    min-height: 45px;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.queue-card-toggle{
+    display: inline-block;
+    padding-left: 40px;
+    padding-right: 40px;
+    cursor: pointer;
+    margin-top: 1px;
+}
+.queueProfileName {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    margin-top: 11px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center !important;
+  padding: 6px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.428571429 !important;
+  border-radius: 15px !important;
+}
+.fa-lg {
+    vertical-align: 0;
+}
+.fa-bars {
+    float: left;
+    color: white;
+    margin-top: 7px;
+    margin-left: 15px;
+    cursor: move;
+}
+.fa-chevron-right, .fa-chevron-down {
+    color: white;
+    padding-left: 10px;
+}
+.queue-delete-btn {
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+.fa-times {
+    margin-top: 1px;
+    margin-left: 1px;
+}
 
 
-/*--Mobile Styles--*/
+
+
+/*--------Reps Working--------*/
+.title {
+    margin-top: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+    text-align: center;
+}
+#date-stamp {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+/*--------Mobile Styles--------*/
 @media only screen and (max-width : 768px){
 	.title {
         margin-top: 10px;
@@ -208,6 +266,11 @@ textarea {
 		padding-bottom: 20px;
 	}
     .rep-profiles-wrapper {
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    .queue-profiles-wrapper {
         border-left: none;
         border-right: none;
         border-radius: 0;

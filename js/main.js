@@ -20,7 +20,7 @@ $(document).ready(function() {
         var repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
-        repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
+        var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
         
         //Rep Profile stored in variable (to be added)
         var repProfile = '<div class="container rep-card"><h3 class="repProfileName">' + repName + '</h3><div class="rep-card-queues"></div><button type="button" class="delete-rep btn btn-danger">Delete</button></div>';
@@ -44,12 +44,20 @@ $(document).ready(function() {
             //Rep Button added in rep-buttons container
             $('.rep-buttons').append(repButton);
 
-            //Adds queues array to local variable of repName
-           // $('.rep-card:contains('+ repName + ')').append(queues);
             
-            if( $('.rep-card:contains('+ repName + ')') ) {
-                  $('.rep-card-queues').append(queues);
-            };
+            
+            //Adds queues array to local variable of repName
+            /*
+            $('.rep-card:contains(' + repName + ')').append(queues);
+            
+            $('.rep-card-queues').append(queues);
+            
+            if( $('.rep-card:contains(' + repName + ')') ) {
+                $('.rep-card-queues').append(queues);
+            }
+            */
+                        
+            
             
         }//end rep array if statement
         
@@ -60,22 +68,35 @@ $(document).ready(function() {
         event.preventDefault();
     });//close add rep    
     
-    
-    //Allows rep-cards to be sortable
-    $("#rep-sortable").sortable({ revert: true });
-        
+  
     
     //Queue button to Rep Profile
     //$('.add-queue').click(function() {
     $('#add-queue-form').submit(function() {
         
         //Name for Queue from input value
-        $queueName = $('#addQueue-name').val();       
+        var queueName = $('#addQueue-name').val();       
         //Queue button stored in variable (to be added)
-        repQueues = '<button class="btn btn-lg btn-block btn-default repQueues-btn">' + $queueName + '</button>';
+        var repQueues = '<button class="btn btn-lg btn-block btn-default repQueues-btn">' + queueName + '</button>';
+        
+//Queue Profile stored in variable (to be added)
+var queueProfile = `
+<div class="queue-card">
+    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+    <div class="queue-card-toggle">
+        <h4 class="queueProfileName">` + queueName + `</h4>
+        <i class="queue-chevron-toggle fa fa-chevron-right fa-lg" aria-hidden="true"></i>
+        <div class="queue-card-data"></div>
+    </div><!--queue-card-toggle close-->
+    <button type="button" class="queue-delete-btn btn btn-danger btn-circle"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+</div><!--queue-card close-->`;
         
         //Adds Queue button to array
         queues.push(repQueues);
+        
+//Rep Profile added in rep-profile container
+$('.queue-profiles').prepend(queueProfile);
+        
         //Adds queues to Rep Profile card
         $('.rep-card-queues').append(repQueues);
         
@@ -87,6 +108,20 @@ $(document).ready(function() {
     });//close add queue
         
 
+ //Adds chevron rotate on click
+ 
+    $('.queue-card-toggle').on('click', function() {
+        $('.queue-chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');
+    });
+
+    
+  
+//Allows queue-cards to be sortable
+    $("#queue-sortable").sortable({ revert: true });    
+    
+    
+    
+    
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
     $('.rep-profiles').on('click', '.delete-rep', function() {
