@@ -312,4 +312,7 @@ textarea {
         margin-top: 10px;
         color: #fff;
     }
+    .fa-trash {
+        margin-top: -1px;
+    }
 }
