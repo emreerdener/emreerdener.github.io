@@ -109,6 +109,11 @@ textarea {
     box-shadow: 0px 2px 5px #888888;
     vertical-align: top;
 }
+.jtextfill {
+    height: 25px;
+    width: auto;
+    margin-bottom: 25px;
+}
 .rep-card:last-child {
     margin-right: 35px !important;
 }
@@ -120,7 +125,6 @@ textarea {
     padding-left: 5px;
     padding-right: 5px;
     white-space: normal;
-    padding-bottom: 10px;
     text-align: center;
 }
 .repQueues-btn {
@@ -189,7 +193,7 @@ textarea {
     border-radius: 5px;
     box-shadow: 0px 2px 5px #888888;
     vertical-align: top;
-    min-height: 45px;
+    min-height: 44px;
     width: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -199,7 +203,6 @@ textarea {
     padding-left: 40px;
     padding-right: 40px;
     cursor: pointer;
-    margin-top: 1px;
 }
 .queueProfileName {
     text-align: center;
@@ -234,11 +237,13 @@ textarea {
 }
 .delete-queue {
     float: right;
-    margin-top: 8px;
-    margin-right: 11px;
+    margin-top: 7px;
+    margin-right: 10px;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
 }
-.fa-trash-o {
-    margin-top: -2px;
+.fa-trash {
+    float: right;
     color: white;
 }
 .fa-lg {

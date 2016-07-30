@@ -26,7 +26,9 @@ $(document).ready(function() {
         //Rep Profile stored in variable (to be added)
         var repProfile = `
             <div class="container rep-card">
-                <h3 class="repProfileName">` + repName + `</h3>
+                <div class="jtextfill">  
+                    <h3 class="repProfileName"><span>` + repName + `</span></h3>
+                </div><!--jtextfill close-->
                 <div class="rep-card-queues"></div>
                 <button type="button" class="delete-rep btn btn-danger">Delete</button>
             </div>`;
@@ -60,8 +62,12 @@ $(document).ready(function() {
         
         //Prevents default form submit, causing page reload
         event.preventDefault();
+        
+        //Plugin that resizes text (repName) to size of container
+        $('.jtextfill').textfill({ maxFontPixels: 24 });  
+        
     });//close add rep    
-    
+   
   
     
     //Queue button to Rep Profile
@@ -78,13 +84,13 @@ $(document).ready(function() {
         var queueProfile = `
         <div class="queue-card">
             <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            <div class="queue-card-toggle">
+            <div class="queue-card-toggle">  
                 <h4 class="queueProfileName">` + queueName + `</h4>
                 <i class="queue-chevron-toggle fa fa-chevron-right fa-lg" aria-hidden="true"></i>
                 <div class="queue-card-data"></div>
             </div><!--queue-card-toggle close-->        
-            <button type="button" class="delete-queue btn btn-circle btn-danger">
-                <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+            <button type="button" class="delete-queue btn btn-danger">
+                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
             </button>
         </div><!--queue-card close-->`;
         
@@ -115,7 +121,10 @@ $(document).ready(function() {
             //Prevents default form submit, causing page reload
             event.preventDefault();
     });//close add queue
-        
+     
+
+   
+    
 
  //Adds chevron rotate on click
     $('.queue-card-toggle').on('click', function() {
