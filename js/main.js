@@ -96,7 +96,11 @@ $(document).ready(function() {
             </div><!--queue-bar-->
 
             <div class="queue-data">
+                <div class="container">
                 <input type="text" placeholder="Utilization">
+                <input type="text" placeholder="Growth %">
+                <input type="text" placeholder="Database ID">
+                </div>
             </div><!--queue-data-->
 
         </div><!--queue-card-->`;
@@ -126,33 +130,37 @@ $(document).ready(function() {
             //Clears queue input field
             $('#addQueue-name').val('');
         
-        
-            //Accordion drop-down for queue-cards
-            $( '.queue-profiles' ).accordion({
-                header: '.queue-card > .queue-bar',
-                collapsible: true,
-                active: false
-            }).sortable({ 
-                revert: true, 
-                handle: '.fa-bars'
-            });    
-            //Refreshes dynamically created elements for accordion toggle
-            $('.queue-profiles').accordion("refresh");
-            //Keeps 3bars icon from toggling accordion
-            $('.refuseAccordion').on('click', function() {
-                return false;
-            });
-            //Toggles chevron icon up/down on click
-            $('.queue-bar').on('click', function() {
-                $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); 
-            });
-            
+  
+    //Hides queue-data to be toggled
+    $('.queue-data').hide();
+    //Allows queue-cards to be sortable
+    $('.queue-profiles').sortable();
+    //Toggle queue data in queue cards
+    $('.queue-bar').on('click', function() {
+        $(this).next('.queue-data').slideToggle('fast');
+        e.preventDefault();
+    });  
+         
 
+//Attempt to toggle chevron up/down on click--   if( $('.queue-bar').is(':visible') ) { $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); }
+             
+        
             //Prevents default form submit, causing page reload
             event.preventDefault();
     });//close add queue
      
 
+    
+
+
+
+
+
+    
+    
+    
+    
+    
    
     
 //--------Delete Rep--------    

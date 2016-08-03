@@ -59,7 +59,7 @@
 
 /*--Input Box--*/
 .input-prompt {
-    border: 1px solid #000;
+    border: 1px solid #1e1e1e;
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
@@ -84,7 +84,7 @@ textarea {
     overflow: auto;
     overflow-x: scroll;
     white-space: nowrap;
-    border: 1px solid #000;
+    border: 1px solid #1e1e1e;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -99,7 +99,7 @@ textarea {
 .rep-card { 
     background-color: #fff;
     display: inline-block;
-    border: 1px solid #000;
+    border: 1px solid #1e1e1e;
     border-radius: 5px;
     padding: 0 !important;
     margin: 1em !important;
@@ -176,7 +176,7 @@ textarea {
     padding-bottom: 50px;
 }
 .queue-profiles-wrapper {
-    border: 1px solid #000;
+    border: 1px solid #1e1e1e;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -189,7 +189,7 @@ textarea {
 }
 .queue-bar{
     background-color: #337ab7;
-    border: 1px solid #000;
+    border: 1px solid #1e1e1e;
     border-radius: 5px;
     box-shadow: 0px 2px 5px #888888;
     vertical-align: top;
@@ -200,12 +200,11 @@ textarea {
     cursor: pointer;
     opacity: .99;
 }
-.queue-data {
-    
-    border: 1px solid #000;
+.queue-data {  
+    border: 1px solid #1e1e1e;
     border-top: none;
     margin-top: -15px;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
