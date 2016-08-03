@@ -128,30 +128,30 @@ $(document).ready(function() {
             
         
             //Clears queue input field
-            $('#addQueue-name').val('');
-        
+            $('#addQueue-name').val('');     
   
     //Hides queue-data to be toggled
     $('.queue-data').hide();
-    //Allows queue-cards to be sortable
-    $('.queue-profiles').sortable();
-    //Toggle queue data in queue cards
-    $('.queue-bar').on('click', function() {
-        $(this).next('.queue-data').slideToggle('fast');
-        e.preventDefault();
-    });  
          
 
-//Attempt to toggle chevron up/down on click--   if( $('.queue-bar').is(':visible') ) { $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); }
-             
+//Attempt to toggle chevron up/down on click--   if( $('.queue-bar').is(':visible') ) { $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); }        
         
             //Prevents default form submit, causing page reload
             event.preventDefault();
     });//close add queue
      
-
+    
+    
     
 
+    //Allows queue-cards to be sortable
+    $('.queue-profiles').sortable();    
+    
+    //Toggle queue data in queue cards
+    $('.queue-profiles').on('click', '.queue-card', function(e) {
+        $(this).find('.queue-data').slideToggle('fast');
+        e.preventDefault();
+    });  
 
 
 
