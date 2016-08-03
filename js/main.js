@@ -28,7 +28,7 @@ $(document).ready(function() {
             <div class="container rep-card">
                 <div class="jtextfill">  
                     <h3 class="repProfileName"><span>` + repName + `</span></h3>
-                </div><!--jtextfill close-->
+                </div><!--jtextfill-->
                 <div class="rep-card-queues"></div>
                 <button type="button" class="delete-rep btn btn-danger">Delete</button>
             </div>`;
@@ -83,16 +83,21 @@ $(document).ready(function() {
         //Queue Profile stored in variable (to be added)
         var queueProfile = `
         <div class="queue-card">
-            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            <div class="queue-card-toggle">  
+    
+            <div class="queue-bar">    
                 <h4 class="queueProfileName">` + queueName + `</h4>
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i> 
                 <i class="queue-chevron-toggle fa fa-chevron-right fa-lg" aria-hidden="true"></i>
-                <div class="queue-card-data"></div>
-            </div><!--queue-card-toggle close-->        
-            <button type="button" class="delete-queue btn btn-danger">
+                <button type="button" class="delete-queue btn btn-danger">
                 <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-            </button>
-        </div><!--queue-card close-->`;
+                </button>
+            </div><!--queue-bar-->
+
+            <div class="queue-data">
+                <input type="text" placeholder="Utilization">
+            </div><!--queue-data-->
+
+        </div><!--queue-card-->`;
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
@@ -117,19 +122,22 @@ $(document).ready(function() {
             
             //Clears queue input field
             $('#addQueue-name').val('');
+        
+        
+            ///!!! Attempt to add accordion to queue buttons
+            $( ".queue-profiles" ).accordion({
+                header: ".queue-card > .queue-bar",
+                collapsible: true,
+                active: false
+            });
+            $('.queue-profiles').accordion("refresh");
+        
 
             //Prevents default form submit, causing page reload
             event.preventDefault();
     });//close add queue
      
 
-   
-    
-
- //Adds chevron rotate on click
-    $('.queue-card-toggle').on('click', function() {
-        $('.queue-chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');
-    });  
   
 //Allows queue-cards to be sortable
     $("#queue-sortable").sortable({ revert: true });    
