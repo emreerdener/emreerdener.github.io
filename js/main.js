@@ -85,12 +85,14 @@ $(document).ready(function() {
         <div class="queue-card">
     
             <div class="queue-bar">    
-                <h4 class="queueProfileName">` + queueName + `</h4>
-                <i class="fa fa-bars fa-2x" aria-hidden="true"></i> 
-                <i class="queue-chevron-toggle fa fa-chevron-right fa-lg" aria-hidden="true"></i>
+                <span>
+                <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>
                 <button type="button" class="delete-queue btn btn-danger">
                 <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
                 </button>
+                </span>
+                <h4 class="queueProfileName">` + queueName + `</h4>
+                <i class="fa fa-chevron-right fa-lg chevron-toggle" aria-hidden="true"></i>
             </div><!--queue-bar-->
 
             <div class="queue-data">
@@ -118,30 +120,39 @@ $(document).ready(function() {
 
             //Adds queues to Rep Profile card
             $('.rep-card-queues').append(repQueues);
-        }
+        }//--close else statement
             
+        
             //Clears queue input field
             $('#addQueue-name').val('');
         
         
-            ///!!! Attempt to add accordion to queue buttons
-            $( ".queue-profiles" ).accordion({
-                header: ".queue-card > .queue-bar",
+            //Accordion drop-down for queue-cards
+            $( '.queue-profiles' ).accordion({
+                header: '.queue-card > .queue-bar',
                 collapsible: true,
                 active: false
-            });
+            }).sortable({ 
+                revert: true, 
+                handle: '.fa-bars'
+            });    
+            //Refreshes dynamically created elements for accordion toggle
             $('.queue-profiles').accordion("refresh");
-        
+            //Keeps 3bars icon from toggling accordion
+            $('.refuseAccordion').on('click', function() {
+                return false;
+            });
+            //Toggles chevron icon up/down on click
+            $('.queue-bar').on('click', function() {
+                $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); 
+            });
+            
 
             //Prevents default form submit, causing page reload
             event.preventDefault();
     });//close add queue
      
 
-  
-//Allows queue-cards to be sortable
-    $("#queue-sortable").sortable({ revert: true });    
-    
    
     
 //--------Delete Rep--------    
