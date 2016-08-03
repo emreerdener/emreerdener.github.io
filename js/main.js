@@ -82,27 +82,28 @@ $(document).ready(function() {
         
         //Queue Profile stored in variable (to be added)
         var queueProfile = `
-        <div class="queue-card">
-    
+        <div class="queue-card"> 
             <div class="queue-bar">    
                 <span>
-                <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>
-                <button type="button" class="delete-queue btn btn-danger">
-                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                </button>
+                    <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>
+                    <button type="button" class="delete-queue btn btn-danger">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                    </button>
                 </span>
                 <h4 class="queueProfileName">` + queueName + `</h4>
-                <i class="fa fa-chevron-right fa-lg chevron-toggle" aria-hidden="true"></i>
             </div><!--queue-bar-->
 
             <div class="queue-data">
-                <div class="container">
-                <input type="text" placeholder="Utilization">
-                <input type="text" placeholder="Growth %">
-                <input type="text" placeholder="Database ID">
+                <div class="queue-data-fields">
+                    <input class="queue-data-input" type="text" placeholder="Utilization">
+                </div>
+                <div class="queue-data-fields">
+                    <input class="queue-data-input" type="text" placeholder="Growth %">
+                </div>
+                <div class="queue-data-fields">
+                    <input class="queue-data-input" type="text" placeholder="Database ID">
                 </div>
             </div><!--queue-data-->
-
         </div><!--queue-card-->`;
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
@@ -127,23 +128,21 @@ $(document).ready(function() {
         }//--close else statement
             
         
-            //Clears queue input field
-            $('#addQueue-name').val('');     
+    //Clears queue input field
+    $('#addQueue-name').val('');     
   
+        
     //Hides queue-data to be toggled
     $('.queue-data').hide();
-         
-
-//Attempt to toggle chevron up/down on click--   if( $('.queue-bar').is(':visible') ) { $(this).find('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); }        
+               
         
-            //Prevents default form submit, causing page reload
-            event.preventDefault();
-    });//close add queue
+    //Prevents default form submit, causing page reload
+    event.preventDefault();
+});//close add queue
      
     
-    
-    
-
+ 
+//--------Queue Cards--------
     //Allows queue-cards to be sortable
     $('.queue-profiles').sortable();    
     
@@ -151,16 +150,11 @@ $(document).ready(function() {
     $('.queue-profiles').on('click', '.queue-card', function(e) {
         $(this).find('.queue-data').slideToggle('fast');
         e.preventDefault();
-    });  
-
-
-
-
-    
-    
-    
-    
-    
+    });
+    //Prevents slideToggle when interacting with queue-data
+    $('.queue-profiles').on('click', '.queue-data', function() {
+        return false;    
+    });
    
     
 //--------Delete Rep--------    
@@ -172,7 +166,7 @@ $(document).ready(function() {
 //--------Delete Queue--------    
     //Removes rep-card on "delete" button click
     $('.queue-profiles').on('click', '.delete-queue', function() {
-            $(this).parent().remove();
+            $(this).parents('.queue-card').remove();
     });    
        
 //---------Button toggle---------

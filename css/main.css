@@ -180,7 +180,7 @@ textarea {
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
-    /*background-color: #f8f8f8;*/
+    background-color: #f8f8f8;
 }
 .queue-profiles {
     padding-left: 5px !important;
@@ -200,15 +200,26 @@ textarea {
     cursor: pointer;
     opacity: .99;
 }
+.queue-bar:hover {
+    background-color: #2e6da4;
+}
 .queue-data {  
     border: 1px solid #1e1e1e;
     border-top: none;
     margin-top: -15px;
     padding-top: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: white;
+}
+.queue-data-fields {
+    padding: 20px;
+}
+.queue-data-input {
+    border: 1px solid #1e1e1e;
+    padding: 5px;
+    border-radius: 5px;
 }
 .queueProfileName {
     text-align: center;
