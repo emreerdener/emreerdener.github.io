@@ -155,6 +155,10 @@ $(document).ready(function() {
     $('.queue-profiles').on('click', '.queue-data', function() {
         return false;    
     });
+    //Prevents slideToggle when interacting with 3 bars icon
+    $('.queue-profiles').on('click', '.fa-bars', function() {
+        return false; 
+    });
    
     
 //--------Delete Rep--------    

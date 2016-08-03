@@ -181,6 +181,7 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f8f8f8;
+    max-width: 70em;
 }
 .queue-profiles {
     padding-left: 5px !important;
