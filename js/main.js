@@ -164,13 +164,13 @@ $(document).ready(function() {
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
     $('.rep-profiles').on('click', '.delete-rep', function() {
-            $(this).parent().remove();
+        $(this).parent().remove();
     });
     
 //--------Delete Queue--------    
-    //Removes rep-card on "delete" button click
+    //Removes queue-card on "delete" button click
     $('.queue-profiles').on('click', '.delete-queue', function() {
-            $(this).parents('.queue-card').remove();
+        $(this).parents('.queue-card').remove();
     });    
        
 //---------Button toggle---------
