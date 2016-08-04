@@ -202,7 +202,7 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f8f8f8;
-    max-width: 70em;
+    max-width: 60em;
 }
 .queue-profiles {
     padding-left: 5px !important;
@@ -229,11 +229,21 @@ textarea {
     border: 1px solid #1e1e1e;
     border-top: none;
     margin-top: -15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: white;
+}
+.queue-data-columns {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+.data-title {
+    display: inline-block;
+    padding-right: 8px;
+}
+.grey {
+    background-color: #f8f8f8;
 }
 .queue-data-fields {
     padding: 20px;
@@ -241,8 +251,12 @@ textarea {
 .queue-data-input {
     border: 1px solid #1e1e1e;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
+.graph-preview img {
+    width: 100%;
+}
+
 .queueProfileName {
     text-align: center;
     display: inline-block;

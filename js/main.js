@@ -94,17 +94,22 @@ $(document).ready(function() {
             </div><!--queue-bar-->
 
             <div class="queue-data">
-                <div class="queue-data-fields">
-                    <input class="queue-data-input" type="text" placeholder="Utilization">
+                <div class="graph-preview">
+                    <img src="images/graph-ex.png"/>
                 </div>
                 <div class="queue-data-fields">
-                    <input class="queue-data-input" type="text" placeholder="Growth %">
+                    <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>
+                    <input class="queue-data-input" type="text" placeholder="Seconds">
+                </div>
+                <div class="queue-data-fields grey">
+                    <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>
+                    <input class="queue-data-input" type="text" placeholder="Percentage">
                 </div>
                 <div class="queue-data-fields">
-                    <input class="queue-data-input" type="text" placeholder="Database ID">
+                    <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>
+                    <input class="queue-data-input" type="text" placeholder="SQL">
                 </div>
-            </div><!--queue-data-->
-        </div><!--queue-card-->`;
+            </div><!--queue-data-->`;
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
@@ -187,7 +192,10 @@ $(document).ready(function() {
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('MMMM D, YYYY'));
     
+
+
 }); //end of jQuery document
+
 
 
 
