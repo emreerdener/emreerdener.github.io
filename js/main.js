@@ -22,6 +22,11 @@ $(document).ready(function() {
         $('#settings').show();
         $('#groups').hide();
     });
+    
+    $('.navbar-brand').on('click', function() {
+        $('#groups').show();
+        $('#settings').hide();
+    });
 
 //---------Settings---------    
     

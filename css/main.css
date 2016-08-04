@@ -28,9 +28,12 @@
     margin-bottom: 0 !important;
     border: none !important;
 }
+.navbar-brand {
+    cursor: pointer;
+}
 
 #groups {
-    padding: 200px;
+    padding: 50px;
 }
 
 /*--------Settings--------*/
