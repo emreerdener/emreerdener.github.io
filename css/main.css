@@ -338,6 +338,10 @@ textarea {
         margin-top: 0;
         margin-bottom: 30px;
     }
+    .btn-rep {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .rep-profiles-wrapper {
         border-left: none;
         border-right: none;
