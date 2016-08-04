@@ -29,7 +29,9 @@
     border: none !important;
 }
 
-
+#groups {
+    padding: 200px;
+}
 
 /*--------Settings--------*/
 /*--Settings Nav--*/

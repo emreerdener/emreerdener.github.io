@@ -11,6 +11,18 @@ $(document).ready(function() {
         $('.nav-cog').toggleClass('fa-spin');
     });
     
+    //Adds bounce animation to ninja logo
+    $('#gp-ninja').click(function() {
+        $(this).effect('bounce', 'slow');
+    });
+    
+    //Hide/Show settings view
+    $('#settings').hide();
+    $('#desktop-cog, #mobile-cog').on('click', function() {
+        $('#settings').show();
+        $('#groups').hide();
+    });
+
 //---------Settings---------    
     
     //Rep Working button & Rep Profile
