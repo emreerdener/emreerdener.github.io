@@ -20,11 +20,11 @@ $(document).ready(function() {
     $('#settings').hide();
     $('#desktop-cog, #mobile-cog').on('click', function() {
         $('#settings').show();
-        $('#groups').hide();
+        $('#reps-working-view').hide();
     });
     
     $('.navbar-brand').on('click', function() {
-        $('#groups').show();
+        $('#reps-working-view').show();
         $('#settings').hide();
     });
 

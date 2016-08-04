@@ -32,8 +32,17 @@
     cursor: pointer;
 }
 
-#groups {
+#reps-working-view {
     padding: 50px;
+}
+
+
+
+/*--------Reps Working--------*/
+#date-stamp {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 /*--------Settings--------*/
@@ -80,7 +89,6 @@
 }
 .reps-working-container {
     padding-bottom: 50px;
-    background-color: #f8f8f8;
 }
 
 /*--Input Box--*/
@@ -310,14 +318,6 @@ textarea {
     padding-left: 5px;
 }
 
-
-
-/*--------Reps Working--------*/
-#date-stamp {
-    display: inline-block;
-    font-weight: 600;
-    font-size: 16px;
-}
 
 
 
