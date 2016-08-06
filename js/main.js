@@ -213,8 +213,7 @@ $(document).ready(function() {
         //Toggle button styles on click
         $('.non-core-name').toggleClass('non-core-btn-styles');
         //Toggle chevron right to down on click
-        $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');
-        
+        $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');       
         e.preventDefault();
     });
     
