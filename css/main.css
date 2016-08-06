@@ -65,7 +65,7 @@
     width: 100%;
     bottom: 0;
     cursor: pointer;
-    box-shadow: 0px -3px 10px #888888;
+    box-shadow: 0px -3px 15px #888888;
 }
 #reps-working-next:hover {
     background-color: #0099c9;
@@ -353,8 +353,8 @@ textarea {
 
 
 /*--------Queue Volumes--------*/
-.queue-import-view {
-    padding-bottom: 70px;
+.queue-imports {
+    padding-bottom: 90px;
 }
 .queue-volume-card {
     max-width: 300px;
@@ -472,7 +472,7 @@ textarea {
     width: 100%;
     position: fixed;
     bottom: 0;
-    box-shadow: 0px -3px 10px #888888;
+    box-shadow: 0px -3px 15px #888888;
 }
 
 
