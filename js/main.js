@@ -216,6 +216,10 @@ $(document).ready(function() {
         $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');       
         e.preventDefault();
     });
+    //Prevents slideToggle when clicking on non-core-data
+    $('.non-core-card').on('click', '.non-core-data', function() {
+        return false;
+    });
     
     
 //--------Delete Rep--------    
@@ -230,7 +234,7 @@ $(document).ready(function() {
         $(this).parents('.queue-card').remove();
     });    
        
-//---------Button toggle---------
+//---------Button toggle & NonCore Btn add---------
     //Toggle button from grey to green on click
     function toggleButton() {
         $(this).toggleClass('btn-default btn-success'); 

@@ -338,8 +338,7 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #000;
-    background-color: #337ab7;
-    color: white;
+    background-color: #f8f8f8;
     text-align: center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -349,6 +348,7 @@ textarea {
     padding: 6px;
     border-radius: 3px;
     border: 1px solid #000;
+    text-align: center;
 }
 .queue-alert {
     margin-left: 3px;
@@ -357,6 +357,9 @@ textarea {
 .qvolume-graph {
     margin-right: 6px;
     cursor: pointer;
+}
+.qvolume-graph:hover {
+    color: #00a4d8;
 }
 .non-core-container {
     max-width: 1000px;
