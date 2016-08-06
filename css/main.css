@@ -32,19 +32,50 @@
     cursor: pointer;
 }
 
-#reps-working-view {
-    padding: 50px;
-}
 
-.title {
+
+.title-withside {
+    display: inline-block;
     margin: 25px;
+    margin-right: -85px;
+}
+.title {
+    margin-bottom: 30px;
 }
 
 /*--------Reps Working--------*/
+#reps-working-view {
+    padding: 0;
+}
+.reps-working-container {
+    padding-bottom: 50px;
+}
 #date-stamp {
     display: inline-block;
     font-weight: 600;
     font-size: 16px;
+    float: right;
+    margin-top: 30px;
+}
+#reps-working-next {
+    background-color: #00a4d8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    cursor: pointer;
+    border-top: 1px solid #000;
+}
+#reps-working-next:hover {
+    background-color: #0099c9;
+}
+#reps-working-next p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
 }
 
 /*--------Settings--------*/
@@ -80,19 +111,6 @@
 }
 
 
-/*--Section Containers--*/
-.rep-settings-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.queue-settings-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.reps-working-container {
-    padding-bottom: 50px;
-}
-
 /*--Input Box--*/
 .input-prompt {
     border: 1px solid #1e1e1e;
@@ -115,6 +133,10 @@ textarea {
 }
 
 /*--Rep Profiles--*/
+.rep-settings-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .rep-profiles-wrapper {
     display: block;
     overflow: auto;
@@ -208,6 +230,10 @@ textarea {
 /*---------------------*/
 
 /*--------Queue Profiles--------*/
+.queue-settings-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .addQueue {
     padding-bottom: 50px;
 }
@@ -319,6 +345,10 @@ textarea {
     color: white;
     padding-left: 5px;
 }
+.queue-data-fields:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
 
 
 
@@ -338,10 +368,14 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #000;
-    background-color: #f8f8f8;
     text-align: center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+}
+.queue-volume-data {
+    background-color: #f8f8f8;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 .queue-volume-input {
     margin: 10px;
@@ -351,7 +385,7 @@ textarea {
     text-align: center;
 }
 .queue-alert {
-    margin-left: 3px;
+    margin-left: 4px;
     cursor: pointer;
 }
 .qvolume-graph {
@@ -393,10 +427,63 @@ textarea {
     padding: 10px;
 }
 
+#queue-import-next {
+    background-color: #00a4d8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+    cursor: pointer;
+    width: 50%;
+    float: right;
+}
+#queue-import-back {
+    background-color: #e8e8e8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+    cursor: pointer;
+    width: 50%;
+    float: left;
+}
+#queue-import-next:hover {
+    background-color: #0099c9;
+}
+#queue-import-next p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
+}
+#queue-import-back p {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
+}
+#queue-import-back:hover {
+    background-color: #d9d7d7;
+}
+.nav-row {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #000;
+}
+
 
 /*--------Mobile Styles--------*/
 @media only screen and (max-width : 768px){
-	.settings-title {
+    .title-withside {
+        margin-right: 25px;
+    }
+    #date-stamp {
+        display: block;
+        float: none;
+        margin: 0;
+    }
+    .settings-title {
         margin-top: 10px;
         margin-bottom: 0;
         margin-right: 0;

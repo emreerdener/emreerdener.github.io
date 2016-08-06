@@ -22,12 +22,24 @@ $(document).ready(function() {
         $('#settings').show();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
-    });
-    
+    });    
+    //Hide/Show reps-working view
+    $('#queue-import-view').hide();
     $('.navbar-brand').on('click', function() {
         $('#reps-working-view').show();
         $('#settings').hide();
+        $('#queue-import-view').hide();
+    });
+    //Hide/Show queue import view
+    $('#reps-working-next').on('click', function() {
         $('#queue-import-view').show();
+        $('#reps-working-view').hide();
+        $('#settings').hide();
+    });
+    $('#queue-import-back').on('click', function() {
+        $('#reps-working-view').show();
+        $('#queue-import-view').hide();
+        $('#settings').hide();
     });
 
 //---------Settings---------    
@@ -116,14 +128,18 @@ $(document).ready(function() {
                     <img src="images/graph-ex.png"/>
                 </div>
                 <div class="queue-data-fields">
+                    <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>
+                    <input class="queue-data-input" type="text" placeholder="Name">
+                </div>
+                <div class="queue-data-fields grey">
                     <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>
                     <input class="queue-data-input" type="text" placeholder="Seconds">
                 </div>
-                <div class="queue-data-fields grey">
+                <div class="queue-data-fields">
                     <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>
                     <input class="queue-data-input" type="text" placeholder="Percentage">
                 </div>
-                <div class="queue-data-fields">
+                <div class="queue-data-fields grey">
                     <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>
                     <input class="queue-data-input" type="text" placeholder="SQL">
                 </div>

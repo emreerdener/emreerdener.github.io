@@ -29,7 +29,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
       <!--Desktop cog-->
-    <a class="hidden-xs" href="#settings"><i id="desktop-cog" class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a>  
+    <a class="hidden-xs" href="#settings"><i id="desktop-cog" class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a>
     <div class="navbar-header">
       <a class="navbar-brand">
         <p class="navbar-txt hidden-xs">GAMEPLAN</p>
@@ -42,22 +42,27 @@
 </nav>
 
 <!--Reps Working View-->    
-<div id="reps-working-view" class="container">
+<div id="reps-working-view">
     <!--Reps Working-->
-    <div class="reps-working-container">
+    <div class="reps-working-container container">
         <!--Title-->
         <div class="text-center">
-            <h2 class="title">Reps</h2>
+            <h2 class="title-withside">Reps</h2>
             <p id="date-stamp"></p>
         </div><!--text-center div-->
         <!--Rep buttons-->
         <div class="text-center rep-buttons"></div><!--rep-buttons-->
-    </div><!--reps-working-container-->    
+    </div><!--reps-working-container-->
+    
+    <div id="reps-working-next">
+        <p>NEXT</p>
+    </div><!--fixed-nav-->
+    
 </div><!--reps-working-view-->
     
         
 <!--Queue Volume View-->
-<div id="queue-import-view" class="container">
+<div id="queue-import-view">
     <!--Queue Import-->
     <div class="queue-import-container">
         <!--Title-->
@@ -79,8 +84,19 @@
     <!--Queue Import fields-->
     <div class="text-center queue-imports"></div><!--queue-imports-->
     </div><!--queue-import-container-->
-    </div><!--queue-import-view-->
     
+    <div class="nav-row">
+        <div id="queue-import-back">
+            <p>BACK</p>
+        </div>
+        <div id="queue-import-next">
+            <p>NEXT</p>
+        </div>
+    </div><!--fixed-nav-->
+    
+</div><!--queue-import-view-->
+    
+ 
     
 <!--Settings-->
 <div class="settings-container" id="settings">
