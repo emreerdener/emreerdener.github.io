@@ -36,7 +36,9 @@
     padding: 50px;
 }
 
-
+.title {
+    margin: 25px;
+}
 
 /*--------Reps Working--------*/
 #date-stamp {
@@ -350,11 +352,43 @@ textarea {
 }
 .queue-alert {
     margin-left: 3px;
+    cursor: pointer;
 }
 .qvolume-graph {
     margin-right: 6px;
+    cursor: pointer;
 }
-
+.non-core-container {
+    max-width: 1000px;
+}
+.non-core-card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #888888;
+    padding: 0 !important;
+    margin: 10px !important;
+}
+.non-core-name {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #337ab7;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.non-core-name:hover {
+    background-color: #2e6da4;
+}
+.non-core-btn-styles {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid #000;
+}
+.non-core-data {
+    padding: 10px;
+}
 
 
 /*--------Mobile Styles--------*/

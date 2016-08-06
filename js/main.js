@@ -36,7 +36,7 @@ $(document).ready(function() {
     $('#add-rep-form').submit(function(event) {
              
         //Name for Rep from input value. Then assigned to variable
-        var repName = $('#addrep-name').val();
+        repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
@@ -133,7 +133,7 @@ $(document).ready(function() {
         var queueVolume = `
         <div class="container queue-volume-card">
             <div class="queue-volume-name">
-                    <h4><span>` + queueName + `</span></h4>
+                    <h4>` + queueName + `</h4>
             </div><!--queue-volume-name-->
             <div class="queue-volume-data">
                 <i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i>
@@ -202,6 +202,22 @@ $(document).ready(function() {
         return false; 
     });
    
+
+//--------Non-Core Work--------
+    //Hide elements to be toggled on click
+    $('.non-core-data').hide();
+    
+    //Toggle non-core work data
+    $('.non-core-card').on('click', function(e) {
+        $(this).find('.non-core-data').slideToggle('fast');
+        //Toggle button styles on click
+        $('.non-core-name').toggleClass('non-core-btn-styles');
+        //Toggle chevron right to down on click
+        $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');
+        
+        e.preventDefault();
+    });
+    
     
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
@@ -220,8 +236,23 @@ $(document).ready(function() {
     function toggleButton() {
         $(this).toggleClass('btn-default btn-success'); 
     }   
-    //Toggles Rep Working button
-    $('.rep-buttons').on('click', '.btn-rep', toggleButton); 
+    //Toggles Rep Working button & adds Non-core work buttons
+    $('.rep-buttons').on('click', '.btn-rep', function() {
+        $(this).toggleClass('btn-default btn-success');
+        
+        
+    //!!!!!!!!!!Attempt to add non-core work button
+        var nonCoreBtn = `<button type="button" class="btn">` + repName + `</button>`;
+        
+        if( $(this).hasClass('btn-success') ) {
+            console.log(repName);
+            $('.non-core-data').append(nonCoreBtn);
+        } else {
+            $('.non-core-data').parent().remove(nonCoreBtn);
+        }
+    });
+    
+    
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
     
