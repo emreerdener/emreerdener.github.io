@@ -21,18 +21,19 @@ $(document).ready(function() {
     $('#desktop-cog, #mobile-cog').on('click', function() {
         $('#settings').show();
         $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
     });
     
     $('.navbar-brand').on('click', function() {
         $('#reps-working-view').show();
         $('#settings').hide();
+        $('#queue-import-view').show();
     });
 
 //---------Settings---------    
     
     //Rep Working button & Rep Profile
-    //$('#add-rep-btn').click(function() {
-    $('#add-rep-form').submit(function() {
+    $('#add-rep-form').submit(function(event) {
              
         //Name for Rep from input value. Then assigned to variable
         var repName = $('#addrep-name').val();
@@ -70,26 +71,27 @@ $(document).ready(function() {
             $('.rep-buttons').append(repButton);
             
             //Adds queues array to local variable of repName
-            $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);            
-            
-        }//end rep array if statement
+            $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);                   
+        }//--close if statement
         
         //Clears rep input field
         $('#addrep-name').val(''); 
         
+        //Plugin to resize text (repName) to container width
+        $('.jtextfill').textfill({ maxFontPixels: 24 }); 
+        
         //Prevents default form submit, causing page reload
-        event.preventDefault();
-        
-        //Plugin that resizes text (repName) to size of container
-        $('.jtextfill').textfill({ maxFontPixels: 24 });  
-        
+        event.preventDefault(); 
     });//close add rep    
-   
+    
+    
+    function textFillCont() {
+      $('.jtextfill').textfill({ maxFontPixels: 18 });  
+    };
   
     
     //Queue button to Rep Profile
-    //$('.add-queue').click(function() {
-    $('#add-queue-form').submit(function() {
+    $('#add-queue-form').submit(function(event) {
         
         //Name for Queue from input value
         var queueName = $('#addQueue-name').val();
@@ -109,7 +111,6 @@ $(document).ready(function() {
                 </span>
                 <h4 class="queueProfileName">` + queueName + `</h4>
             </div><!--queue-bar-->
-
             <div class="queue-data">
                 <div class="graph-preview">
                     <img src="images/graph-ex.png"/>
@@ -127,6 +128,20 @@ $(document).ready(function() {
                     <input class="queue-data-input" type="text" placeholder="SQL">
                 </div>
             </div><!--queue-data-->`;
+        
+        //Queue import field (to be added)
+        var queueVolume = `
+        <div class="container queue-volume-card">
+            <div class="queue-volume-name">
+                    <h4><span>` + queueName + `</span></h4>
+            </div><!--queue-volume-name-->
+            <div class="queue-volume-data">
+                <i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+                <input class="queue-volume-input" type="number">
+                <i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i>
+            </div><!--queue-volume-data-->
+        </div><!--queue-volume-card-->
+        `;
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
@@ -147,21 +162,26 @@ $(document).ready(function() {
 
             //Adds queues to Rep Profile card
             $('.rep-card-queues').append(repQueues);
-        }//--close else statement
             
+            //Adds queues to Queue Volume cards
+            $('.queue-imports').append(queueVolume);
+        }//--close if statement
         
     //Clears queue input field
     $('#addQueue-name').val('');     
-  
+          
+    //Hides queue-data to be toggled in drop-down
+    $('.queue-data').hide();       
+    
+    textFillCont();    
         
-    //Hides queue-data to be toggled
-    $('.queue-data').hide();
-               
+    //Plugin to resize text (queueName) to container width
+    //$('.textfill').textfill({ maxFontPixels: 18 });     
         
     //Prevents default form submit, causing page reload
     event.preventDefault();
 });//close add queue
-     
+    
     
  
 //--------Queue Cards--------
@@ -208,13 +228,7 @@ $(document).ready(function() {
 
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('MMMM D, YYYY'));
+        
     
-
-
-}); //end of jQuery document
-
-
-
-
-
+}); //end of .ready document
 
