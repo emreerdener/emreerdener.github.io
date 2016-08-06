@@ -45,14 +45,14 @@
 
 /*--------Reps Working--------*/
 #reps-working-view {
-    padding: 0;
+    padding-bottom: 70px;
 }
 .reps-working-container {
     padding-bottom: 50px;
 }
 #date-stamp {
     display: inline-block;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     float: right;
     margin-top: 30px;
@@ -65,7 +65,7 @@
     width: 100%;
     bottom: 0;
     cursor: pointer;
-    border-top: 1px solid #000;
+    box-shadow: 0px -3px 10px #888888;
 }
 #reps-working-next:hover {
     background-color: #0099c9;
@@ -353,6 +353,9 @@ textarea {
 
 
 /*--------Queue Volumes--------*/
+.queue-import-view {
+    padding-bottom: 70px;
+}
 .queue-volume-card {
     max-width: 300px;
     height: auto;
@@ -469,14 +472,19 @@ textarea {
     width: 100%;
     position: fixed;
     bottom: 0;
-    border-top: 1px solid #000;
+    box-shadow: 0px -3px 10px #888888;
 }
 
 
 /*--------Mobile Styles--------*/
 @media only screen and (max-width : 768px){
     .title-withside {
+        margin-top: 35px;
         margin-right: 25px;
+        margin-bottom: 10px;
+    }
+    .title {
+        margin-top: 35px;
     }
     #date-stamp {
         display: block;
@@ -539,5 +547,8 @@ textarea {
     .qvolume-graph {
         margin-right: 0;
         margin-left: 15px;
+    }
+    .repname-emptyerror, .repname-duperror, .queuename-duperror, .queuename-emptyerror {
+        top: 300px;
     }
 }
