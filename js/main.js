@@ -153,7 +153,7 @@ $(document).ready(function() {
             </div><!--queue-volume-name-->
             <div class="queue-volume-data">
                 <button type="button" class="btn qvolume-btn"><i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i></button>
-                <input class="queue-volume-input" type="number">
+                <input class="queue-volume-input" type="number" placeholder="Volume">
                 <button type="button" class="btn qvolume-btn"><i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i></button>
             </div><!--queue-volume-data-->
         </div><!--queue-volume-card-->

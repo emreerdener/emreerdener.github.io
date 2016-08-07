@@ -33,6 +33,12 @@
 }
 
 
+/*turns off input number spinner*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 
 /*--------Reps Working--------*/
@@ -159,6 +165,20 @@
 .qvolume-graph:hover {
     color: #00a4d8;
 }
+
+input[type="number"].queue-volume-input::-webkit-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].queue-volume-input::-moz-placeholder {
+    font-weight: 300;
+}
+input[type="number"].queue-volume-input:-ms-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].queue-volume-input:-moz-placeholder{
+    font-weight: 300;
+}
+
 .non-core-container {
     max-width: 1110px;
 }
@@ -222,6 +242,20 @@
     font-size: 18px;
     background-color: white;
 }
+
+input[type="number"].nc-input::-webkit-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].nc-input::-moz-placeholder {
+    font-weight: 300;
+}
+input[type="number"].nc-input:-ms-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].nc-input:-moz-placeholder{
+    font-weight: 300;
+}
+
 #queue-import-next {
     background-color: #00a4d8;
     padding-top: 15px;
