@@ -34,21 +34,18 @@
 
 
 
+
+/*--------Reps Working--------*/
+.reps-header {
+    margin-top: 50px;
+}
 .title-withside {
     display: inline-block;
     margin: 25px;
     margin-right: -85px;
 }
-.title {
-    margin-bottom: 30px;
-}
-
-/*--------Reps Working--------*/
-.reps-header {
-    margin-top: 30px;
-}
 #reps-working-view {
-    padding-bottom: 70px;
+    padding-bottom: 35px;
 }
 .reps-working-container {
     padding-bottom: 50px;
@@ -84,9 +81,31 @@
 /*---------------------------*/
 
 /*--------Queue Volumes--------*/
+.importQueuesBtn {
+    display: inline-block;
+    float: right;
+    margin-right: 100px;
+    margin-top: 20px;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-weight: 600 !important;
+    background-color: #00a4d8 !important;
+    color: white !important;
+}
+.importQueuesBtn:hover {
+    background-color: #0099c9 !important;
+}
 .volumes-header {
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+.volumes-title {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    display: inline-block;
+    margin-right: -270px;
 }
 .queue-imports {
     padding-bottom: 90px;
@@ -109,6 +128,8 @@
     text-align: center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    background-color: #337ab7;
+    color: white;
 }
 .queue-volume-data {
     padding-top: 10px;
@@ -167,7 +188,6 @@
 .non-core-data {
     padding: 10px;
 }
-
 #queue-import-next {
     background-color: #00a4d8;
     padding-top: 15px;
@@ -493,7 +513,6 @@ textarea {
 
 
 
-
 /*--------Mobile Styles--------*/
 @media only screen and (max-width : 768px){
     .title-withside {
@@ -570,5 +589,17 @@ textarea {
     }
     .repname-emptyerror, .repname-duperror, .queuename-duperror, .queuename-emptyerror {
         top: 300px;
+    }
+    .importQueuesBtn {
+        display: block !important;
+        margin: 0 auto;
+        float: none;
+    }
+    .volumes-title {
+        margin-top: 0;
+        margin-right: 0;
+    }
+    .volumes-header {
+        margin-bottom: 40px;
     }
 }
