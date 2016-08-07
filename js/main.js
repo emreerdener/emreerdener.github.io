@@ -20,6 +20,7 @@ $(document).ready(function() {
     $('#settings').hide();
     $('#desktop-cog, #mobile-cog').on('click', function() {
         $('#settings').show();
+        $('.breadcrumb').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
     });    
@@ -27,18 +28,33 @@ $(document).ready(function() {
     $('#queue-import-view').hide();
     $('.navbar-brand').on('click', function() {
         $('#reps-working-view').show();
+        $('.breadcrumb').show();
         $('#settings').hide();
         $('#queue-import-view').hide();
     });
     //Hide/Show queue import view
     $('#reps-working-next').on('click', function() {
         $('#queue-import-view').show();
+        $('.breadcrumb').show();
         $('#reps-working-view').hide();
         $('#settings').hide();
     });
     $('#queue-import-back').on('click', function() {
         $('#reps-working-view').show();
+        $('.breadcrumb').show();
         $('#queue-import-view').hide();
+        $('#settings').hide();
+    });
+    $('.bread-reps').on('click', function() {
+        $('#reps-working-view').show();
+        $('.breadcrumb').show();
+        $('#settings').hide();
+        $('#queue-import-view').hide();
+    });
+    $('.bread-volumes').on('click', function() {
+        $('#queue-import-view').show();
+        $('.breadcrumb').show();
+        $('#reps-working-view').hide();
         $('#settings').hide();
     });
 
@@ -232,12 +248,12 @@ $(document).ready(function() {
         $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down');       
         e.preventDefault();
     });
+    
     //Prevents slideToggle when clicking on non-core-data
     $('.non-core-card').on('click', '.non-core-data', function() {
         return false;
     });
     
-
     //Changes non-core card to green if input is above 0 or not empty  
     $('.non-core-data').on('change', '.nc-input-card', function() {
         //Changes non-core card back to white if 0 or empty
@@ -251,7 +267,31 @@ $(document).ready(function() {
     });
 
     
+
     
+    
+        $('.rep-buttons').on('click', '.btn-rep', function() {
+            //Toggles rep-btns from grey to green and vice versa
+            $(this).toggleClass('btn-default btn-success');
+            
+            //Non-core work card (to be added)
+            var ncInputCard = `
+                <div class="nc-input-card text-center">
+                    <div class="nc-input-name">
+                        <p>` + repName + `</p>
+                    </div><!--nc-input-name-->
+                    <input class="nc-input" type="number" placeholder="Hours">
+                </div><!--nc-input-card-->
+            `;
+            
+            //Determins if rep-btns are selected or not
+            if( $(this).hasClass('btn-success') ) {
+                console.log('selected');
+            } else {
+                console.log('de-selected');
+            }
+        }).trigger('change');
+
     
     
     
@@ -276,7 +316,7 @@ $(document).ready(function() {
     }   
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
-    $('.rep-buttons').on('click', '.btn-rep', toggleButton);
+    //$('.rep-buttons').on('click', '.btn-rep', toggleButton);
 
     
 //--------Date Stamp--------

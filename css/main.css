@@ -41,6 +41,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+/*Breadcrumbs*/
+.breadcrumb {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #888888;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+.breadcrumb li {
+    font-weight: 500;
+}
+
+
 /*--------Reps Working--------*/
 .reps-header {
     margin-top: 50px;
