@@ -277,7 +277,7 @@ $(document).ready(function() {
     
 
 //--------Date Stamp--------
-$('#date-stamp').append(moment().format('MMMM D, YYYY'));
+$('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
         
     
 }); //end of .ready document
