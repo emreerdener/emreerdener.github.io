@@ -152,9 +152,9 @@ $(document).ready(function() {
                     <h4>` + queueName + `</h4>
             </div><!--queue-volume-name-->
             <div class="queue-volume-data">
-                <i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+                <button type="button" class="btn qvolume-btn"><i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i></button>
                 <input class="queue-volume-input" type="number">
-                <i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i>
+                <button type="button" class="btn qvolume-btn"><i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i></button>
             </div><!--queue-volume-data-->
         </div><!--queue-volume-card-->
         `;
@@ -237,6 +237,24 @@ $(document).ready(function() {
         return false;
     });
     
+
+    //Changes non-core card to green if input is above 0 or not empty  
+    $('.non-core-data').on('change', '.nc-input-card', function() {
+        //Changes non-core card back to white if 0 or empty
+        if ( ( $(this).find('.nc-input').val() ) == (0 && '') ) {
+            $(this).css({'background-color' : 'white'});
+            $(this).find('.nc-input-name').css({'color' : 'black'});
+        } else {
+            $(this).css({'background-color' : '#5cb85c'});
+            $(this).find('.nc-input-name').css({'color' : 'white'});
+        }
+    });
+
+    
+    
+    
+    
+    
     
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
@@ -248,34 +266,19 @@ $(document).ready(function() {
     //Removes queue-card on "delete" button click
     $('.queue-profiles').on('click', '.delete-queue', function() {
         $(this).parents('.queue-card').remove();
-    });    
-       
-//---------Button toggle & NonCore Btn add---------
+    });        
+    
+    
+//---------Button toggle---------    
     //Toggle button from grey to green on click
     function toggleButton() {
         $(this).toggleClass('btn-default btn-success'); 
     }   
-    //Toggles Rep Working button & adds Non-core work buttons
-    $('.rep-buttons').on('click', '.btn-rep', function() {
-        $(this).toggleClass('btn-default btn-success');
-        
-        
-    //!!!!!!!!!!Attempt to add non-core work button
-        var nonCoreBtn = `<button type="button" class="btn">` + repName + `</button>`;
-        
-        if( $(this).hasClass('btn-success') ) {
-            console.log(repName);
-            $('.non-core-data').append(nonCoreBtn);
-        } else {
-            $('.non-core-data').parent().remove(nonCoreBtn);
-        }
-    });
-    
-    
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
-    
+    $('.rep-buttons').on('click', '.btn-rep', toggleButton);
 
+    
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
         

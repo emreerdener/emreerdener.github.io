@@ -111,7 +111,7 @@
     padding-bottom: 90px;
 }
 .queue-volume-card {
-    max-width: 300px;
+    max-width: 325px;
     height: auto;
     border: 1px solid #000;
     border-radius: 5px;
@@ -144,20 +144,23 @@
     border-radius: 3px;
     border: 1px solid #000;
     text-align: center;
+    font-weight: 500;
 }
 .queue-alert {
-    margin-left: 4px;
     cursor: pointer;
 }
 .qvolume-graph {
-    margin-right: 6px;
     cursor: pointer;
+}
+.qvolume-btn {
+    background-color: transparent;
+    padding: 5px !important;
 }
 .qvolume-graph:hover {
     color: #00a4d8;
 }
 .non-core-container {
-    max-width: 1040px;
+    max-width: 1110px;
 }
 .non-core-card {
     border: 1px solid #000;
@@ -187,6 +190,37 @@
 }
 .non-core-data {
     padding: 10px;
+    background-color: #f8f8f8;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.nc-input-card {
+    width: 213px;
+    height: auto;
+    margin: 8px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: white;
+    vertical-align: top;
+}
+.nc-input-name p {
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+.nc-input {
+    width: 150px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: white;
 }
 #queue-import-next {
     background-color: #00a4d8;
@@ -601,5 +635,9 @@ textarea {
     }
     .volumes-header {
         margin-bottom: 40px;
+    }
+    .queue-volume-input {
+        width: 150px;
+        height: auto;
     }
 }
