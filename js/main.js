@@ -39,16 +39,18 @@ $(document).ready(function() {
         $('.breadcrumbs').show();
         $('#reps-working-view').hide();
         $('#settings').hide();
-        $('.bread-reps').toggleClass('bread-active bread-completed');
-        $('.bread-vol').toggleClass('bread-active');
+        $('.bread-reps').removeClass('bread-active');
+        $('.bread-reps').addClass('bread-completed');
+        $('.bread-vol').addClass('bread-active');
     });
     $('#queue-import-back, .bread-reps').on('click', function() {
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
         $('#queue-import-view').hide();
         $('#settings').hide();
-        $('.bread-reps').toggleClass('bread-active bread-completed');
-        $('.bread-vol').toggleClass('bread-active');
+        $('.bread-reps').removeClass('bread-completed');
+        $('.bread-reps').addClass('bread-active');
+        $('.bread-vol').removeClass('bread-active');
     });
 
 
@@ -80,7 +82,7 @@ $(document).ready(function() {
                 <div class="nc-input-name">
                     ` + repName + `
                 </div><!--nc-input-name-->
-                <input class="nc-input" type="number" placeholder="Hours">
+                <input class="nc-input" type="number" placeholder="Hours" pattern="[0-9]*" inputmode="numeric">
             </div><!--nc-input-card-->
         `;
         

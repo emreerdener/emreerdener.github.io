@@ -81,7 +81,7 @@ input[type=number]::-webkit-outer-spin-button {
 .breadcrumbs li .bread-completed {
     color: #fff;
     background-color: #5cb85c;
-    border: 1px solid #5cb85c;
+    border: 1px solid #00a4d8;
 }
 .breadcrumbs li .bread-completed:before {
     right: -10px;
@@ -97,7 +97,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .breadcrumbs li .bread-completed:focus, .breadcrumbs li .bread-completed:hover {
     background-color: #4cae4c;
-    border: 1px solid #4cae4c;
+    border: 1px solid #00a4d8;
     color: white;
 }
 .breadcrumb-arrow li .bread-completed:focus:before, .breadcrumb-arrow li .bread-completed:hover:before {
@@ -194,7 +194,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 36px;
     width: 10px;
     top: -1px;
-    right: -7px;
+    right: -9px;
     background-color: white;
     z-index: 5;
 }
@@ -842,5 +842,8 @@ textarea {
     .queue-volume-input {
         width: 150px;
         height: auto;
+    }
+    .lastcrumb-box {
+        right: -4px;
     }
 }
