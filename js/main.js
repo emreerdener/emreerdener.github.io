@@ -3,6 +3,7 @@ $(document).ready(function() {
     var reps = [];
     var queues = [];
     var queueNames = [];
+    var nonCore = [];
 
     
 //---------Navbar----------
@@ -20,7 +21,7 @@ $(document).ready(function() {
     $('#settings').hide();
     $('#desktop-cog, #mobile-cog').on('click', function() {
         $('#settings').show();
-        $('.breadcrumb').hide();
+        $('.breadcrumbs').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
     });    
@@ -28,35 +29,29 @@ $(document).ready(function() {
     $('#queue-import-view').hide();
     $('.navbar-brand').on('click', function() {
         $('#reps-working-view').show();
-        $('.breadcrumb').show();
+        $('.breadcrumbs').show();
         $('#settings').hide();
         $('#queue-import-view').hide();
     });
     //Hide/Show queue import view
-    $('#reps-working-next').on('click', function() {
+    $('#reps-working-next, .bread-vol').on('click', function() {
         $('#queue-import-view').show();
-        $('.breadcrumb').show();
+        $('.breadcrumbs').show();
         $('#reps-working-view').hide();
         $('#settings').hide();
+        $('.bread-reps').toggleClass('bread-active bread-completed');
+        $('.bread-vol').toggleClass('bread-active');
     });
-    $('#queue-import-back').on('click', function() {
+    $('#queue-import-back, .bread-reps').on('click', function() {
         $('#reps-working-view').show();
-        $('.breadcrumb').show();
+        $('.breadcrumbs').show();
         $('#queue-import-view').hide();
         $('#settings').hide();
+        $('.bread-reps').toggleClass('bread-active bread-completed');
+        $('.bread-vol').toggleClass('bread-active');
     });
-    $('.bread-reps').on('click', function() {
-        $('#reps-working-view').show();
-        $('.breadcrumb').show();
-        $('#settings').hide();
-        $('#queue-import-view').hide();
-    });
-    $('.bread-volumes').on('click', function() {
-        $('#queue-import-view').show();
-        $('.breadcrumb').show();
-        $('#reps-working-view').hide();
-        $('#settings').hide();
-    });
+
+
 
 //---------Settings---------    
     
@@ -64,7 +59,7 @@ $(document).ready(function() {
     $('#add-rep-form').submit(function(event) {
              
         //Name for Rep from input value. Then assigned to variable
-        repName = $('#addrep-name').val();
+        var repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
@@ -79,6 +74,16 @@ $(document).ready(function() {
                 <button type="button" class="delete-rep btn btn-danger">Delete</button>
             </div>`;
         
+        //Non-core work card (to be added)
+        var ncInputCard = `
+            <div class="nc-input-card">
+                <div class="nc-input-name">
+                    ` + repName + `
+                </div><!--nc-input-name-->
+                <input class="nc-input" type="number" placeholder="Hours">
+            </div><!--nc-input-card-->
+        `;
+        
         //Checks if repName is already in rep array. if so, it's rejected. If not, it's added to reps array.
         if (reps.indexOf(repName) !== -1) {
             $('#addrep-name').before('<span class="repname-duperror">Duplicate name. Please enter a different name.</span>');
@@ -91,6 +96,7 @@ $(document).ready(function() {
         } else {
             //Adds repName to reps array
             reps.push(repName);
+            nonCore.push(ncInputCard);
             
             //Rep Profile added in rep-profile container
             $('.rep-profiles').prepend(repProfile);
@@ -98,9 +104,15 @@ $(document).ready(function() {
             //Rep Button added in rep-buttons container
             $('.rep-buttons').append(repButton);
             
+            //Adds nonCore cards to Non-Core Work section
+            $('.non-core-data').append(ncInputCard);
+            
             //Adds queues array to local variable of repName
             $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);                   
         }//--close if statement
+        
+        //Hide non-core-input cards (to show/hide--around line 290)
+        $('.nc-input-card').hide();
         
         //Clears rep input field
         $('#addrep-name').val(''); 
@@ -110,12 +122,8 @@ $(document).ready(function() {
         
         //Prevents default form submit, causing page reload
         event.preventDefault(); 
-    });//close add rep    
+    });//--close add rep    
     
-    
-    function textFillCont() {
-      $('.jtextfill').textfill({ maxFontPixels: 18 });  
-    };
   
     
     //Queue button to Rep Profile
@@ -203,16 +211,11 @@ $(document).ready(function() {
     $('#addQueue-name').val('');     
           
     //Hides queue-data to be toggled in drop-down
-    $('.queue-data').hide();       
-    
-    textFillCont();    
-        
-    //Plugin to resize text (queueName) to container width
-    //$('.textfill').textfill({ maxFontPixels: 18 });     
+    $('.queue-data').hide();          
         
     //Prevents default form submit, causing page reload
     event.preventDefault();
-});//close add queue
+});//--close add queue
     
     
  
@@ -265,35 +268,20 @@ $(document).ready(function() {
             $(this).find('.nc-input-name').css({'color' : 'white'});
         }
     });
+    
+    //Toggle rep-btns & Add nc-input card to Non-Core Work div
+    $('.rep-buttons').on('click', '.btn-rep', function() {
+        //Toggles rep-btns from grey to green and vice versa
+        $(this).toggleClass('btn-default btn-success');
 
-    
+        //Determins if rep-btns are selected or not
+        if( $(this).hasClass('btn-success') ) {
+            $('.nc-input-card').show();
+        } else {
+            $('.nc-input-card').hide();
+        }
+    }).trigger('change');
 
-    
-    
-        $('.rep-buttons').on('click', '.btn-rep', function() {
-            //Toggles rep-btns from grey to green and vice versa
-            $(this).toggleClass('btn-default btn-success');
-            
-            //Non-core work card (to be added)
-            var ncInputCard = `
-                <div class="nc-input-card text-center">
-                    <div class="nc-input-name">
-                        <p>` + repName + `</p>
-                    </div><!--nc-input-name-->
-                    <input class="nc-input" type="number" placeholder="Hours">
-                </div><!--nc-input-card-->
-            `;
-            
-            //Determins if rep-btns are selected or not
-            if( $(this).hasClass('btn-success') ) {
-                console.log('selected');
-            } else {
-                console.log('de-selected');
-            }
-        }).trigger('change');
-
-    
-    
     
     
 //--------Delete Rep--------    

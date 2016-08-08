@@ -32,7 +32,6 @@
     cursor: pointer;
 }
 
-
 /*turns off input number spinner*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -41,16 +40,172 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-/*Breadcrumbs*/
-.breadcrumb {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #888888;
-    border-radius: 0 !important;
-    margin: 0 !important;
+/*--------Breadcrumbs--------*/
+.breadcrumbs li {
+    width: 33%;
 }
-.breadcrumb li {
+.breadcrumb-arrow {
+    height: 36px;
+    margin-left: -15px;
+    padding: 0;
+    line-height: 36px;
+    list-style: none;
+    background-color: white;
+}
+.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb-arrow li:not(:first-child) {
+    margin-left: -5px;
+}
+.breadcrumb-arrow li+li:before {
+    padding: 0;
+    content: "";
+}
+
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+    height: 36px;
+    padding: 0 10px 0 25px;
+    line-height: 36px;
+}
+.breadcrumb-arrow li a {
+    position: relative;
+    width: 100%;
     font-weight: 500;
+    text-decoration: none;
+    border: 1px solid #00a4d8;
+    color: #434a54;
+}
+
+.breadcrumbs li .bread-completed {
+    color: #fff;
+    background-color: #5cb85c;
+    border: 1px solid #5cb85c;
+}
+.breadcrumbs li .bread-completed:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: #5cb85c;
+    border-left-style: solid;
+    border-left-width: 11px;
+}
+.bread-completed:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #00a4d8;
+}
+.breadcrumbs li .bread-completed:focus, .breadcrumbs li .bread-completed:hover {
+    background-color: #4cae4c;
+    border: 1px solid #4cae4c;
+    color: white;
+}
+.breadcrumb-arrow li .bread-completed:focus:before, .breadcrumb-arrow li .bread-completed:hover:before {
+    border-left-color: #4cae4c;
+}
+
+
+.breadcrumb-arrow li .bread-active {
+    background-color: #e6e9ed;
+}
+.breadcrumb-arrow li .bread-active:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: #e6e9ed;
+    border-left-style: solid;
+    border-left-width: 11px;
+}
+.breadcrumb-arrow li .bread-active:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #00a4d8;
+}
+.breadcrumb-arrow li .bread-active:focus, .breadcrumb-arrow li .bread-active:hover {
+    background-color: #d9d7d7;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li .bread-active:focus:before, .breadcrumb-arrow li .bread-active:hover:before {
+    border-left-color: #d9d7d7;
+}
+.breadcrumb-arrow li .bread-active:active {
+    background-color: #e6e9ed;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li .bread-active:active:after {
+    border-left-color: #00a4d8;
+}
+.breadcrumb-arrow li .bread-active:active:before {
+    border-left-color: #e6e9ed;
+}
+
+
+
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+
+.breadcrumb-arrow li a:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 11px;
+}
+.breadcrumb-arrow li a:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #00a4d8;
+}
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
+    background-color: #e6e9ed;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
+    border-left-color: #e6e9ed;
+}
+.breadcrumb-arrow li a:active {
+    background-color: #e6e9ed;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li a:active:after {
+    border-left-color: #00a4d8;
+}
+
+.breadcrumb-arrow li a:active:before {
+    border-left-color: #e6e9ed;
+}
+
+.breadcrumb-arrow li .last-crumb:before, .breadcrumb-arrow li .last-crumb:after {
+    border: none;
+}
+.breadcrumb-arrow li .last-crumb:hover:before, .breadcrumb-arrow li .last-crumb:focus:before {
+    border: none;
+}
+.lastcrumb-box {
+    position: absolute;
+    border-bottom: 1px solid #00a4d8;
+    border-top: 1px solid #00a4d8;
+    height: 36px;
+    width: 10px;
+    top: -1px;
+    right: -7px;
+    background-color: white;
+    z-index: 5;
+}
+.last-crumb:hover .lastcrumb-box {
+    background-color: #e6e9ed;
+}
+.last-crumb:active .lastcrumb-box {
+    background-color: #e6e9ed;
+}
+.last-crumb:focus .lastcrumb-box {
+    background-color: #e6e9ed;
 }
 
 
@@ -193,7 +348,7 @@ input[type="number"].queue-volume-input:-moz-placeholder{
 }
 
 .non-core-container {
-    max-width: 1110px;
+    max-width: 1000px;
 }
 .non-core-card {
     border: 1px solid #000;
@@ -238,9 +393,10 @@ input[type="number"].queue-volume-input:-moz-placeholder{
     background-color: white;
     vertical-align: top;
 }
-.nc-input-name p {
+.nc-input-name {
     font-size: 15px;
     margin-top: 5px;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 .nc-input {
