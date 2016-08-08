@@ -312,27 +312,51 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
-.queue-volume-input {
-    margin: 10px;
-    padding: 6px;
+.queue-volume-input input {
     border-radius: 3px;
     border: 1px solid #000;
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 19px !important;
+    padding: 6px;
+    width: 100%;
 }
-.queue-alert {
+.queue-volume-input {
+    max-width: 60%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.qv-alert {
+    display: inline-block;
     cursor: pointer;
+    margin: 0 auto;
+}
+.fa-bell {
+    color: #333;
+    font-size: 22px;
+}
+.fa-stack:hover .fa-bell, .fa-stack:active .fa-bell, .fa-stack:focus .fa-bell {
+    color: #00a4d8;
+}
+.fa-circle {
+    color: red;
+    top: -8px;
+    left: 5px;
+    font-size: 11px;
 }
 .qvolume-graph {
+    display: inline-block;
+    margin: 0 auto;
     cursor: pointer;
-}
-.qvolume-btn {
-    background-color: transparent;
-    padding: 5px !important;
+    color: #333;
 }
 .qvolume-graph:hover {
     color: #00a4d8;
 }
+
 
 input[type="number"].queue-volume-input::-webkit-input-placeholder {
     font-weight: 300;
@@ -639,7 +663,7 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f8f8f8;
-    max-width: 60em;
+    max-width: 64em;
 }
 .queue-profiles {
     padding-left: 5px !important;
@@ -654,8 +678,8 @@ textarea {
     vertical-align: top;
     min-height: 44px;
     width: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
     opacity: .99;
 }
@@ -665,7 +689,7 @@ textarea {
 .queue-data {  
     border: 1px solid #1e1e1e;
     border-top: none;
-    margin-top: -15px;
+    margin-top: -20px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: white;
@@ -676,19 +700,28 @@ textarea {
     column-count: 3;
 }
 .data-title {
-    display: inline-block;
+    display: block;
     padding-right: 8px;
 }
 .grey {
     background-color: #f8f8f8;
 }
+
 .queue-data-fields {
-    padding: 20px;
+    padding: 10px;
+}
+.queue-data-card {
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
 }
 .queue-data-input {
     border: 1px solid #1e1e1e;
     padding: 5px;
+    margin-bottom: 10px;
     border-radius: 3px;
+    max-width: 175px;
+    text-align: center;
 }
 .graph-preview img {
     width: 100%;
@@ -740,10 +773,6 @@ textarea {
 .fa-chevron-right, .fa-chevron-down {
     color: white;
     padding-left: 5px;
-}
-.queue-data-fields:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
 }
 
 
@@ -816,14 +845,6 @@ textarea {
     .fa-trash {
         margin-top: -1px;
     }
-    .queue-alert {
-        margin-left: 0;
-        margin-right: 15px;
-    }
-    .qvolume-graph {
-        margin-right: 0;
-        margin-left: 15px;
-    }
     .repname-emptyerror, .repname-duperror, .queuename-duperror, .queuename-emptyerror {
         top: 300px;
     }
@@ -839,11 +860,26 @@ textarea {
     .volumes-header {
         margin-bottom: 40px;
     }
-    .queue-volume-input {
-        width: 150px;
-        height: auto;
-    }
+
     .lastcrumb-box {
         right: -4px;
+    }
+    .queue-data-fields {
+        max-width: 40em;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width : 991px){
+    .queue-data-fields {
+        max-width: 40em;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .queue-volume-input {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }

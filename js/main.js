@@ -169,20 +169,22 @@ $(document).ready(function() {
                     <img src="images/graph-ex.png"/>
                 </div>
                 <div class="queue-data-fields">
-                    <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>
-                    <input class="queue-data-input" type="text" placeholder="Name">
-                </div>
-                <div class="queue-data-fields grey">
-                    <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>
-                    <input class="queue-data-input" type="text" placeholder="Seconds">
-                </div>
-                <div class="queue-data-fields">
-                    <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>
-                    <input class="queue-data-input" type="text" placeholder="Percentage">
-                </div>
-                <div class="queue-data-fields grey">
-                    <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>
-                    <input class="queue-data-input" type="text" placeholder="SQL">
+                    <div class="queue-data-card">
+                        <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>
+                        <input id="queue-data-name" class="queue-data-input" type="text" placeholder="Name">
+                    </div><!--queue-data-card-->
+                    <div class="queue-data-card">
+                        <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>
+                        <input class="queue-data-input" type="text" placeholder="Seconds">
+                    </div><!--queue-data-card-->
+                    <div class="queue-data-card">
+                        <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>
+                        <input class="queue-data-input" type="text" placeholder="Percentage">
+                    </div>
+                    <div class="queue-data-card">
+                        <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>
+                        <input class="queue-data-input" type="text" placeholder="SQL">
+                    </div>
                 </div>
             </div><!--queue-data-->`;
         
@@ -193,9 +195,18 @@ $(document).ready(function() {
                     <h4>` + queueName + `</h4>
             </div><!--queue-volume-name-->
             <div class="queue-volume-data">
-                <button type="button" class="btn qvolume-btn"><i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i></button>
-                <input class="queue-volume-input" type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
-                <button type="button" class="btn qvolume-btn"><i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i></button>
+                <div type="button" class="qvolume-graph">
+                    <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+                </div><!--qvolume-graph-->
+                <div class="queue-volume-input">
+                    <input type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
+                </div><!--queue-volume-input-->
+                <div role="button" class="qv-alert">
+                    <span class="fa-stack">
+                        <i class="fa fa-bell fa-stack-2x" aria-hidden="true"></i>
+                        <i class="fa fa-circle fa-stack-1x" aria-hidden="true"></i>
+                    </span>
+                </div><!--qv-alert-->
             </div><!--queue-volume-data-->
         </div><!--queue-volume-card-->
         `;
