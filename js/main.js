@@ -32,6 +32,9 @@ $(document).ready(function() {
         $('.breadcrumbs').show();
         $('#settings').hide();
         $('#queue-import-view').hide();
+        $('.bread-reps').removeClass('bread-completed');
+        $('.bread-reps').addClass('bread-active');
+        $('.bread-vol').removeClass('bread-active');
     });
     //Hide/Show queue import view
     $('#reps-working-next, .bread-vol').on('click', function() {
@@ -82,7 +85,7 @@ $(document).ready(function() {
                 <div class="nc-input-name">
                     ` + repName + `
                 </div><!--nc-input-name-->
-                <input class="nc-input" type="number" placeholder="Hours" pattern="[0-9]*" inputmode="numeric">
+                <input class="nc-input" type="number" placeholder="Hours">
             </div><!--nc-input-card-->
         `;
         
@@ -112,6 +115,18 @@ $(document).ready(function() {
             //Adds queues array to local variable of repName
             $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);                   
         }//--close if statement
+        
+        
+        //Add nc-input-card to Non-Core Work div
+        $('.rep-buttons').on('click', '.btn-rep', function() {  
+            //Determins if rep-btns are selected or not
+            if( $(this).hasClass('btn-success') ) {
+                $('.nc-input-card:contains(' + repName + ')') .show();
+            } else {
+                $('.nc-input-card').hide();
+            }
+        }).trigger('change');
+        
         
         //Hide non-core-input cards (to show/hide--around line 290)
         $('.nc-input-card').hide();
@@ -179,7 +194,7 @@ $(document).ready(function() {
             </div><!--queue-volume-name-->
             <div class="queue-volume-data">
                 <button type="button" class="btn qvolume-btn"><i class="qvolume-graph fa fa-bar-chart fa-lg" aria-hidden="true"></i></button>
-                <input class="queue-volume-input" type="number" placeholder="Volume">
+                <input class="queue-volume-input" type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
                 <button type="button" class="btn qvolume-btn"><i class="queue-alert fa fa-bell fa-lg" aria-hidden="true"></i></button>
             </div><!--queue-volume-data-->
         </div><!--queue-volume-card-->
@@ -271,18 +286,7 @@ $(document).ready(function() {
         }
     });
     
-    //Toggle rep-btns & Add nc-input card to Non-Core Work div
-    $('.rep-buttons').on('click', '.btn-rep', function() {
-        //Toggles rep-btns from grey to green and vice versa
-        $(this).toggleClass('btn-default btn-success');
-
-        //Determins if rep-btns are selected or not
-        if( $(this).hasClass('btn-success') ) {
-            $('.nc-input-card').show();
-        } else {
-            $('.nc-input-card').hide();
-        }
-    }).trigger('change');
+    
 
     
     
@@ -306,7 +310,7 @@ $(document).ready(function() {
     }   
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
-    //$('.rep-buttons').on('click', '.btn-rep', toggleButton);
+    $('.rep-buttons').on('click', '.btn-rep', toggleButton);
 
     
 //--------Date Stamp--------
