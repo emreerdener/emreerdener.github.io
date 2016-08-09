@@ -249,7 +249,7 @@ $('.queue-imports').on('mouseover', '.qv-alert', function() {
         content: function() {
             return $(this).find('.popover_content_wrapper').html();
         }
-    });  
+    });
 });    
     
 //Code to close popover on off click    

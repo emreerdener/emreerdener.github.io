@@ -211,7 +211,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*--------Reps Working--------*/
 .reps-header {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .title-withside {
     display: inline-block;
@@ -272,7 +272,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #0099c9 !important;
 }
 .volumes-header {
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 20px;
 }
 .volumes-title {
@@ -316,7 +316,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 3px;
     border: 1px solid #000;
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 19px !important;
     padding: 6px;
     width: 100%;
@@ -355,6 +355,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .qvolume-graph:hover {
     color: #00a4d8;
+}
+.popover-content {
+    text-align: center;
 }
 
 
