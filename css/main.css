@@ -342,10 +342,10 @@ input[type=number]::-webkit-outer-spin-button {
     color: #00a4d8;
 }
 .fa-circle {
-    color: red;
     top: -8px;
     left: 5px;
     font-size: 11px;
+    color: red;
 }
 .qvolume-graph {
     display: inline-block;
@@ -358,16 +358,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-input[type="number"].queue-volume-input::-webkit-input-placeholder {
+input[type="number"].qv-input::-webkit-input-placeholder {
     font-weight: 300;
 }
-input[type="number"].queue-volume-input::-moz-placeholder {
+input[type="number"].qv-input::-moz-placeholder {
     font-weight: 300;
 }
-input[type="number"].queue-volume-input:-ms-input-placeholder {
+input[type="number"].qv-input:-ms-input-placeholder {
     font-weight: 300;
 }
-input[type="number"].queue-volume-input:-moz-placeholder{
+input[type="number"].qv-input:-moz-placeholder{
     font-weight: 300;
 }
 

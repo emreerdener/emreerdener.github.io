@@ -58,8 +58,7 @@ $(document).ready(function() {
 
 
 
-//---------Settings---------    
-    
+//---------Settings---------  
     //Rep Working button & Rep Profile
     $('#add-rep-form').submit(function(event) {
              
@@ -116,18 +115,6 @@ $(document).ready(function() {
             $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);                   
         }//--close if statement
         
-        
-        //Add nc-input-card to Non-Core Work div
-        $('.rep-buttons').on('click', '.btn-rep', function() {  
-            //Determins if rep-btns are selected or not
-            if( $(this).hasClass('btn-success') ) {
-                $('.nc-input-card:contains(' + repName + ')') .show();
-            } else {
-                $('.nc-input-card').hide();
-            }
-        }).trigger('change');
-        
-        
         //Hide non-core-input cards (to show/hide--around line 290)
         $('.nc-input-card').hide();
         
@@ -139,9 +126,10 @@ $(document).ready(function() {
         
         //Prevents default form submit, causing page reload
         event.preventDefault(); 
-    });//--close add rep    
+    });//--close add rep
+ 
+
     
-  
     
     //Queue button to Rep Profile
     $('#add-queue-form').submit(function(event) {
@@ -199,9 +187,12 @@ $(document).ready(function() {
                     <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
                 </div><!--qvolume-graph-->
                 <div class="queue-volume-input">
-                    <input type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
+                    <input class="qv-input" type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
                 </div><!--queue-volume-input-->
-                <div role="button" class="qv-alert">
+                <div role="button" class="qv-alert text-center" data-toggle="popover" data-placement="top">
+
+                <div class="popover_content_wrapper hide">` + queueName + ` is 23% above average</div>
+
                     <span class="fa-stack">
                         <i class="fa fa-bell fa-stack-2x" aria-hidden="true"></i>
                         <i class="fa fa-circle fa-stack-1x" aria-hidden="true"></i>
@@ -209,7 +200,7 @@ $(document).ready(function() {
                 </div><!--qv-alert-->
             </div><!--queue-volume-data-->
         </div><!--queue-volume-card-->
-        `;
+        `;        
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
@@ -239,13 +230,55 @@ $(document).ready(function() {
     $('#addQueue-name').val('');     
           
     //Hides queue-data to be toggled in drop-down
-    $('.queue-data').hide();          
+    $('.queue-data').hide();   
+    
+    //Hides notification circle (to be shown)
+    $('.fa-circle').hide();    
         
     //Prevents default form submit, causing page reload
     event.preventDefault();
 });//--close add queue
+   
     
     
+//--------Popover--------    
+//Code to initialize popover
+$('.queue-imports').on('mouseover', '.qv-alert', function() {
+    $(this).popover({
+        html : true,
+        content: function() {
+            return $(this).find('.popover_content_wrapper').html();
+        }
+    });  
+});    
+    
+//Code to close popover on off click    
+$('body').on('click', function(e) {    
+    $('[data-toggle="popover"]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+});
+//Code to stop double-click to fire popover
+$('body').on('hidden.bs.popover', function(e) {
+    $(e.target).data('bs.popover').inState.click = false;
+});
+
+//Toggles visibility of notification circle for queue volumes
+$('.queue-imports').on('change', '.qv-input', function() {  
+    if ($(this).val() > 10) {
+        $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').show('fast');
+    } else {
+        $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').hide('fast');
+    }
+});    
+
+
+    
+       
  
 //--------Queue Cards--------
     //Allows queue-cards to be sortable
@@ -265,6 +298,7 @@ $(document).ready(function() {
         return false; 
     });
    
+    
 
 //--------Non-Core Work--------
     //Hide elements to be toggled on click
@@ -297,9 +331,7 @@ $(document).ready(function() {
         }
     });
     
-    
-
-    
+     
     
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
@@ -322,7 +354,14 @@ $(document).ready(function() {
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
     $('.rep-buttons').on('click', '.btn-rep', toggleButton);
-
+    
+    
+    
+    
+    
+    
+    
+    
     
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
