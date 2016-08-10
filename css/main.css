@@ -689,6 +689,7 @@ Add New Rep Card
     border: 1px solid #1e1e1e;
     border-radius: 5px;
     padding: 30px;
+    padding-bottom: 20px;
     margin: 1em !important;
     max-width: 250px;
     min-width: 200px;
@@ -715,8 +716,13 @@ Add New Rep Card
     font-size: 2em;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    color: white;
+}
+#addrep-btn:hover {
+    color: #337ab7;
 }
 .fa-user {
     color: white;
