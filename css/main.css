@@ -868,10 +868,23 @@ Duplicate Error Msgs (Queues)
 /*--------MOBILE STYLES--------*/
 @media only screen and (max-width : 768px){
     /*----Navbar & Breadcrumbs----*/
+    .navbar {
+        padding-bottom: 9px;
+    }
+    .navbar-brand {
+        padding-left: 10px !important;
+    }
     #gp-ninja {
-        max-height: 27px;
-        margin-top: -4px;
+        max-height: 39px;
+        margin-top: -3px;
         padding-left: 0;
+    }
+    #mobile-cog {
+        float: right;
+        margin-right: 13px;
+        margin-top: 9px;
+        color: #fff;
+        font-size: 3em;
     }
     .lastcrumb-box {
         right: -4px;
@@ -916,12 +929,6 @@ Duplicate Error Msgs (Queues)
     }
     
     /*----Settings----*/
-    #mobile-cog {
-        float: right;
-        margin-right: 15px;
-        margin-top: 10px;
-        color: #fff;
-    }
     .settings-heading {
         padding-top: 45px;
         padding-bottom: 45px;
