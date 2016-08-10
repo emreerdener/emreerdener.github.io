@@ -54,10 +54,10 @@
 <!--Reps Working View-->    
 <div id="reps-working-view">    
     <!--Reps Working-->
-    <div class="reps-working-container container">
+    <div class="reps-working-container">
         <!--Title-->
         <div class="reps-header text-center">
-            <h2 class="title-withside">Reps</h2>
+            <h1 class="reps-title">Reps</h1>
             <p id="date-stamp"></p>
         </div><!--text-center div-->
         <!--Rep buttons-->
@@ -77,7 +77,7 @@
     <div class="queue-import-container">
         <!--Title-->
         <div class="text-center volumes-header">
-            <h2 class="volumes-title">Volumes</h2>
+            <h1 class="volumes-title">Volumes</h1>
             <button type="button" class="btn importQueuesBtn">IMPORT</button>
         </div><!--text-center div-->
         
@@ -111,7 +111,7 @@
 <div class="settings-container" id="settings">
 
 <div class="settings-heading">
-<h2 class="settings-title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h2>
+<h1 class="settings-title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h1>
 
 <button type="button" id="settings-save" class="btn btn-primary btn-save">SAVE</button>
 </div><!--settings heading-->
@@ -147,16 +147,32 @@
     <!--Rep Settings-->
     <div role="tabpanel" class="tab-pane" id="rs">      
         <div class="rep-settings-container">
+            
             <!--New Rep -->
+            <!--
             <div class="container addRep text-center">             
                 <form id="add-rep-form">
                     <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
                     <button type="submit" id="add-rep-btn" class="btn btn-sm btn-primary input-btn">ADD</button>
                 </form>
             </div><!--addRep-->
+            
             <!--Rep Profiles-->    
             <div class="container rep-profiles-wrapper">
-                <div class="container rep-profiles" id="rep-sortable"></div><!--rep-profiles-->
+                <div class="container rep-profiles">
+                    
+                    <div class="container text-center addRepCard">
+                    <form id="add-rep-form">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                        <h3>New Rep</h3>
+                        <input type="text" id="addrep-name" placeholder="Rep Name">
+                        <!--
+                        <i type="submit" id="addrep-btn" class="btn fa fa-plus-square fa-2x" aria-hidden="true"></i>
+                        -->
+                    </form>
+                    </div>
+                    
+                </div><!--rep-profiles-->
             </div><!--rep-profile-wrapper-->   
         </div><!--rep-settings-container-->
       </div><!--#rs-->

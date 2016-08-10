@@ -90,11 +90,11 @@ $(document).ready(function() {
         
         //Checks if repName is already in rep array. if so, it's rejected. If not, it's added to reps array.
         if (reps.indexOf(repName) !== -1) {
-            $('#addrep-name').before('<span class="repname-duperror">Duplicate name. Please enter a different name.</span>');
+            $('.rep-settings-container').before('<span class="repname-duperror text-center">Duplicate name. Please enter a different name.</span>');
             //Fade out error message
             $('.repname-duperror').delay(1200).fadeOut();
         } else if (repName === "") {
-            $('#addrep-name').before('<span class="repname-emptyerror">Please input a name.</span>');
+            $('.rep-settings-container').before('<span class="repname-emptyerror text-center">Please input a name.</span>');
             //Fade out error message
             $('.repname-emptyerror').delay(1200).fadeOut();
         } else {
@@ -103,7 +103,7 @@ $(document).ready(function() {
             nonCore.push(ncInputCard);
             
             //Rep Profile added in rep-profile container
-            $('.rep-profiles').prepend(repProfile);
+            $('.rep-profiles').append(repProfile);
             
             //Rep Button added in rep-buttons container
             $('.rep-buttons').append(repButton);

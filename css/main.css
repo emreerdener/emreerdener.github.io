@@ -1,4 +1,19 @@
-/*--Navbar--*/
+/*--------GENERAL--------*/
+/*turns off input number spinner*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.fa-lg {
+    vertical-align: 0;
+}
+/*-----------------------------------------*/
+
+
+
+/*--------NAVBAR--------*/
 #gp-ninja {
     max-height: 23px;
     width: auto;
@@ -17,7 +32,7 @@
 }
 #desktop-cog {
     float: right;
-    margin-top: 10px;
+    margin-top: 11px;
     color: white;
 }
 .navbar-default {
@@ -31,21 +46,17 @@
 .navbar-brand {
     cursor: pointer;
 }
-
-/*turns off input number spinner*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
+/*-----------------------------------------*/
 
 
-/*--------Breadcrumbs--------*/
+
+/*--------BREADCRUMBS--------*/
 .breadcrumbs li {
     width: 33%;
 }
 .breadcrumb-arrow {
     height: 36px;
+    margin-bottom: 0;
     margin-left: -15px;
     padding: 0;
     line-height: 36px;
@@ -63,12 +74,6 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0;
     content: "";
 }
-
-.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
-    height: 36px;
-    padding: 0 10px 0 25px;
-    line-height: 36px;
-}
 .breadcrumb-arrow li a {
     position: relative;
     width: 100%;
@@ -76,17 +81,62 @@ input[type=number]::-webkit-outer-spin-button {
     text-decoration: none;
     border: 1px solid #00a4d8;
     color: #434a54;
+    height: 36px;
+    padding: 0 10px 0 25px;
+    line-height: 36px;
+}
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+    position: absolute;
+    top: -1px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+.breadcrumb-arrow li a:before {
+    right: -10px;
+    z-index: 3;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 11px;
+}
+.breadcrumb-arrow li a:after {
+    right: -11px;
+    z-index: 2;
+    border-left: 11px solid #00a4d8;
+}
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
+    background-color: #e6e9ed;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
+    border-left-color: #e6e9ed;
+}
+.breadcrumb-arrow li a:active {
+    background-color: #e6e9ed;
+    border: 1px solid #00a4d8;
+}
+.breadcrumb-arrow li a:active:after {
+    border-left-color: #00a4d8;
 }
 
+.breadcrumb-arrow li a:active:before {
+    border-left-color: #e6e9ed;
+}
+
+/*----
+Breadcrumbs Completed
+----*/
 .breadcrumbs li .bread-completed {
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #66cc66;
     border: 1px solid #00a4d8;
 }
 .breadcrumbs li .bread-completed:before {
     right: -10px;
     z-index: 3;
-    border-left-color: #5cb85c;
+    border-left-color: #66cc66;
     border-left-style: solid;
     border-left-width: 11px;
 }
@@ -104,7 +154,9 @@ input[type=number]::-webkit-outer-spin-button {
     border-left-color: #4cae4c;
 }
 
-
+/*----
+Breadcrumbs Active
+----*/
 .breadcrumb-arrow li .bread-active {
     background-color: #e6e9ed;
 }
@@ -138,49 +190,9 @@ input[type=number]::-webkit-outer-spin-button {
     border-left-color: #e6e9ed;
 }
 
-
-
-.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
-    position: absolute;
-    top: -1px;
-    width: 0;
-    height: 0;
-    content: '';
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-}
-
-.breadcrumb-arrow li a:before {
-    right: -10px;
-    z-index: 3;
-    border-left-color: white;
-    border-left-style: solid;
-    border-left-width: 11px;
-}
-.breadcrumb-arrow li a:after {
-    right: -11px;
-    z-index: 2;
-    border-left: 11px solid #00a4d8;
-}
-.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
-    background-color: #e6e9ed;
-    border: 1px solid #00a4d8;
-}
-.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
-    border-left-color: #e6e9ed;
-}
-.breadcrumb-arrow li a:active {
-    background-color: #e6e9ed;
-    border: 1px solid #00a4d8;
-}
-.breadcrumb-arrow li a:active:after {
-    border-left-color: #00a4d8;
-}
-
-.breadcrumb-arrow li a:active:before {
-    border-left-color: #e6e9ed;
-}
-
+/*----
+Breadcrumbs Last "Crumb"
+----*/
 .breadcrumb-arrow li .last-crumb:before, .breadcrumb-arrow li .last-crumb:after {
     border: none;
 }
@@ -207,29 +219,30 @@ input[type=number]::-webkit-outer-spin-button {
 .last-crumb:focus .lastcrumb-box {
     background-color: #e6e9ed;
 }
+/*-----------------------------------------*/
 
 
-/*--------Reps Working--------*/
-.reps-header {
-    margin-top: 20px;
-}
-.title-withside {
-    display: inline-block;
-    margin: 25px;
-    margin-right: -110px;
-}
-#reps-working-view {
-    padding-bottom: 35px;
-}
+/*--------REPS WORKING--------*/
 .reps-working-container {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
+}
+.reps-header {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 55px;
+}
+.reps-title {
+    display: inline-block;
+    margin: 0;
+    margin-right: -255px;
 }
 #date-stamp {
     display: inline-block;
     font-weight: 500;
     font-size: 16px;
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-right: 100px;
 }
 #reps-working-next {
     background-color: #00a4d8;
@@ -251,15 +264,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 600;
     font-size: 19px;
 }
+/*-----------------------------------------*/
 
-/*---------------------------*/
 
-/*--------Queue Volumes--------*/
+
+/*--------QUEUE VOLMES--------*/
+.queue-import-container {
+    padding-bottom: 100px;
+}
 .importQueuesBtn {
     display: inline-block;
     float: right;
     margin-right: 100px;
-    margin-top: 20px;
+    margin-top: -1px;
     padding-left: 60px !important;
     padding-right: 60px !important;
     padding-top: 10px !important;
@@ -272,18 +289,20 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #0099c9 !important;
 }
 .volumes-header {
-    margin-top: 35px;
-    margin-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 55px;
+    background-color: white;
 }
 .volumes-title {
-    margin-top: 20px;
-    margin-bottom: 35px;
+    margin-top: 0;
+    margin-bottom: 0;
     display: inline-block;
-    margin-right: -270px;
+    margin-right: -280px;
 }
-.queue-imports {
-    padding-bottom: 90px;
-}
+
+/*----
+Queue Volume Card
+----*/
 .queue-volume-card {
     max-width: 325px;
     height: auto;
@@ -329,6 +348,22 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 15px;
     margin-right: 15px;
 }
+input[type="number"].qv-input::-webkit-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].qv-input::-moz-placeholder {
+    font-weight: 300;
+}
+input[type="number"].qv-input:-ms-input-placeholder {
+    font-weight: 300;
+}
+input[type="number"].qv-input:-moz-placeholder{
+    font-weight: 300;
+}
+
+/*----
+Volume Notifications
+----*/
 .qv-alert {
     display: inline-block;
     cursor: pointer;
@@ -360,22 +395,12 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
 }
 
-
-input[type="number"].qv-input::-webkit-input-placeholder {
-    font-weight: 300;
-}
-input[type="number"].qv-input::-moz-placeholder {
-    font-weight: 300;
-}
-input[type="number"].qv-input:-ms-input-placeholder {
-    font-weight: 300;
-}
-input[type="number"].qv-input:-moz-placeholder{
-    font-weight: 300;
-}
-
+/*----
+Non-Core Work
+----*/
 .non-core-container {
     max-width: 1000px;
+    padding-top: 20px;
 }
 .non-core-card {
     border: 1px solid #000;
@@ -387,8 +412,8 @@ input[type="number"].qv-input:-moz-placeholder{
 }
 .non-core-name {
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #337ab7;
     color: white;
     text-align: center;
@@ -438,7 +463,6 @@ input[type="number"].qv-input:-moz-placeholder{
     font-size: 18px;
     background-color: white;
 }
-
 input[type="number"].nc-input::-webkit-input-placeholder {
     font-weight: 300;
 }
@@ -451,7 +475,11 @@ input[type="number"].nc-input:-ms-input-placeholder {
 input[type="number"].nc-input:-moz-placeholder{
     font-weight: 300;
 }
+/*-----------------------------------------*/
 
+
+
+/*--------QUEUE NAV BTNS (next/back)--------*/
 #queue-import-next {
     background-color: #00a4d8;
     padding-top: 15px;
@@ -496,45 +524,54 @@ input[type="number"].nc-input:-moz-placeholder{
     bottom: 0;
     box-shadow: 0px 0px 8px #888888;
 }
+/*-----------------------------------------*/
 
 
 
-
-
-/*--------Settings--------*/
-/*--Settings Nav--*/
+/*--------SETTINGS--------*/
+/*----
+Settings Nav
+----*/
 .settings-nav a {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     border-radius: 0 !important;
     font-weight: 500;
 }
+.settings-nav li {
+    background-color: white;
+}
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
     background-color: #00a4d8 !important;
 }
 .settings-heading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
     text-align: center;
 }
 .settings-title {
-    margin-top: 10px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+    margin-top: 0;
     display: inline-block;
     margin-right: -100px;
 }
 #settings-save {
     float: right;
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 5px;
     margin-right: 30px;
+    font-weight: 500;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    
 }
 .btn-save {
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
-
-
-/*--Input Box--*/
+/*----
+Input Box
+----*/
 .input-prompt {
     border: 1px solid #1e1e1e;
     display: inline-block;
@@ -543,19 +580,22 @@ input[type="number"].nc-input:-moz-placeholder{
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 4px;
+    text-align: center;
 }
 input[type='text'],
 input[type='number'],
 textarea {
   font-size: 16px;
 }
-.addQueue .input-btn, .addRep .input-btn {
+.addQueue .input-btn {
     padding-left: 25px;
     padding-right: 25px;
     margin-top: -4px;
 }
 
-/*--Rep Profiles--*/
+
+
+/*--------REP PROFILES--------*/
 .rep-settings-container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -590,6 +630,24 @@ textarea {
     box-shadow: 0px 2px 5px #888888;
     vertical-align: top;
 }
+.btn-rep {
+	width: 200px;
+	height: 70px;
+	margin-left: 3em !important;
+	margin-right: 3em !important;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em !important;
+    white-space: normal !important;
+}
+.delete-rep {
+    margin-top: 20px;
+    width: 100%;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid #000 !important;
+}
 .jtextfill {
     height: 25px;
     width: auto;
@@ -612,45 +670,70 @@ textarea {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
+
+/*----
+Add New Rep Card
+----*/
+.addRepCard {
+    background-color: #00a4d8;
+    display: inline-block;
+    border: 1px solid #1e1e1e;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 1em !important;
+    max-width: 250px;
+    min-width: 200px;
+    height: auto;
+    box-shadow: 0px 2px 5px #888888;
+    vertical-align: top;
+}
+.addRepCard h3 {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: white;
+}
+#addrep-name {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px;
+    text-align: center;
+}
+#addrep-btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 2em;
+    padding: 0;
+}
+.fa-user {
+    color: white;
+}
+
+/*----
+Duplicate Error Msgs
+----*/
 .repname-duperror {
     color: red;
     position: absolute;
-    top: 250px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    padding-top: 15px;
+    font-weight: 500;
 }
 .repname-emptyerror {
     color: red;
     position: absolute;
-    top: 250px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    padding-top: 15px;
+    font-weight: 500;
 }
-.addRep {
-    padding-bottom: 50px;
-}
-.btn-rep {
-	width: 200px;
-	height: 70px;
-	margin-left: 3em !important;
-	margin-right: 3em !important;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em !important;
-    white-space: normal !important;
-}
-.delete-rep {
-    margin-top: 20px;
-    width: 100%;
-    border-top-right-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top: 1px solid #000 !important;
-}
+/*-----------------------------------------*/
 
-/*---------------------*/
+
 
 /*--------Queue Profiles--------*/
 .queue-settings-container {
@@ -689,6 +772,31 @@ textarea {
 .queue-bar:hover {
     background-color: #2e6da4;
 }
+.fa-bars {
+    float: left;
+    color: white;
+    margin-top: 7px;
+    margin-left: 15px;
+    cursor: move;
+}
+.fa-chevron-right, .fa-chevron-down {
+    color: white;
+    padding-left: 5px;
+}
+.delete-queue {
+    float: right;
+    margin-top: 7px;
+    margin-right: 10px;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+.fa-trash {
+    float: right;
+    color: white;
+}
+/*----
+Queue Data
+----*/
 .queue-data {  
     border: 1px solid #1e1e1e;
     border-top: none;
@@ -709,7 +817,6 @@ textarea {
 .grey {
     background-color: #f8f8f8;
 }
-
 .queue-data-fields {
     padding: 10px;
 }
@@ -729,13 +836,15 @@ textarea {
 .graph-preview img {
     width: 100%;
 }
-
 .queueProfileName {
     text-align: center;
     display: inline-block;
     color: white;
     margin-top: 11px;
 }
+/*---
+Duplicate Error Msgs (Queues)
+----*/
 .queuename-duperror {
     color: red;
     position: absolute;
@@ -752,57 +861,74 @@ textarea {
     right: 0;
     margin: 0 auto;
 }
-.delete-queue {
-    float: right;
-    margin-top: 7px;
-    margin-right: 10px;
-    padding-left: 9px !important;
-    padding-right: 9px !important;
-}
-.fa-trash {
-    float: right;
-    color: white;
-}
-.fa-lg {
-    vertical-align: 0;
-}
-.fa-bars {
-    float: left;
-    color: white;
-    margin-top: 7px;
-    margin-left: 15px;
-    cursor: move;
-}
-.fa-chevron-right, .fa-chevron-down {
-    color: white;
-    padding-left: 5px;
-}
+/*-----------------------------------------*/
 
 
 
-
-
-/*--------Mobile Styles--------*/
+/*--------MOBILE STYLES--------*/
 @media only screen and (max-width : 768px){
-    .title-withside {
-        margin-top: 0;
-        margin-right: 25px;
-        margin-bottom: 10px;
+    /*----Navbar & Breadcrumbs----*/
+    #gp-ninja {
+        max-height: 27px;
+        margin-top: -4px;
+        padding-left: 0;
     }
-    .title {
-        margin-top: 35px;
+    .lastcrumb-box {
+        right: -4px;
+    }
+    
+    /*----Reps----*/
+    .reps-header {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    .reps-title {
+        margin: 0;
     }
     #date-stamp {
         display: block;
         float: none;
         margin: 0;
-        padding-bottom: 30px;
+        margin-top: 15px;
+        padding-bottom: 0;
+    }
+    
+    /*----Volumes----*/
+    .volumes-header {
+        padding-top: 45px;
+        padding-bottom: 45px;
+        margin-bottom: 0;
+    }
+    .volumes-title {
+        margin-top: 0;
+        margin-right: 0;
+        padding-bottom: 20px;
+    }
+    .importQueuesBtn {
+        display: block !important;
+        margin: 0 auto;
+        float: none;
+        margin-top: 10px;
+    }
+    .queue-data-fields {
+        max-width: 40em;
+        margin: 0 auto;
+    }
+    
+    /*----Settings----*/
+    #mobile-cog {
+        float: right;
+        margin-right: 15px;
+        margin-top: 10px;
+        color: #fff;
+    }
+    .settings-heading {
+        padding-top: 45px;
+        padding-bottom: 45px;
     }
     .settings-title {
-        margin-top: 10px;
-        margin-bottom: 0;
-        margin-right: 0;
-        padding-top: 20px;
+        margin: 0;
+        padding-top: 0;
 		padding-bottom: 20px;
         display: block;
 	}
@@ -810,13 +936,8 @@ textarea {
         float: none;
         display: block;
         margin: 0 auto;
-        margin-top: 0;
-        margin-bottom: 30px;
-    }
-    .btn-rep {
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
+        margin-top: 10px;
+        margin-bottom: 0;
     }
     .rep-profiles-wrapper {
         border-left: none;
@@ -831,45 +952,19 @@ textarea {
     .queue-settings-container, .rep-settings-container {
         padding-top: 45px;
     }
-    #gp-ninja {
-        max-height: 27px;
-        margin-top: -4px;
-        padding-left: 0;
+    .btn-rep {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
     }
     .nav-pills>li+li {
         margin-left: 0 !important;
-    }
-    #mobile-cog {
-        float: right;
-        margin-right: 15px;
-        margin-top: 10px;
-        color: #fff;
     }
     .fa-trash {
         margin-top: -1px;
     }
     .repname-emptyerror, .repname-duperror, .queuename-duperror, .queuename-emptyerror {
-        top: 300px;
-    }
-    .importQueuesBtn {
-        display: block !important;
-        margin: 0 auto;
-        float: none;
-    }
-    .volumes-title {
-        margin-top: 0;
-        margin-right: 0;
-    }
-    .volumes-header {
-        margin-bottom: 40px;
-    }
-
-    .lastcrumb-box {
-        right: -4px;
-    }
-    .queue-data-fields {
-        max-width: 40em;
-        margin: 0 auto;
+        top: 330px;
     }
 }
 
@@ -886,3 +981,4 @@ textarea {
         margin-right: 10px;
     }
 }
+/*-----------------------------------------*/
