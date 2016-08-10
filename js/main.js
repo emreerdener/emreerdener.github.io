@@ -7,9 +7,11 @@ $(document).ready(function() {
 
     
 //---------Navbar----------
+    $('#settings-link').hide();
     //Adds spin animation to Settings "gear" in navbar 
     $('.nav-cog').hover(function() {
-        $('.nav-cog').toggleClass('fa-spin');
+        $('.nav-cog').toggleClass('fa-spin');   
+        $('#settings-link').toggle('slide', { direction: "right" }, 'fast');
     });
     
     //Adds bounce animation to ninja logo
