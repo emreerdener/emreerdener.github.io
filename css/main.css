@@ -586,8 +586,8 @@ Input Box
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 4px;
     text-align: center;
 }
@@ -595,11 +595,6 @@ input[type='text'],
 input[type='number'],
 textarea {
   font-size: 16px;
-}
-.addQueue .input-btn {
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-top: -4px;
 }
 
 
@@ -694,7 +689,7 @@ Add New Rep Card
     max-width: 250px;
     min-width: 200px;
     height: auto;
-    box-shadow: 0px 2px 5px #888888;
+/*  box-shadow: 0px 2px 5px #888888; */
     vertical-align: top;
 }
 .addRepCard h3 {
@@ -756,9 +751,6 @@ Duplicate Error Msgs
 /*--------Queue Profiles--------*/
 .queue-settings-container {
     padding-top: 50px;
-    padding-bottom: 50px;
-}
-.addQueue {
     padding-bottom: 50px;
 }
 .queue-profiles-wrapper {
@@ -879,6 +871,54 @@ Duplicate Error Msgs (Queues)
     right: 0;
     margin: 0 auto;
 }
+
+/*----
+Add New Queue
+----*/
+.addnew-queue {
+    max-width: 250px;
+    min-width: 200px;
+    height: auto;
+    padding: 30px;
+    padding-bottom: 20px;
+    background-color: #00a4d8;
+    border: 1px solid #1e1e1e;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 0 auto;
+    margin-top: -1px;
+}
+#addQueue-name {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px;
+    text-align: center;
+}
+.addnew-queue h3 {
+    color: white;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#addqueue-btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 2em;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    color: white;
+}
+#addqueue-btn:hover {
+    color: #337ab7;
+}
+.fa-archive {
+    color: white;
+}
 /*-----------------------------------------*/
 
 
@@ -978,6 +1018,7 @@ Duplicate Error Msgs (Queues)
         border-left: none;
         border-right: none;
         border-radius: 0;
+        box-shadow: 0px 0px 5px #888888;
     }
     .queue-settings-container, .rep-settings-container {
         padding-top: 45px;

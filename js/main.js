@@ -219,7 +219,7 @@ $(document).ready(function() {
             queueNames.push(queueName);
 
             //Queue Profile added in rep-profile container
-            $('.queue-profiles').prepend(queueProfile);
+            $('.queue-profiles').append(queueProfile);
 
             //Adds queues to Rep Profile card
             $('.rep-card-queues').append(repQueues);
@@ -340,6 +340,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
     $('.rep-profiles').on('click', '.delete-rep', function() {
         $(this).parent().remove();
     });
+    
     
 //--------Delete Queue--------    
     //Removes queue-card on "delete" button click

@@ -128,18 +128,20 @@
     <!--Queue Settings-->    
     <div role="tabpanel" class="tab-pane active" id="qs">  
         <div class="queue-settings-container text-center">
-            <!--New Queue -->
-            <div class="container addQueue">              
-                <form id="add-queue-form">
-                    <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
-                    <button type="submit" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
-                </form>
-            </div><!--addQueue close-->  
             
             <!--Queue Profiles-->
-            <div class="container queue-profiles-wrapper">
-                <div class="queue-profiles"></div><!--queue-profiles-->
+            <div class="container queue-profiles-wrapper">    
+                <div class="queue-profiles"></div><!--queue-profiles-->                
             </div><!--queue-profile-wrapper-->
+            
+                <div class="container text-center addnew-queue">
+                    <i class="fa fa-archive fa-4x" aria-hidden="true"></i>
+                    <h3>New Queue</h3>
+                    <form id="add-queue-form">
+                        <input type="text" id="addQueue-name" class="input-prompt" placeholder="Enter Queue">                        
+                        <button type="submit" id="addqueue-btn" class="btn input-btn"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button>
+                    </form>
+                </div><!--addnew-queue-->
             
         </div><!--queue-settings-container-->              
     </div><!--#qs-->
@@ -147,15 +149,6 @@
     <!--Rep Settings-->
     <div role="tabpanel" class="tab-pane" id="rs">      
         <div class="rep-settings-container">
-            
-            <!--New Rep -->
-            <!--
-            <div class="container addRep text-center">             
-                <form id="add-rep-form">
-                    <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
-                    <button type="submit" id="add-rep-btn" class="btn btn-sm btn-primary input-btn">ADD</button>
-                </form>
-            </div><!--addRep-->
             
             <!--Rep Profiles-->    
             <div class="container rep-profiles-wrapper">
