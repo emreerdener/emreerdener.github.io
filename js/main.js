@@ -61,6 +61,12 @@ $(document).ready(function() {
 
 
 //---------Settings---------  
+    //Settings Save button
+    $('#settings-save').on('click', function() {
+        $('.settings-heading').before('<span class="settings-datestamp">Last Saved: ' + moment().format("MMMM Do, h:mma") + '</span>');
+    });
+    
+    
     //Rep Working button & Rep Profile
     $('#add-rep-form').submit(function(event) {
              
@@ -206,11 +212,11 @@ $(document).ready(function() {
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
-            $('#addQueue-name').before('<span class="queuename-duperror">Duplicate queue. Please enter a different queue.</span>');
+            $('.queue-settings-container').before('<span class="queuename-duperror text-center">Duplicate queue. Please enter a different queue.</span>');
             //Fade out error message
             $('.queuename-duperror').delay(1200).fadeOut();
         } else if (queueName === "") {
-            $('#addQueue-name').before('<span class="queuename-emptyerror">Please input a queue name.</span>');
+            $('.queue-settings-container').before('<span class="queuename-emptyerror text-center">Please input a queue name.</span>');
             //Fade out error message
            $('.queuename-emptyerror').delay(1200).fadeOut();
         } else {     
@@ -241,6 +247,13 @@ $(document).ready(function() {
     event.preventDefault();
 });//--close add queue
    
+   
+    
+//--------Import Queues--------
+    $('.importQueuesBtn').on('click', function() {
+        $('.volumes-header').before('<span class="import-datestamp">Last Import: ' + moment().format("MMMM Do, h:mma") + '</span>');
+    });
+    
     
     
 //--------Popover--------    
