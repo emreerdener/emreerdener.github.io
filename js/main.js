@@ -155,9 +155,6 @@ $(document).ready(function() {
             <div class="queue-bar">    
                 <span>
                     <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>
-                    <button type="button" class="delete-queue btn btn-danger">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                    </button>
                 </span>
                 <h4 class="queueProfileName">` + queueName + `</h4>
             </div><!--queue-bar-->
