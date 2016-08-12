@@ -63,6 +63,7 @@ $(document).ready(function() {
 //---------Settings---------  
     //Settings Save button
     $('#settings-save').on('click', function() {
+        $('.settings-datestamp').empty();
         $('.settings-heading').before('<span class="settings-datestamp">Last Saved: ' + moment().format("MMMM Do, h:mma") + '</span>');
     });
     
@@ -251,6 +252,7 @@ $(document).ready(function() {
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
+        $('.import-datestamp').empty();
         $('.volumes-header').before('<span class="import-datestamp">Last Import: ' + moment().format("MMMM Do, h:mma") + '</span>');
     });
     
