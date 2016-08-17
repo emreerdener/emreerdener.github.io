@@ -75,7 +75,7 @@ $(document).ready(function() {
         var repName = $('#addrep-name').val();
         
         //Rep Button stored in local variable (to be added)
-        var repButton = '<button type="button" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';
+        var repButton = '<button type="button" id="' + repName + '" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';  
         
         //Rep Profile stored in variable (to be added)
         var repProfile = `
@@ -89,7 +89,7 @@ $(document).ready(function() {
         
         //Non-core work card (to be added)
         var ncInputCard = `
-            <div class="nc-input-card">
+            <div class="nc-input-card" id="nc-` + repName + `">
                 <div class="nc-input-name">
                     ` + repName + `
                 </div><!--nc-input-name-->
@@ -121,7 +121,7 @@ $(document).ready(function() {
             $('.non-core-data').append(ncInputCard);
             
             //Adds queues array to local variable of repName
-            $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);                   
+            $('.rep-card:contains(' + repName + ') .rep-card-queues').append(queues);    
         }//--close if statement
         
         //Hide non-core-input cards (to show/hide--around line 290)
@@ -131,13 +131,28 @@ $(document).ready(function() {
         $('#addrep-name').val(''); 
         
         //Plugin to resize text (repName) to container width
-        $('.jtextfill').textfill({ maxFontPixels: 24 }); 
+        $('.jtextfill').textfill({ maxFontPixels: 24 });
+            
+        //Remove white spaces from ID repName and make all lower-case
+        $('[id="' + repName + '"]').attr("id", repName.replace(/ /g, '').toLowerCase());
+        //Remove white space for nc-input-card ID and make lower-case
+        $('[id="nc-' + repName + '"]').attr("id", 'nc-' + repName.replace(/ /g, '').toLowerCase());
         
         //Prevents default form submit, causing page reload
         event.preventDefault(); 
     });//--close add rep
  
+     
 
+    
+        
+    
+    
+    
+    
+    
+    
+    
     
     
     //Queue button to Rep Profile
@@ -345,6 +360,41 @@ $('.queue-imports').on('change', '.qv-input', function() {
         }
     });
     
+    //Show / Hide Non-Core Work cards from rep-buttons
+    $('.rep-buttons').on('click', '.btn-rep', function() {
+            //Toggles button color for select
+            $(this).toggleClass('btn-default btn-success');
+             
+            var repSelect = $(this);
+            
+            //Removes "nc-" from ID in order to match to btn-rep ID
+            $('.nc-input-card').each(function() {
+                this.id = this.id.replace('nc-', '');
+            });            
+            
+            //If btn-rep is selected then show corresponding non-core-work button
+            if( $(this).hasClass('btn-success') ) {
+                //For every nc-input-card if the IDs match the card is shown
+                $('.nc-input-card').each(function() {
+                    if ( ($(this).attr('id')) === (repSelect.attr('id')) ) {
+                        $(this).show();
+                    }
+                });
+                
+            } else {   
+                //For every nc-input-card if the IDs match the card is shown
+                $('.nc-input-card').each(function() {
+                    if ( ($(this).attr('id')) === (repSelect.attr('id')) ) {
+                        $(this).hide();
+                        
+                        //Clears nc-input input field
+                        $(this).find('.nc-input').val('').trigger('change');
+                    }
+                });            
+            }//--close if statement
+        }).trigger('change');
+  
+    
      
     
 //--------Delete Rep--------    
@@ -368,7 +418,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
     }   
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
-    $('.rep-buttons').on('click', '.btn-rep', toggleButton);
+    //$('.rep-buttons').on('click', '.btn-rep', toggleButton);
     
     
     

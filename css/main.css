@@ -731,9 +731,6 @@ Add New Rep Card
     background-color: transparent;
     color: white;
 }
-#addrep-btn:hover {
-    color: #337ab7;
-}
 .fa-user {
     color: white;
 }
@@ -934,9 +931,6 @@ Add New Queue
     background-color: transparent;
     color: white;
 }
-#addqueue-btn:hover {
-    color: #337ab7;
-}
 .fa-archive {
     color: white;
 }
@@ -996,6 +990,9 @@ Add New Queue
         margin-right: 0;
         padding-bottom: 20px;
     }
+    .non-core-container {
+        margin-bottom: 20px;
+    }
     .importQueuesBtn {
         display: block !important;
         margin: 0 auto;
@@ -1010,7 +1007,7 @@ Add New Queue
         margin: 0;
     }
     .import-datestamp {
-        right: 110px;
+        right: 115px;
         top: 255px;
     }
     
