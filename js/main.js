@@ -81,24 +81,23 @@ $(document).ready(function() {
         var repButton = '<button type="button" id="' + repName + '" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';  
         
         //Rep Profile stored in variable (to be added)
-        var repProfile = `
-            <div class="container rep-card">
-                <div class="jtextfill">  
-                    <h3 class="repProfileName"><span>` + repName + `</span></h3>
-                </div><!--jtextfill-->
-                <div class="rep-card-queues"></div>
-                <button type="button" class="delete-rep btn btn-danger">Delete</button>
+        var repProfile = `\
+            <div class="container rep-card">\
+                <div class="jtextfill">\  
+                    <h3 class="repProfileName"><span>` + repName + `</span></h3>\
+                </div><!--jtextfill-->\
+                <div class="rep-card-queues"></div>\
+                <button type="button" class="delete-rep btn btn-danger">Delete</button>\
             </div>`;
         
         //Non-core work card (to be added)
-        var ncInputCard = `
-            <div class="nc-input-card" id="nc-` + repName + `">
-                <div class="nc-input-name">
-                    ` + repName + `
-                </div><!--nc-input-name-->
-                <input class="nc-input" type="number" placeholder="Hours">
-            </div><!--nc-input-card-->
-        `;
+        var ncInputCard = `\
+            <div class="nc-input-card" data-nc="` + repName + `">\
+                <div class="nc-input-name">\
+                    ` + repName + `\
+                </div><!--nc-input-name-->\
+                <input class="nc-input" type="number" placeholder="Hours">\
+            </div><!--nc-input-card-->`;
         
         //Checks if repName is already in rep array. if so, it's rejected. If not, it's added to reps array.
         if (reps.indexOf(repName) !== -1) {
@@ -137,9 +136,9 @@ $(document).ready(function() {
         $('.jtextfill').textfill({ maxFontPixels: 24 });
             
         //Remove white spaces from ID repName and make all lower-case
-        $('[id="' + repName + '"]').attr("id", repName.replace(/ /g, '').toLowerCase());
-        //Remove white space for nc-input-card ID and make lower-case
-        $('[id="nc-' + repName + '"]').attr("id", 'nc-' + repName.replace(/ /g, '').toLowerCase());
+        $('[id="' + repName + '"]').attr('id', repName.replace(/ /g, '').toLowerCase());
+        //Remove white space for nc-input-card data-nc and make lower-case
+        $('[data-nc="' + repName + '"]').attr('data-nc', repName.replace(/ /g, '').toLowerCase());
         
         //Prevents default form submit, causing page reload
         event.preventDefault(); 
@@ -159,63 +158,60 @@ $(document).ready(function() {
         var repQueues = '<button class="btn btn-lg btn-block btn-default repQueues-btn">' + queueName + '</button>';
         
         //Queue Profile stored in variable (to be added)
-        var queueProfile = `
-        <div class="queue-card"> 
-            <div class="queue-bar">    
-                <span>
-                    <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>
-                </span>
-                <h4 class="queueProfileName">` + queueName + `</h4>
-            </div><!--queue-bar-->
-            <div class="queue-data">
-                <div class="graph-preview">
-                    <img src="images/graph-ex.png"/>
-                </div>
-                <div class="queue-data-fields">
-                    <div class="queue-data-card">
-                        <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>
-                        <input id="queue-data-name" class="queue-data-input" type="text" placeholder="Name">
-                    </div><!--queue-data-card-->
-                    <div class="queue-data-card">
-                        <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>
-                        <input class="queue-data-input" type="text" placeholder="Seconds">
-                    </div><!--queue-data-card-->
-                    <div class="queue-data-card">
-                        <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>
-                        <input class="queue-data-input" type="text" placeholder="Percentage">
-                    </div>
-                    <div class="queue-data-card">
-                        <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>
-                        <input class="queue-data-input" type="text" placeholder="SQL">
-                    </div>
-                </div>
+        var queueProfile = `\
+        <div class="queue-card">\
+            <div class="queue-bar">\    
+                <span>\
+                    <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
+                </span>\
+                <h4 class="queueProfileName">` + queueName + `</h4>\
+            </div><!--queue-bar-->\
+            <div class="queue-data">\
+                <div class="graph-preview">\
+                    <img src="images/graph-ex.png"/>\
+                </div>\
+                <div class="queue-data-fields">\
+                    <div class="queue-data-card">\
+                        <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>\
+                        <input id="queue-data-name" class="queue-data-input" type="text" placeholder="Name">\
+                    </div><!--queue-data-card-->\
+                    <div class="queue-data-card">\
+                        <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>\
+                        <input class="queue-data-input" type="text" placeholder="Seconds">\
+                    </div><!--queue-data-card-->\
+                    <div class="queue-data-card">\
+                        <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>\
+                        <input class="queue-data-input" type="text" placeholder="Percentage">\
+                    </div>\
+                    <div class="queue-data-card">\
+                        <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>\
+                        <input class="queue-data-input" type="text" placeholder="SQL">\
+                    </div>\
+                </div>\
             </div><!--queue-data-->`;
         
         //Queue import field (to be added)
-        var queueVolume = `
-        <div class="container queue-volume-card">
-            <div class="queue-volume-name">
-                    <h4>` + queueName + `</h4>
-            </div><!--queue-volume-name-->
-            <div class="queue-volume-data">
-                <div type="button" class="qvolume-graph">
-                    <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
-                </div><!--qvolume-graph-->
-                <div class="queue-volume-input">
-                    <input class="qv-input" type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">
-                </div><!--queue-volume-input-->
-                <div role="button" class="qv-alert text-center" data-toggle="popover" data-placement="top">
-
-                <div class="popover_content_wrapper hide">` + queueName + ` is 23% above average</div>
-
-                    <span class="fa-stack">
-                        <i class="fa fa-bell fa-stack-2x" aria-hidden="true"></i>
-                        <i class="fa fa-circle fa-stack-1x" aria-hidden="true"></i>
-                    </span>
-                </div><!--qv-alert-->
-            </div><!--queue-volume-data-->
-        </div><!--queue-volume-card-->
-        `;        
+        var queueVolume = `\
+        <div class="container queue-volume-card">\
+            <div class="queue-volume-name">\
+                    <h4>` + queueName + `</h4>\
+            </div><!--queue-volume-name-->\
+            <div class="queue-volume-data">\
+                <div type="button" class="qvolume-graph">\
+                    <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>\
+                </div><!--qvolume-graph-->\
+                <div class="queue-volume-input">\
+                    <input class="qv-input" type="number" placeholder="Volume" pattern="[0-9]*" inputmode="numeric">\
+                </div><!--queue-volume-input-->\
+                <div role="button" class="qv-alert text-center" data-toggle="popover" data-placement="top">\
+        <div class="popover_content_wrapper hide">` + queueName + ` is 23% above average</div>\
+                    <span class="fa-stack">\
+                        <i class="fa fa-bell fa-stack-2x" aria-hidden="true"></i>\
+                        <i class="fa fa-circle fa-stack-1x" aria-hidden="true"></i>\
+                    </span>\
+                </div><!--qv-alert-->\
+            </div><!--queue-volume-data-->\
+        </div><!--queue-volume-card-->`;        
         
         //Checks if queueName is already in queueNames array. if so, it's rejected. If not, it's added to queues array.
         if (queueNames.indexOf(queueName) !== -1) {
@@ -300,8 +296,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
 });    
 
 
-    
-       
+   
  
 //--------Queue Cards--------
     //Allows queue-cards to be sortable
@@ -359,26 +354,20 @@ $('.queue-imports').on('change', '.qv-input', function() {
             //Toggles button color for select
             $(this).toggleClass('btn-default btn-success');
              
-            var repSelect = $(this);
-            
-            //Removes "nc-" from ID in order to match to btn-rep ID
-            $('.nc-input-card').each(function() {
-                this.id = this.id.replace('nc-', '');
-            });            
+            var repSelect = $(this);            
             
             //If btn-rep is selected then show corresponding non-core-work button
-            if( $(this).hasClass('btn-success') ) {
+            if( $(this).hasClass('btn-success') ) {             
                 //For every nc-input-card if the IDs match the card is shown
                 $('.nc-input-card').each(function() {
-                    if ( ($(this).attr('id')) === (repSelect.attr('id')) ) {
+                    if ( ($(this).data('nc')) === (repSelect.attr('id')) ) {
                         $(this).show();
                     }
-                });
-                
+                });              
             } else {   
                 //For every nc-input-card if the IDs match the card is hidden
                 $('.nc-input-card').each(function() {
-                    if ( ($(this).attr('id')) === (repSelect.attr('id')) ) {
+                    if ( ($(this).data('nc')) === (repSelect.attr('id')) ) {
                         $(this).hide();
                         
                         //Clears nc-input input field
@@ -394,7 +383,9 @@ $('.queue-imports').on('change', '.qv-input', function() {
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
     $('.rep-profiles').on('click', '.delete-rep', function() {
-        $(this).parent().remove();
+        $(this).parent('.rep-card').fadeOut(function() {
+            $(this).remove();    
+        });
     });
     
     
@@ -416,10 +407,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
     
     
     
-    
-    
-    
-    
+ 
     
     
 //--------Date Stamp--------
