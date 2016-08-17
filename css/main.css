@@ -253,6 +253,10 @@ Breadcrumbs Last "Crumb"
     margin-top: 10px;
     margin-right: 100px;
 }
+.rep-buttons {
+    margin-left: 70px;
+    margin-right: 70px;
+}
 #reps-working-next {
     background-color: #00a4d8;
     padding-top: 15px;
@@ -977,6 +981,9 @@ Add New Queue
         margin: 0;
         margin-top: 15px;
         padding-bottom: 0;
+    }
+    .rep-buttons {
+        margin: 0;
     }
     
     /*----Volumes----*/

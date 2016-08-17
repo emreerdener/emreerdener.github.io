@@ -358,23 +358,12 @@ $('.queue-imports').on('change', '.qv-input', function() {
             
             //If btn-rep is selected then show corresponding non-core-work button
             if( $(this).hasClass('btn-success') ) {             
-                //For every nc-input-card if the IDs match the card is shown
-                $('.nc-input-card').each(function() {
-                    if ( ($(this).data('nc')) === (repSelect.attr('id')) ) {
-                        $(this).show();
-                    }
-                });              
-            } else {   
-                //For every nc-input-card if the IDs match the card is hidden
-                $('.nc-input-card').each(function() {
-                    if ( ($(this).data('nc')) === (repSelect.attr('id')) ) {
-                        $(this).hide();
-                        
-                        //Clears nc-input input field
-                        $(this).find('.nc-input').val('').trigger('change');
-                    }
-                });            
-            }//--close if statement
+                //Match btn-rep ID to nc-input-card data to show
+                $('.nc-input-card[data-nc="' + repSelect.attr('id') + '"]').show();
+            } else {
+                //Match btn-rep ID to nc-input-card data to hide & clear input value
+                $('.nc-input-card[data-nc="' + repSelect.attr('id') + '"]').hide().find('.nc-input').val('').trigger('change');    
+            }//--close if statement        
         }).trigger('change');
   
     
