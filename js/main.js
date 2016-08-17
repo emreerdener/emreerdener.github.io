@@ -10,8 +10,11 @@ $(document).ready(function() {
     $('#settings-link').hide();
     //Adds spin animation to Settings "gear" in navbar 
     $('.nav-cog').hover(function() {
-        $('.nav-cog').toggleClass('fa-spin');   
-        $('#settings-link').toggle('slide', { direction: "right" }, 'fast');
+        $('.nav-cog').toggleClass('fa-spin');
+    });
+    //Reveals "settings" link
+    $('.nav-cog').mouseover(function() {
+        $('#settings-link').toggle('slide', {direction: "right"}, 'fast');
     });
     
     //Adds bounce animation to ninja logo
@@ -21,7 +24,7 @@ $(document).ready(function() {
     
     //Hide/Show settings view
     $('#settings').hide();
-    $('#desktop-cog, #mobile-cog').on('click', function() {
+    $('#desktop-cog, #mobile-cog, #settings-link').on('click', function() {
         $('#settings').show();
         $('.breadcrumbs').hide();
         $('#reps-working-view').hide();
@@ -143,15 +146,6 @@ $(document).ready(function() {
     });//--close add rep
  
      
-
-    
-        
-    
-    
-    
-    
-    
-    
     
     
     
@@ -382,7 +376,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
                 });
                 
             } else {   
-                //For every nc-input-card if the IDs match the card is shown
+                //For every nc-input-card if the IDs match the card is hidden
                 $('.nc-input-card').each(function() {
                     if ( ($(this).attr('id')) === (repSelect.attr('id')) ) {
                         $(this).hide();
