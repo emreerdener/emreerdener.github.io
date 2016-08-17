@@ -163,8 +163,8 @@ $(document).ready(function() {
             <div class="queue-bar">\    
                 <span>\
                     <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
+                    <span contenteditable="true"><h4 class="queueProfileName">` + queueName + `</h4></span>\
                 </span>\
-                <h4 class="queueProfileName">` + queueName + `</h4>\
             </div><!--queue-bar-->\
             <div class="queue-data">\
                 <div class="graph-preview">\
@@ -296,7 +296,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
 });    
 
 
-   
+
  
 //--------Queue Cards--------
     //Allows queue-cards to be sortable
