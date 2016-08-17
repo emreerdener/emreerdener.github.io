@@ -1,5 +1,6 @@
 $(document).ready(function() {
  
+    var types = [];
     var reps = [];
     var queues = [];
     var queueNames = [];
@@ -21,36 +22,47 @@ $(document).ready(function() {
     $('#gp-ninja').click(function() {
         $(this).effect('bounce', 'slow');
     });
-    
-    //Hide/Show settings view
+
+        
+//----------Navitagion----------    
+    //Initial homepage display (show/hide)
+    $('.breadcrumbs').hide();
+    $('#reps-working-view').hide();
+    $('#queue-import-view').hide();
     $('#settings').hide();
+    
+    //Settings view
     $('#desktop-cog, #mobile-cog, #settings-link').on('click', function() {
         $('#settings').show();
         $('.breadcrumbs').hide();
+        $('#types-view').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
     });    
-    //Hide/Show reps-working view
-    $('#queue-import-view').hide();
+    
+    //'Home' view (types view)
     $('.navbar-brand').on('click', function() {
+        $('#types-view').show(); 
+        $('.breadcrumbs').hide();
+        $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
+        $('#settings').hide();
+    });
+    
+    //Reps-working view
+    $('#queue-import-view').hide();
+    $('#types-view').on('click', '.type-card', function() {
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
+        $('#types-view').hide();
         $('#settings').hide();
         $('#queue-import-view').hide();
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
         $('.bread-vol').removeClass('bread-active');
     });
-    //Hide/Show queue import view
-    $('#reps-working-next, .bread-vol').on('click', function() {
-        $('#queue-import-view').show();
-        $('.breadcrumbs').show();
-        $('#reps-working-view').hide();
-        $('#settings').hide();
-        $('.bread-reps').removeClass('bread-active');
-        $('.bread-reps').addClass('bread-completed');
-        $('.bread-vol').addClass('bread-active');
-    });
+    
+    //Reps-working view
     $('#queue-import-back, .bread-reps').on('click', function() {
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
@@ -60,6 +72,19 @@ $(document).ready(function() {
         $('.bread-reps').addClass('bread-active');
         $('.bread-vol').removeClass('bread-active');
     });
+    
+    //Queue import view
+    $('#reps-working-next, .bread-vol').on('click', function() {
+        $('#queue-import-view').show();
+        $('.breadcrumbs').show();
+        $('#types-view').hide();
+        $('#reps-working-view').hide();
+        $('#settings').hide();
+        $('.bread-reps').removeClass('bread-active');
+        $('.bread-reps').addClass('bread-completed');
+        $('.bread-vol').addClass('bread-active');
+    });
+  
 
 
 
@@ -148,7 +173,7 @@ $(document).ready(function() {
     
     
     
-    //Queue button to Rep Profile
+//-----Queue button to Rep Profile-----
     $('#add-queue-form').submit(function(event) {
         
         //Name for Queue from input value
@@ -251,6 +276,49 @@ $(document).ready(function() {
 });//--close add queue
    
    
+    
+    
+//-----Type Button submit-----    
+$('#add-type-form').submit(function(event) {
+    //Name for Queue from input value
+    var typeName = $('#addType-name').val();
+        
+    //Queue button stored in variable (to be added)
+    var typeButton = '<div class="type-card">\
+                        <div class="type-card-title">\
+                            <h3>' + typeName + '</h3>\
+                        </div><!--type-card-title-->\
+                      </div><!--type-card-->';
+    
+    //Checks if typeName is already in types array. if so, it's rejected. If not, it's added to types array.
+        if (types.indexOf(typeName) !== -1) {
+            $('.types-container').before('<span class="typename-duperror text-center">Duplicate queue. Please enter a different type name.</span>');
+            //Fade out error message
+            $('.typename-duperror').delay(1200).fadeOut();
+        } else if (typeName === "") {
+            $('.types-container').before('<span class="typename-emptyerror text-center">Please input a type name.</span>');
+            //Fade out error message
+           $('.typename-emptyerror').delay(1200).fadeOut();
+        } else {     
+            //Adds Type button to array
+            types.push(typeName);
+
+            //Queue Profile added in rep-profile container
+            $('.type-cards').prepend(typeButton);         
+        }//--close if statement
+        
+    //Clears queue input field
+    $('#addType-name').val('');
+    
+    //Prevents default form submit, causing page reload
+    event.preventDefault();
+});//--close add type
+    
+    
+    
+    
+    
+    
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
@@ -392,12 +460,9 @@ $('.queue-imports').on('change', '.qv-input', function() {
     }   
     //Toggles repQueues buttons
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
-    //$('.rep-buttons').on('click', '.btn-rep', toggleButton);
     
     
-    
- 
-    
+
     
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
