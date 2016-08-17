@@ -60,6 +60,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /*--------BREADCRUMBS--------*/
+.breadcrumbs {
+    overflow-x: hidden;
+}
 .breadcrumbs li {
     width: 33%;
 }
@@ -213,9 +216,9 @@ Breadcrumbs Last "Crumb"
     border-bottom: 1px solid #00a4d8;
     border-top: 1px solid #00a4d8;
     height: 36px;
-    width: 10px;
+    width: 15px;
     top: -1px;
-    right: -9px;
+    right: -13px;
     background-color: white;
     z-index: 5;
 }
@@ -942,8 +945,82 @@ Add New Queue
 
 
 
+/*--------iPad Styles--------*/
+@media only screen and (max-width: 768px) {    
+    /*----iPad Reps----*/
+    .reps-header {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    .reps-title {
+        margin: 0;
+    }
+    #date-stamp {
+        display: block;
+        float: none;
+        margin: 0;
+        margin-top: 15px;
+        padding-bottom: 0;
+    }
+    .rep-buttons {
+        margin: 0;
+    }
+    
+    /*----iPad Volumes----*/
+    .volumes-header {
+        padding-top: 45px;
+        padding-bottom: 45px;
+        margin-bottom: 0;
+    }
+    .volumes-title {
+        margin-top: 0;
+        margin-right: 0;
+        padding-bottom: 20px;
+    }
+    .non-core-container {
+        margin-bottom: 20px;
+    }
+    .importQueuesBtn {
+        display: block !important;
+        margin: 0 auto;
+        float: none;
+        margin-top: 10px;
+    }
+    .import-datestamp {
+        right: 0;
+        top: 245px;
+        left: 0;
+        margin: 0 auto;
+    }
+    /*----iPad Settings----*/
+    .settings-heading {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    .settings-title {
+        margin: 0;
+        padding-top: 0;
+		padding-bottom: 0;
+        display: block;
+	}
+    #settings-save {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .settings-datestamp {
+        right: 319px;
+        top: 200px;
+    }
+}
+/*----IPAD STYLES CLOSE-------------------*/
+
+
+
 /*--------MOBILE STYLES--------*/
-@media only screen and (max-width : 768px){
+@media only screen and (max-width : 767px){
     /*----Navbar & Breadcrumbs----*/
     .navbar {
         padding-bottom: 10px;
@@ -962,9 +1039,6 @@ Add New Queue
         margin-top: 9px;
         color: #fff;
         font-size: 3em;
-    }
-    .lastcrumb-box {
-        right: -4px;
     }
     
     /*----Reps----*/
@@ -1014,8 +1088,10 @@ Add New Queue
         margin: 0;
     }
     .import-datestamp {
-        right: 115px;
+        right: 0;
         top: 255px;
+        left: 0;
+        margin: 0 auto;
     }
     
     /*----Settings----*/
@@ -1033,12 +1109,15 @@ Add New Queue
         float: none;
         display: block;
         margin: 0 auto;
-        margin-top: 10px;
+        margin-top: 30px;
         margin-bottom: 0;
-        display: none;
     }
     .settings-datestamp {
-        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 210px;
     }
     .rep-profiles-wrapper {
         border-left: none;
@@ -1073,18 +1152,4 @@ Add New Queue
         top: 277px;
     }
 }
-
-@media only screen and (max-width : 991px){
-    .queue-data-fields {
-        max-width: 40em;
-        margin: 0 auto;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .queue-volume-input {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
-/*-----------------------------------------*/
+/*----------------------------------------------------------*/
