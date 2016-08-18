@@ -10,12 +10,8 @@ $(document).ready(function() {
 //---------Navbar----------
     $('#settings-link').hide();
     //Adds spin animation to Settings "gear" in navbar 
-    $('.nav-cog').hover(function() {
+    $('.nav-cog, #settings-link').hover(function() {
         $('.nav-cog').toggleClass('fa-spin');
-    });
-    //Reveals "settings" link
-    $('.nav-cog').mouseover(function() {
-        $('#settings-link').toggle('slide', {direction: "right"}, 'fast');
     });
     
     //Adds bounce animation to ninja logo
@@ -32,21 +28,28 @@ $(document).ready(function() {
     $('#settings').hide();
     $('#desktop-cog, #settings-link').hide();
     $('#groupHome-view').hide();
+    $('#group-nav-title').hide();
+    $('#mobile-cog').hide();
         
-    //'Home' view (types view)
+    //Groups view
     $('.navbar-brand').on('click', function() {
         $('#groups-view').show();
+        $('#group-nav-title').hide();
         $('#groupHome-view').hide();
         $('#settings').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
+        $('#desktop-cog, #settings-link').hide();
+        $('#mobile-cog').hide();
     });
     
-    //Reps-working view
+    //Home-Group view
     $('#groups-view').on('click', '.group-card', function() {
-        $('#desktop-cog').show();
+        $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
+        $('#group-nav-title').show();
+        $('#mobile-cog').show();
         $('#groups-view').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
@@ -56,6 +59,30 @@ $(document).ready(function() {
         $('.bread-vol').removeClass('bread-active');
     });
     
+    $('.navbar').on('click', '#group-nav-title', function() {
+        $('#desktop-cog, #settings-link').show();
+        $('#groupHome-view').show();
+        $('#group-nav-title').show();
+        $('#groups-view').hide();
+        $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
+        $('.breadcrumbs').hide();
+        $('#settings').hide();
+    });
+    
+    //Arrow-back in groupsHome view
+    $('.ghback-arrow').on('click', function() {
+        $('#groups-view').show();
+        $('#group-nav-title').hide();
+        $('#groupHome-view').hide();
+        $('#settings').hide();
+        $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
+        $('.breadcrumbs').hide();
+        $('#desktop-cog, #settings-link').hide();
+    });
+    
+    //Create
     $('.create-btn').on('click', function() {
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
@@ -313,7 +340,10 @@ $('#add-group-form').submit(function(event) {
             groups.push(groupName);
 
             //Group Profile added in group-profiles container
-            $('.group-profiles').append(groupButton);         
+            $('.group-profiles').append(groupButton);   
+            
+            //Home-Group title added to groupHome-view
+            $('#group-nav-title').append(groupName);
         }//--close if statement
         
     //Clears group input field

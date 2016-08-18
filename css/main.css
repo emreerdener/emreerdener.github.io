@@ -22,7 +22,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding-left: 6px;
 }
 .navbar-txt {
-    margin-top: 6px;
+    margin-top: 5px;
     font-size: 34px;
     color: white;
     font-weight: 500;
@@ -57,6 +57,21 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     font-weight: 500;
     font-size: 20px;
+}
+#group-nav-title {
+    display: block;
+    color: white;
+    font-size: 23px;
+    font-weight: 400;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 13px;
+    cursor: pointer;
+}
+#group-nav-title:hover {
+    font-weight: 500;
 }
 /*-----------------------------------------*/
 
@@ -246,7 +261,7 @@ Breadcrumbs Last "Crumb"
 .groups-header {
     background-color: white;
     padding-top: 50px;
-    padding-bottom: 55px;
+    padding-bottom: 50px;
 }
 .group-card {
     display: inline-block;
@@ -255,7 +270,7 @@ Breadcrumbs Last "Crumb"
     margin: 31px;
     border: 1px solid #000;
     border-radius: 10px;
-    box-shadow: 2px 2px 8px #888888;
+    box-shadow: 1px 1px 8px #888888;
     background-color: #fff;
     cursor: pointer;
     vertical-align: middle;
@@ -279,7 +294,7 @@ Breadcrumbs Last "Crumb"
     height: 270px;
     width: 250px;
     margin: 31px;
-    box-shadow: 2px 2px 8px #888888;
+    box-shadow: 1px 1px 8px #888888;
 }
 .addgroup-title {
     margin: 0;
@@ -317,18 +332,23 @@ Breadcrumbs Last "Crumb"
 
 /*--------HOME-GROUP--------*/
 #groupHome-view {
-    margin-top: 110px;
+    margin-top: 140px;
+}
+.groupsHome-header {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .create-btn {
     display: inline-block;
     border: 1px solid #000 !important;
     border-radius: 10px !important;
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     margin: 30px;
-    margin-right: 50px;
+    margin-right: 70px;
     background-color: #00a4d8;
-    box-shadow: 0px 0px 8px #888888;
+    box-shadow: 1px 1px 8px #888888;
     color: white;
 }
 .create-btn:hover {
@@ -339,25 +359,29 @@ Breadcrumbs Last "Crumb"
     display: inline-block;
     border: 1px solid #000 !important;
     border-radius: 10px !important;
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     margin: 30px;
-    margin-left: 50px;
+    margin-left: 70px;
     background-color: white;
-    box-shadow: 2px 2px 8px #888888;
+    box-shadow: 1px 1px 8px #888888;
 }
 .fa-history {
-    font-size: 140px;
+    font-size: 165px;
     margin-top: 30px;
 }
 .create-btn img {
-    max-height: 140px;
+    max-height: 170px;
     width: auto;
     margin-top: 25px;
 }
 .fa-arrow-left {
     margin-top: 100px;
     font-size: 70px;
+    cursor: pointer;
+}
+.fa-arrow-left:hover {
+    color: #00a4db;
 }
 
 /*-----------------------------------------*/
@@ -1076,7 +1100,15 @@ Add New Queue
 
 
 /*--------iPad Styles--------*/
-@media only screen and (max-width: 768px) {    
+@media only screen and (max-width: 768px) {   
+    /*-----Home-Group-----*/
+    .create-btn {
+        margin-right: 30px;
+    }
+    .history-btn {
+        margin-left: 30px;
+    }
+    
     /*----iPad Reps----*/
     .reps-header {
         padding-top: 45px;
@@ -1169,6 +1201,10 @@ Add New Queue
         margin-top: 9px;
         color: #fff;
         font-size: 3em;
+    }
+    #group-nav-title {
+        display: block;
+        margin-top: -37px;
     }
     /*----Groups----*/
     .group-profiles {
