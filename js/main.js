@@ -71,7 +71,7 @@ $(document).ready(function() {
     });
     
     //Arrow-back in groupsHome view
-    $('.ghback-arrow').on('click', function() {
+    $('.fa-arrow-left').on('click', function() {
         $('#groups-view').show();
         $('#group-nav-title').hide();
         $('#groupHome-view').hide();
@@ -340,7 +340,7 @@ $('#add-group-form').submit(function(event) {
             groups.push(groupName);
 
             //Group Profile added in group-profiles container
-            $('.group-profiles').append(groupButton);   
+            $('.group-profiles').prepend(groupButton);   
             
             //Home-Group title added to groupHome-view
             $('#group-nav-title').append(groupName);
