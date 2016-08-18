@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
     
     //Home-Group view
-    $('#groups-view').on('click', '.group-card', function() {
+    $('#groups-view').on('click', '.group-title', function() {
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -321,10 +321,23 @@ $('#add-group-form').submit(function(event) {
         
     //Group button stored in variable (to be added)
     var groupButton = '<div class="group-card">\
-                        <div class="group-card-title">\
-                            <h3>' + groupName + '</h3>\
-                        </div><!--group-card-title-->\
-                      </div><!--group-card-->';
+                <div class="group-title">\
+                    <h3>' + groupName + '</h3>\
+                </div><!--group-title-->\
+            <div class="group-card-options">\
+                <div class="group-options-title">\
+                        <h5>OPTIONS</h5>\
+                        <i class="chevron-toggle fa fa-chevron-right" aria-hidden="true"></i>\
+                    </div><!--group-options-title-->\
+                    <div class="group-data">\
+                        <input id="groupName-edit" type="text" placeholder="Group Name"/>\
+                        <i class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true"></i>\
+                        <div type="button" class="btn btn-danger group-delete">\
+                            <p>DELETE</p>\
+                        </div><!--group-delete-->\
+                    </div><!--group-data-->\
+                </div><!--group-card-options-->\
+            </div><!--group-card-->';
     
     //Checks if groupName is already in groups array. if so, it's rejected. If not, it's added to groups array.
         if (groups.indexOf(groupName) !== -1) {
@@ -349,13 +362,39 @@ $('#add-group-form').submit(function(event) {
     //Clears group input field
     $('#addGroup-name').val('');
     
+    //Hides group-data to be toggled in drop-down
+    $('.group-data').hide(); 
+    
     //Prevents default form submit, causing page reload
     event.preventDefault();
 });//--close add type
     
     
     
-      
+     
+//--------Groups Toggle--------
+    //Toggle group data in group cards
+    $('.group-profiles').on('click', '.group-card-options', function(e) {
+        $(this).find('.group-data').slideToggle(100);
+
+        //Toggle style on click (removes border-radius)
+        $('.group-options-title').toggleClass('got-toggle');
+        //Toggle chevron right to down on click
+        $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); 
+        
+        e.preventDefault();
+    });
+    //Prevents slideToggle when interacting with group-data
+    $('.group-profiles').on('click', '.group-data', function() {
+        return false;    
+    });
+    
+    
+    
+    
+    
+    
+    
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {

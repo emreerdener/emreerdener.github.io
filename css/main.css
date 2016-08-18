@@ -61,17 +61,20 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 #group-nav-title {
+    float: right;
     display: block;
     color: white;
     font-size: 23px;
     font-weight: 400;
-    margin-left: 47%;
-    margin-right: 53%;
+    margin-right: 25px;
     margin-top: 13px;
     cursor: pointer;
 }
 #group-nav-title:hover {
     font-weight: 500;
+}
+.fa-home {
+    margin-right: 3px;
 }
 /*-----------------------------------------*/
 
@@ -265,8 +268,6 @@ Breadcrumbs Last "Crumb"
 }
 .group-card {
     display: inline-block;
-    height: 270px;
-    width: 250px;
     margin: 31px;
     border: 1px solid #000;
     border-radius: 10px;
@@ -275,14 +276,78 @@ Breadcrumbs Last "Crumb"
     cursor: pointer;
     vertical-align: middle;
 }
-.group-card:hover {
+.group-title {
+    height: 165px;
+    width: 260px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+.group-title h3 {
+    margin: 0;
+    padding-top: 70px;
+}
+.group-title:hover {
     background-color: #00a4d8;
     color: white;
 }
-.group-card-title h3 {
-    padding-top: 113px;
+.group-options-title {
+    background-color: #337ab7;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+.group-options-title:hover {
+    background-color: #286090;
+}
+.group-options-title h5 {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    display: inline-block;
+}
+.got-toggle{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.group-data {
+    background-color: white;
+    padding: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#groupName-edit {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    color: #000;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: inline-block;
+}
+.group-data .fa-arrow-circle-o-right {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-left: 8px;
+}
+.group-delete {
+    display: block !important;
+    margin-top: 20px;
+    width: 100%;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 9px !important;
+    border-bottom-left-radius: 9px !important;
+    border-top: 1px solid #000 !important;
+}
+.group-delete p {
+    padding: 0;
     margin: 0;
 }
+
+
 .addgroup-card {
     border: 1px solid #000 !important;
     border-radius: 10px !important;
@@ -365,6 +430,9 @@ Breadcrumbs Last "Crumb"
     margin-left: 70px;
     background-color: white;
     box-shadow: 1px 1px 8px #888888;
+}
+.history-btn:hover {
+    background-color: #d9d7d7;
 }
 .fa-history {
     font-size: 165px;
@@ -1208,6 +1276,8 @@ Add New Queue
         margin-top: -37px;
         margin-left: 0;
         margin-right: 0;
+        padding-right: 45px;
+        float: none;
     }
     /*----Groups----*/
     .group-profiles {
