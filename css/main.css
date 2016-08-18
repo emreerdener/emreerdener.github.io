@@ -15,14 +15,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*--------NAVBAR--------*/
 #gp-ninja {
-    max-height: 23px;
+    max-height: 27px;
     width: auto;
     display: inline-block;
-    margin-top: -8px;
-    padding-left: 4px;
+    margin-top: -16px;
+    padding-left: 6px;
 }
 .navbar-txt {
-    font-size: 24px;
+    margin-top: 6px;
+    font-size: 34px;
     color: white;
     font-weight: 500;
     display: inline-block;
@@ -34,6 +35,7 @@ input[type=number]::-webkit-outer-spin-button {
     float: right;
     margin-top: 11px;
     color: white;
+    font-size: 38px !important;
 }
 .navbar-default {
     background-color: #00a4d8 !important;
@@ -42,6 +44,7 @@ input[type=number]::-webkit-outer-spin-button {
 .navbar {
     margin-bottom: 0 !important;
     border: none !important;
+    height: 60px;
 }
 .navbar-brand {
     cursor: pointer;
@@ -49,11 +52,11 @@ input[type=number]::-webkit-outer-spin-button {
 #settings-link {
     display: inline-block;
     float: right;
-    margin-top: 14px;
+    margin-top: 17px;
     margin-right: 5px;
     color: white;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
 }
 /*-----------------------------------------*/
 
@@ -235,33 +238,37 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------TYPES--------*/
-.types-header {
+/*--------GROUPS--------*/
+.group-profiles {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+.groups-header {
     background-color: white;
     padding-top: 50px;
     padding-bottom: 55px;
 }
-.type-card {
+.group-card {
     display: inline-block;
     height: 270px;
     width: 250px;
     margin: 31px;
     border: 1px solid #000;
     border-radius: 10px;
-    box-shadow: 0px 0px 8px #888888;
+    box-shadow: 2px 2px 8px #888888;
     background-color: #fff;
     cursor: pointer;
     vertical-align: middle;
 }
-.type-card:hover {
+.group-card:hover {
     background-color: #00a4d8;
     color: white;
 }
-.type-card-title h3 {
+.group-card-title h3 {
     padding-top: 113px;
     margin: 0;
 }
-.addtype-card {
+.addgroup-card {
     border: 1px solid #000 !important;
     border-radius: 10px !important;
     background-color: #00a4d8;
@@ -272,19 +279,19 @@ Breadcrumbs Last "Crumb"
     height: 270px;
     width: 250px;
     margin: 31px;
-    box-shadow: 0px 0px 8px #888888;
+    box-shadow: 2px 2px 8px #888888;
 }
-.addtype-title {
+.addgroup-title {
     margin: 0;
     color: white;
 }
-.addtype-title h3 {
+.addgroup-title h3 {
     margin-top: 15px;
 }
 .fa-users {
     margin-top: 32px;
 }
-#addtype-btn {
+#addgroup-btn {
     display: block;
     margin: 0 auto;
     font-size: 2em;
@@ -295,13 +302,62 @@ Breadcrumbs Last "Crumb"
     background-color: transparent;
     color: white;
 }
-#addType-name {
+#addGroup-name {
     border: 1px solid #000;
     border-radius: 4px;
     padding: 8px;
     margin: 10px;
     text-align: center;
     color: #000;
+}
+
+/*-----------------------------------------*/
+
+
+
+/*--------HOME-GROUP--------*/
+#groupHome-view {
+    margin-top: 110px;
+}
+.create-btn {
+    display: inline-block;
+    border: 1px solid #000 !important;
+    border-radius: 10px !important;
+    height: 250px;
+    width: 250px;
+    margin: 30px;
+    margin-right: 50px;
+    background-color: #00a4d8;
+    box-shadow: 0px 0px 8px #888888;
+    color: white;
+}
+.create-btn:hover {
+    background-color: #0099c9;
+    color: white !important;
+}
+.history-btn {
+    display: inline-block;
+    border: 1px solid #000 !important;
+    border-radius: 10px !important;
+    height: 250px;
+    width: 250px;
+    margin: 30px;
+    margin-left: 50px;
+    background-color: white;
+    box-shadow: 2px 2px 8px #888888;
+}
+.fa-history {
+    font-size: 140px;
+    margin-top: 30px;
+}
+.create-btn img {
+    max-height: 140px;
+    width: auto;
+    margin-top: 25px;
+}
+.fa-arrow-left {
+    margin-top: 100px;
+    font-size: 70px;
 }
 
 /*-----------------------------------------*/
@@ -392,7 +448,7 @@ Breadcrumbs Last "Crumb"
 .import-datestamp {
     position: absolute;
     right: 103px;
-    top: 180px;
+    top: 190px;
     font-weight: 200;
     font-size: 10px;
 }
@@ -664,7 +720,7 @@ Settings Nav
 .settings-datestamp {
     position: absolute;
     right: 30px;
-    top: 141px;
+    top: 150px;
     font-weight: 200;
     font-size: 10px;
 }
@@ -1114,7 +1170,22 @@ Add New Queue
         color: #fff;
         font-size: 3em;
     }
-    
+    /*----Groups----*/
+    .group-profiles {
+        margin: 0;
+    }
+    /*-----Home-Group-----*/
+    #groupHome-view {
+        margin: 0;
+    }
+    .history-btn, .create-btn {
+        margin: 0;
+        margin-top: 50px;
+    }
+    .fa-arrow-left{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
     /*----Reps----*/
     .reps-header {
         padding-top: 45px;
