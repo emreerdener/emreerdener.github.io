@@ -71,7 +71,7 @@ $(document).ready(function() {
     });
     
     //Arrow-back in groupsHome view
-    $('.fa-arrow-left').on('click', function() {
+    $('#group-home-back').on('click', function() {
         $('#groups-view').show();
         $('#group-nav-title').hide();
         $('#groupHome-view').hide();
@@ -121,6 +121,18 @@ $(document).ready(function() {
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
     });  
+    
+    //Settings back
+    $('#settings-back').on('click', function() {
+        $('#reps-working-view').show();
+        $('#group-nav-title').show();
+        $('.breadcrumbs').show();
+        $('#desktop-cog, #settings-link').show();
+        $('#groups-view').hide();
+        $('#groupHome-view').hide();
+        $('#settings').hide();
+        $('#queue-import-view').hide();
+    });
 
 
 
@@ -320,7 +332,7 @@ $('#add-group-form').submit(function(event) {
     var groupName = $('#addGroup-name').val();
         
     //Group button stored in variable (to be added)
-    var groupButton = '<div class="group-card">\
+    var groupButton = '<div class="group-card btn">\
                 <div class="group-title">\
                     <h3>' + groupName + '</h3>\
                 </div><!--group-title-->\

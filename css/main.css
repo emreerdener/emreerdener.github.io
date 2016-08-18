@@ -266,15 +266,35 @@ Breadcrumbs Last "Crumb"
     padding-top: 50px;
     padding-bottom: 50px;
 }
+#group-home-back { 
+    background-color: #e8e8e8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px #888888;
+}
+#group-home-back:hover {
+    background-color: #d9d7d7;
+}
+#group-home-back p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
+}
 .group-card {
     display: inline-block;
     margin: 31px;
-    border: 1px solid #000;
-    border-radius: 10px;
+    border: 1px solid #000 !important;
+    border-radius: 10px !important;
     box-shadow: 1px 1px 8px #888888;
     background-color: #fff;
     cursor: pointer;
     vertical-align: middle;
+    padding: 0 !important;
 }
 .group-title {
     height: 165px;
@@ -397,7 +417,7 @@ Breadcrumbs Last "Crumb"
 
 /*--------HOME-GROUP--------*/
 #groupHome-view {
-    margin-top: 90px;
+    margin-top: 100px;
 }
 .groupsHome-header {
     background-color: white;
@@ -775,6 +795,9 @@ input[type="number"].nc-input:-moz-placeholder{
 
 
 /*--------SETTINGS--------*/
+.settings-container {
+    padding-bottom: 58px;
+}
 /*----
 Settings Nav
 ----*/
@@ -820,6 +843,25 @@ Settings Nav
 .btn-save {
     padding-left: 20px !important;
     padding-right: 20px !important;
+}
+#settings-back { 
+    background-color: #e8e8e8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px #888888;
+}
+#settings-back:hover {
+    background-color: #d9d7d7;
+}
+#settings-back p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
 }
 /*----
 Input Box
@@ -1299,6 +1341,7 @@ Add New Queue
     /*-----Home-Group-----*/
     #groupHome-view {
         margin: 0;
+        padding-bottom: 110px;
     }
     .history-btn, .create-btn {
         margin: 0;
