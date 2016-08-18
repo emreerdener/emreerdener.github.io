@@ -289,19 +289,21 @@ Breadcrumbs Last "Crumb"
 .group-card {
     display: inline-block;
     margin: 31px;
-    border: 1px solid #000 !important;
-    border-radius: 10px !important;
+    border: 1px solid #000;
+    border-radius: 10px;
     box-shadow: 1px 1px 8px #888888;
     background-color: #fff;
     cursor: pointer;
     vertical-align: middle;
-    padding: 0 !important;
+    padding: 0;
 }
 .group-title {
     height: 165px;
     width: 260px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 9px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 .group-title h3 {
     margin: 0;
@@ -309,7 +311,7 @@ Breadcrumbs Last "Crumb"
 }
 .group-title:hover {
     background-color: #00a4d8;
-    color: white;
+    color: white !important;
 }
 .group-options-title {
     background-color: #337ab7;
@@ -335,6 +337,10 @@ Breadcrumbs Last "Crumb"
     padding: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+.group-data h4 {
+    margin: 0;
+    padding-top: 20px;
 }
 #groupName-edit {
     border: 1px solid #000;
@@ -1042,12 +1048,9 @@ Duplicate Error Msgs
     padding-bottom: 50px;
 }
 .queue-profiles-wrapper {
-    /*border: 1px solid #1e1e1e;*/
     border-radius: 10px;
-    /*padding-top: 20px;*/
     padding-bottom: 10px;
-    /*background-color: #f8f8f8;*/
-    max-width: 64em;
+    max-width: 45em;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-left: 1px solid #000;
@@ -1085,13 +1088,6 @@ Duplicate Error Msgs
     color: white;
     padding-left: 5px;
 }
-.delete-queue {
-    float: right;
-    margin-top: 7px;
-    margin-right: 10px;
-    padding-left: 9px !important;
-    padding-right: 9px !important;
-}
 .fa-trash {
     float: right;
     color: white;
@@ -1103,6 +1099,7 @@ Queue Data
     border: 1px solid #1e1e1e;
     border-top: none;
     margin-top: -20px;
+    margin-bottom: 25px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: white;
@@ -1113,24 +1110,18 @@ Queue Data
     column-count: 3;
 }
 .data-title {
-    display: block;
-    padding-right: 8px;
+    display: inline-block;
+}
+.queue-data-fields {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 .grey {
     background-color: #f8f8f8;
 }
-.queue-data-fields {
-    padding: 10px;
-}
-.queue-data-card {
-    display: inline-block;
-    padding: 10px;
-    margin: 0;
-}
 .queue-data-input {
     border: 1px solid #1e1e1e;
     padding: 5px;
-    margin-bottom: 10px;
     border-radius: 3px;
     max-width: 175px;
     text-align: center;
@@ -1145,6 +1136,33 @@ Queue Data
     margin-top: 11px;
     margin-left: -30px;
 }
+.delete-queue {
+    display: block !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-top: 1px solid #000 !important;
+}
+.delete-queue p {
+    font-weight: 500;
+    margin: 0;
+}
+.data-title .fa-archive {
+    color: #333;
+}
+.title-right {
+    text-align: right;
+}
+.input-left {
+    text-align: left;
+}
+.queue-table {
+    margin: 0 auto;
+    margin-bottom: 0 !important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    vertical-align: middle !important;
+}
+
 /*---
 Duplicate Error Msgs (Queues)
 ----*/
@@ -1171,7 +1189,7 @@ Duplicate Error Msgs (Queues)
 Add New Queue
 ----*/
 .addnew-queue {
-    max-width: 64em;
+    max-width: 45em;
     height: auto;
     padding: 30px;
     padding-bottom: 20px;
@@ -1351,6 +1369,10 @@ Add New Queue
     #addgroup-btn {
         display: inline-block;
     }
+    .group-card {
+        margin-right: 0;
+        margin-left: 0;
+    }
     /*-----Home-Group-----*/
     #groupHome-view {
         margin: 0;
@@ -1463,6 +1485,9 @@ Add New Queue
         border-left: none;
         border-right: none;
         border-radius: 0;
+    }
+    .queue-data-input {
+        width: 100%;
     }
     .btn-rep {
         margin-left: 0;

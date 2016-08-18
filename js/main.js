@@ -144,7 +144,10 @@ $(document).ready(function() {
     });
     
     
-    //Rep Working button & Rep Profile
+  
+//------------------------------------------------------------------    
+    
+//--------Rep Working button & Rep Profile
     $('#add-rep-form').submit(function(event) {
              
         //Name for Rep from input value. Then assigned to variable
@@ -218,8 +221,7 @@ $(document).ready(function() {
     });//--close add rep
  
      
-    
-    
+   
     
 //-----Queue button to Rep Profile-----
     $('#add-queue-form').submit(function(event) {
@@ -244,23 +246,79 @@ $(document).ready(function() {
                     <img src="images/graph-ex.png"/>\
                 </div>\
                 <div class="queue-data-fields">\
-                    <div class="queue-data-card">\
-                        <h4 class="data-title"><i class="fa fa-archive" aria-hidden="true"></i> Queue Name</h4>\
+                    
+<table class="queue-table table">\
+<tbody>\
+<tr>\
+<td class="title-right">\
+                        <h4 class="data-title">Queue Name</h4>\
+</td>\
+<td class="input-left">\
                         <input id="queue-data-name" class="queue-data-input" type="text" placeholder="Name">\
-                    </div><!--queue-data-card-->\
-                    <div class="queue-data-card">\
-                        <h4 class="data-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Utilization Time</h4>\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right grey">\
+                        <h4 class="data-title">Utilization Time</h4>\
+</td>\
+<td class="input-left grey">\
                         <input class="queue-data-input" type="text" placeholder="Seconds">\
-                    </div><!--queue-data-card-->\
-                    <div class="queue-data-card">\
-                        <h4 class="data-title"><i class="fa fa-line-chart" aria-hidden="true"></i> Daily Growth</h4>\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right">\
+                        <h4 class="data-title">Daily Growth</h4>\
+</td>\
+<td class="input-left">\
                         <input class="queue-data-input" type="text" placeholder="Percentage">\
-                    </div>\
-                    <div class="queue-data-card">\
-                        <h4 class="data-title"><i class="fa fa-database" aria-hidden="true"></i> Database ID</h4>\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right grey">\
+                        <h4 class="data-title">Database ID</h4>\
+</td>\
+<td class="input-left grey">\
                         <input class="queue-data-input" type="text" placeholder="SQL">\
-                    </div>\
-                </div>\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right">\
+                        <h4 class="data-title">Minimum Volume</h4>\
+</td>\
+<td class="input-left">\
+                        <input class="queue-data-input" type="text" placeholder="Min Number">\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right grey">\
+                        <h4 class="data-title">Maximum Volume</h4>\
+</td>\
+<td class="input-left grey">\
+                        <input class="queue-data-input" type="text" placeholder="Max Number">\
+</td>\
+</tr>\
+
+<tr>\
+<td class="title-right">\
+                        <h4 class="data-title">Maximum Assign</h4>\
+</td>\
+<td class="input-left">\
+                        <input class="queue-data-input" type="text" placeholder="Max Number">\
+</td>\
+
+</tr>\
+</tbody>\
+</table>\
+
+                    <div class="btn btn-danger delete-queue">\
+                        <p>DELETE</p>\
+                    </div><!--delete-queue-->\
+                </div><!--queue-data-fields-->\
             </div><!--queue-data-->`;
         
         //Queue import field (to be added)
@@ -324,6 +382,9 @@ $(document).ready(function() {
 });//--close add queue
    
    
+  
+//------------------------------------------------------------------
+    
     
     
 //-----Group Button submit-----    
@@ -332,8 +393,8 @@ $('#add-group-form').submit(function(event) {
     var groupName = $('#addGroup-name').val();
         
     //Group button stored in variable (to be added)
-    var groupButton = '<div class="group-card btn">\
-                <div class="group-title">\
+    var groupButton = '<div class="group-card">\
+                <div class="group-title btn">\
                     <h3>' + groupName + '</h3>\
                 </div><!--group-title-->\
             <div class="group-card-options">\
@@ -342,7 +403,8 @@ $('#add-group-form').submit(function(event) {
                         <i class="chevron-toggle fa fa-chevron-right" aria-hidden="true"></i>\
                     </div><!--group-options-title-->\
                     <div class="group-data">\
-                        <input id="groupName-edit" type="text" placeholder="Group Name"/>\
+                        <h4>Group Name</h4>\
+                        <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
                         <i class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true"></i>\
                         <div type="button" class="btn btn-danger group-delete">\
                             <p>DELETE</p>\
@@ -401,12 +463,7 @@ $('#add-group-form').submit(function(event) {
         return false;    
     });
     
-    
-    
-    
-    
-    
-    
+  
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
@@ -450,7 +507,6 @@ $('.queue-imports').on('change', '.qv-input', function() {
         $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').hide('fast');
     }
 });    
-
 
 
  
@@ -522,7 +578,6 @@ $('.queue-imports').on('change', '.qv-input', function() {
             }//--close if statement        
         }).trigger('change');
   
-    
      
     
 //--------Delete Rep--------    
@@ -550,7 +605,6 @@ $('.queue-imports').on('change', '.qv-input', function() {
     $('.rep-profiles').on('click', '.repQueues-btn', toggleButton);
     
     
-
     
 //--------Date Stamp--------
 $('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
