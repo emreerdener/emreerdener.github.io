@@ -1412,7 +1412,7 @@ Add New Queue
     #addgroup-btn {
         display: inline-block;
     }
-    .group-card {
+    .group-profiles .group-card {
         margin-right: 0;
         margin-left: 0;
     }
