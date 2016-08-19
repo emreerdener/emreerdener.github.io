@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
     
     //To Home-Group view (from groups select)
-    $('#groups-view').on('click', '.group-card', function() {
+    $('#groups-view').on('click', '.gc-title', function() {
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -402,9 +402,12 @@ $('#add-group-form').submit(function(event) {
         
     //Group button stored in variable (to be added)
     var groupButton = '<div class="group-card">\
-                    <h3>' + groupName + '</h3>\
+                    <div class="gc-title btn">\
+                        <h3>' + groupName + '</h3>\
+                    </div><!--gc-title-->\
                     <div class="group-options btn">\
-                        <h5>OPTIONS</h5>\
+                        <h5 class="hidden-xs">OPTIONS</h5>\
+                        <i class="visible-xs fa fa-chevron-right" aria-hidden="true"></i>\
                     </div><!--group-options-->\
                     <div class="group-data">\
                         <h4>Group Name</h4>\
@@ -453,6 +456,8 @@ $('#add-group-form').submit(function(event) {
         
         //Toggles class for border-radius when clicked
         $(this).toggleClass('goptions-toggle');
+        $(this).parent('.group-card').find('.gc-title').toggleClass('gc-title-toggle');
+        
         
         e.preventDefault();
     });

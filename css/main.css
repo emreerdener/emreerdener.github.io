@@ -309,25 +309,33 @@ Breadcrumbs Last "Crumb"
 }
 
 .group-profiles .group-card {
-    margin: 15px;
+    margin-bottom: 30px;
     border: 1px solid #000;
     border-radius: 10px;
     box-shadow: 1px 1px 8px #888888;
     vertical-align: middle;
     padding: 0;
-    min-height: 60px;
     width: 100%;
-    background-color: #337ab7;
-    cursor: pointer;
+    height: auto;
 }
-.group-card:not(.group-options):hover {
-    background-color: #204d74;
+.group-card .gc-title {
+    display: inline-block;
+    width: 80%;
+    height: 58px;
+    background-color: #337ab7;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.gc-title:hover {
+    background-color: #286090;
 }
 .group-card h3 {
     margin: 0;
     color: white;
-    padding-top: 15px;
-    padding-left: 20px;
+    padding-top: 8px;
+    padding-left: 10px;
     display: inline-block;
     float: left;
 }
@@ -335,8 +343,12 @@ Breadcrumbs Last "Crumb"
     border-bottom-right-radius: 0 !important;
     background-color: #f8f8f8 !important;
 }
+.gc-title-toggle {
+    border-bottom-left-radius: 0 !important;
+    border-bottom: 1px solid #000 !important;
+}
 .group-card .group-options {
-    width: 100px;
+    width: 20%;
     height: 58px;
     background-color: white;
     cursor: pointer;
@@ -356,13 +368,14 @@ Breadcrumbs Last "Crumb"
     padding-top: 14px;
     text-align: center;
 }
-
+.group-options .fa-chevron-right {
+    margin-top: 15px;
+}
 .group-data {
     padding: 0;
     background-color: #f8f8f8;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-top: 58px;
     width: 100%;
     height: auto;
 }
