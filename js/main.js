@@ -380,7 +380,6 @@ $(document).ready(function() {
     event.preventDefault();
 });//--close add queue
    
-   
   
 //------------------------------------------------------------------
     
@@ -463,13 +462,23 @@ $('#add-group-form').submit(function(event) {
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
+        //Removes previous time-stamp
         $('.import-datestamp').empty();
+        //Adds time stamp when button clicked
         $('.volumes-header').before('<span class="import-datestamp text-center">Last Imported: ' + moment().format("l, h:mma") + '</span>');
+        
+//!!!!!!!!!!!!!Toggle button color to indicate import successful
+        $(this).toggleClass('importQueuesBtnClr importQueuesDone');
     });
     
     
     
-//--------Popover--------    
+//--------Popover--------  
+    //Initialize popovers for entire page
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+    
     //Initialize popover
     $('.queue-imports').on('mouseover', '.qv-alert', function() {
         $(this).popover({
@@ -580,7 +589,7 @@ $('#add-group-form').submit(function(event) {
         $(this).closest('.group-card').fadeOut(function() {
             $(this).remove();
         });
-    });    
+    });
     
 //--------Delete Queue--------    
 //Removes queue-card on "delete" button click
@@ -597,8 +606,6 @@ $('.queue-profiles').on('click', '.delete-queue', function() {
             $(this).remove();    
         });
     });
-    
-
     
     
 //---------Button toggle---------    

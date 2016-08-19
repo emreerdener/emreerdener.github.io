@@ -572,11 +572,19 @@ Breadcrumbs Last "Crumb"
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     font-weight: 600 !important;
-    background-color: #00a4d8 !important;
     color: white !important;
 }
-.importQueuesBtn:hover {
-    background-color: #0099c9 !important;
+.importQueuesBtnClr {
+    background-color: #00a4d8;
+}
+.importQueuesBtnClr:hover {
+    background-color: #0099c9;
+}
+.importQueuesDone {
+    background-color: #66cc66;
+}
+.importQueuesDone:hover {
+    background-color: #4cae4c;
 }
 .volumes-header {
     padding-top: 50px;
