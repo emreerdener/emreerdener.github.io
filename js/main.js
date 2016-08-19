@@ -44,10 +44,11 @@ $(document).ready(function() {
         $('#desktop-cog, #settings-link').hide();
         $('#mobile-cog').hide();
         $('.navbar').hide();
+        $('.group-data').hide();
     });
     
-    //Home-Group view
-    $('#groups-view').on('click', '.group-title', function() {
+    //To Home-Group view (from groups select)
+    $('#groups-view').on('click', '.group-select-btn', function() {
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -59,6 +60,7 @@ $(document).ready(function() {
         $('.navbar').show();
     });
     
+    //Home-Group view (from navbar)
     $('.navbar').on('click', '#group-nav-title', function() {
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
@@ -82,6 +84,7 @@ $(document).ready(function() {
         $('.breadcrumbs').hide();
         $('#desktop-cog, #settings-link, #mobile-cog').hide();
         $('.navbar').hide();
+        $('.group-data').hide();
     });
     
     //Create
@@ -399,7 +402,7 @@ $('#add-group-form').submit(function(event) {
         
     //Group button stored in variable (to be added)
     var groupButton = '<div class="group-card">\
-                <div class="group-title btn">\
+                <div class="group-title">\
                     <h3>' + groupName + '</h3>\
                 </div><!--group-title-->\
             <div class="group-card-options">\
@@ -412,6 +415,7 @@ $('#add-group-form').submit(function(event) {
                         <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
                         <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
                     </div><!--group-data-->\
+                    <button type="button" class="btn group-select-btn btn-success">SELECT</button>\
                 </div><!--group-card-options-->\
             </div><!--group-card-->';
     
