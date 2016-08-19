@@ -163,7 +163,7 @@ $(document).ready(function() {
                     <h3 class="repProfileName"><span>` + repName + `</span></h3>\
                 </div><!--jtextfill-->\
                 <div class="rep-card-queues"></div>\
-                <button type="button" class="delete-rep btn btn-danger">Delete</button>\
+                <button type="button" class="delete-rep btn btn-danger">DELETE</button>\
             </div>`;
         
         //Non-core work card (to be added)
@@ -315,11 +315,10 @@ $(document).ready(function() {
 </tbody>\
 </table>\
 
-                    <div class="btn btn-danger delete-queue">\
-                        <p>DELETE</p>\
-                    </div><!--delete-queue-->\
+                    <button type="button" class="btn btn-danger delete-queue">DELETE</button><!--delete-queue-->\
                 </div><!--queue-data-fields-->\
-            </div><!--queue-data-->`;
+            </div><!--queue-data-->\
+        </div><!--queue-card-->`;
         
         //Queue import field (to be added)
         var queueVolume = `\
@@ -405,10 +404,7 @@ $('#add-group-form').submit(function(event) {
                     <div class="group-data">\
                         <h4>Group Name</h4>\
                         <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
-                        <i class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true"></i>\
-                        <div type="button" class="btn btn-danger group-delete">\
-                            <p>DELETE</p>\
-                        </div><!--group-delete-->\
+                        <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
                     </div><!--group-data-->\
                 </div><!--group-card-options-->\
             </div><!--group-card-->';
@@ -461,7 +457,7 @@ $('#add-group-form').submit(function(event) {
     //Prevents slideToggle when interacting with group-data
     $('.group-profiles').on('click', '.group-data', function() {
         return false;    
-    });
+    });    
     
   
     
@@ -474,39 +470,39 @@ $('#add-group-form').submit(function(event) {
     
     
 //--------Popover--------    
-//Code to initialize popover
-$('.queue-imports').on('mouseover', '.qv-alert', function() {
-    $(this).popover({
-        html : true,
-        content: function() {
-            return $(this).find('.popover_content_wrapper').html();
-        }
-    });
-});    
-    
-//Code to close popover on off click    
-$('body').on('click', function(e) {    
-    $('[data-toggle="popover"]').each(function () {
-        //the 'is' for buttons that trigger popups
-        //the 'has' for icons within a button that triggers a popup
-        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-            $(this).popover('hide');
-        }
-    });
-});
-//Code to stop double-click to fire popover
-$('body').on('hidden.bs.popover', function(e) {
-    $(e.target).data('bs.popover').inState.click = false;
-});
+    //Initialize popover
+    $('.queue-imports').on('mouseover', '.qv-alert', function() {
+        $(this).popover({
+            html : true,
+            content: function() {
+                return $(this).find('.popover_content_wrapper').html();
+            }
+        });
+    });    
 
-//Toggles visibility of notification circle for queue volumes
-$('.queue-imports').on('change', '.qv-input', function() {  
-    if ($(this).val() > 10) {
-        $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').show('fast');
-    } else {
-        $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').hide('fast');
-    }
-});    
+    //Close popover on off click    
+    $('body').on('click', function(e) {    
+        $('[data-toggle="popover"]').each(function () {
+            //the 'is' for buttons that trigger popups
+            //the 'has' for icons within a button that triggers a popup
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
+    //Stop double-click to fire popover
+    $('body').on('hidden.bs.popover', function(e) {
+        $(e.target).data('bs.popover').inState.click = false;
+    });
+
+    //Toggles visibility of notification circle for queue volumes
+    $('.queue-imports').on('change', '.qv-input', function() {  
+        if ($(this).val() > 10) {
+            $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').show('fast');
+        } else {
+            $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').hide('fast');
+        }
+    });    
 
 
  
@@ -515,19 +511,16 @@ $('.queue-imports').on('change', '.qv-input', function() {
     $('.queue-profiles').sortable();    
     
     //Toggle queue data in queue cards
-    $('.queue-profiles').on('click', '.queue-card', function(e) {
-        $(this).find('.queue-data').slideToggle('fast');
+    $('.queue-profiles').on('click', '.queue-bar', function(e) {
+        $(this).parent('.queue-card').find('.queue-data').slideToggle('fast');      
         e.preventDefault();
-    });
-    //Prevents slideToggle when interacting with queue-data
-    $('.queue-profiles').on('click', '.queue-data', function() {
-        return false;    
     });
     //Prevents slideToggle when interacting with 3 bars icon
     $('.queue-profiles').on('click', '.fa-bars', function() {
         return false; 
     });
-   
+    
+           
     
 
 //--------Non-Core Work--------
@@ -578,7 +571,24 @@ $('.queue-imports').on('change', '.qv-input', function() {
             }//--close if statement        
         }).trigger('change');
   
-     
+   
+
+    
+//--------Delete Group--------    
+    //Removes group-card on "delete" button click
+    $('.group-profiles').on('click', '.group-delete', function() {
+        $(this).closest('.group-card').fadeOut(function() {
+            $(this).remove();
+        });
+    });    
+    
+//--------Delete Queue--------    
+//Removes queue-card on "delete" button click
+$('.queue-profiles').on('click', '.delete-queue', function() {
+    $(this).closest('.queue-card').fadeOut(function() {
+        $(this).remove();
+    });
+}); 
     
 //--------Delete Rep--------    
     //Removes rep-card on "delete" button click
@@ -588,12 +598,7 @@ $('.queue-imports').on('change', '.qv-input', function() {
         });
     });
     
-    
-//--------Delete Queue--------    
-    //Removes queue-card on "delete" button click
-    $('.queue-profiles').on('click', '.delete-queue', function() {
-        $(this).parents('.queue-card').remove();
-    });        
+
     
     
 //---------Button toggle---------    

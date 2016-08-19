@@ -314,6 +314,7 @@ Breadcrumbs Last "Crumb"
     color: white !important;
 }
 .group-options-title {
+    border-top: 1px solid #000;
     background-color: #337ab7;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
@@ -331,6 +332,7 @@ Breadcrumbs Last "Crumb"
 .got-toggle{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-bottom: 1px solid #000;
 }
 .group-data {
     background-color: #f8f8f8;
@@ -372,6 +374,7 @@ Breadcrumbs Last "Crumb"
     border-bottom-right-radius: 9px !important;
     border-bottom-left-radius: 9px !important;
     border-top: 1px solid #000 !important;
+    font-weight: 500 !important;
 }
 .group-delete p {
     padding: 0;
@@ -419,6 +422,24 @@ Breadcrumbs Last "Crumb"
     margin: 10px;
     text-align: center;
     color: #000;
+}
+.groupname-duperror {
+    color: red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-weight: 500;
+}
+.groupname-emptyerror {
+    color: red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-weight: 500;
 }
 
 /*-----------------------------------------*/
@@ -948,6 +969,7 @@ textarea {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top: 1px solid #000 !important;
+    font-weight: 500 !important;
 }
 .jtextfill {
     height: 25px;
@@ -1141,11 +1163,11 @@ Queue Data
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     border-top: 1px solid #000 !important;
+    width: 100%;
+    height: auto;
+    font-weight: 500 !important;
 }
-.delete-queue p {
-    font-weight: 500;
-    margin: 0;
-}
+
 .data-title .fa-archive {
     color: #333;
 }
@@ -1487,7 +1509,7 @@ Add New Queue
         border-radius: 0;
     }
     .queue-data-input {
-        width: 100%;
+        width: 90%;
     }
     .btn-rep {
         margin-left: 0;
