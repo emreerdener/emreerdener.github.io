@@ -15,7 +15,7 @@ $(document).ready(function() {
     });
     
     //Adds bounce animation to ninja logo
-    $('#gp-ninja').click(function() {
+    $('#groups-img').click(function() {
         $(this).effect('bounce', 'slow');
     });
 
@@ -30,6 +30,7 @@ $(document).ready(function() {
     $('#groupHome-view').hide();
     $('#group-nav-title').hide();
     $('#mobile-cog').hide();
+    $('.navbar').hide();
         
     //Groups view
     $('.navbar-brand').on('click', function() {
@@ -42,6 +43,7 @@ $(document).ready(function() {
         $('.breadcrumbs').hide();
         $('#desktop-cog, #settings-link').hide();
         $('#mobile-cog').hide();
+        $('.navbar').hide();
     });
     
     //Home-Group view
@@ -54,9 +56,7 @@ $(document).ready(function() {
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
-        $('.bread-reps').removeClass('bread-completed');
-        $('.bread-reps').addClass('bread-active');
-        $('.bread-vol').removeClass('bread-active');
+        $('.navbar').show();
     });
     
     $('.navbar').on('click', '#group-nav-title', function() {
@@ -68,9 +68,10 @@ $(document).ready(function() {
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
         $('#settings').hide();
+        $('.navbar').show();
     });
     
-    //Arrow-back in groupsHome view
+    //Back in groups-home view
     $('#group-home-back').on('click', function() {
         $('#groups-view').show();
         $('#group-nav-title').hide();
@@ -79,7 +80,8 @@ $(document).ready(function() {
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
-        $('#desktop-cog, #settings-link').hide();
+        $('#desktop-cog, #settings-link, #mobile-cog').hide();
+        $('.navbar').hide();
     });
     
     //Create
@@ -90,6 +92,7 @@ $(document).ready(function() {
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
         $('.bread-vol').removeClass('bread-active');
+        $('.navbar').show();
     });
     
     //Reps-working view
@@ -100,6 +103,7 @@ $(document).ready(function() {
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
         $('.bread-vol').removeClass('bread-active');
+        $('.navbar').show();
     });
     
     //Queue import view
@@ -110,6 +114,7 @@ $(document).ready(function() {
         $('.bread-reps').removeClass('bread-active');
         $('.bread-reps').addClass('bread-completed');
         $('.bread-vol').addClass('bread-active');
+        $('.navbar').show();
     });
   
     //Settings view
@@ -120,6 +125,7 @@ $(document).ready(function() {
         $('.breadcrumbs').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
+        $('.navbar').show();
     });  
     
     //Settings back
@@ -132,6 +138,7 @@ $(document).ready(function() {
         $('#groupHome-view').hide();
         $('#settings').hide();
         $('#queue-import-view').hide();
+        $('.navbar').show();
     });
 
 

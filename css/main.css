@@ -1,4 +1,9 @@
 /*--------GENERAL--------*/
+body {
+background-color: #fff;
+background-image: url('/images/cream-pixels.png');
+}
+
 /*turns off input number spinner*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -263,12 +268,23 @@ Breadcrumbs Last "Crumb"
     margin-right: 90px;
 }
 .groups-header {
-    background-color: white;
     padding-top: 50px;
     padding-bottom: 50px;
 }
+.groups-header h1 {
+    font-size: 50px;
+    font-weight: 600;
+    display: inline-block;
+    color: #00a4d8;
+}
+#groups-img {
+    max-height: 38px;
+    height: auto;
+    margin-bottom: 27px;
+    margin-left: 10px;
+}
 #group-home-back { 
-    background-color: #e8e8e8;
+    background-color: #d8d8d8;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
@@ -278,7 +294,7 @@ Breadcrumbs Last "Crumb"
     box-shadow: 0px 0px 8px #888888;
 }
 #group-home-back:hover {
-    background-color: #d9d7d7;
+    background-color: #f8f8f8;
 }
 #group-home-back p {
     margin: 0;
@@ -352,7 +368,7 @@ Breadcrumbs Last "Crumb"
     color: #000;
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     display: inline-block;
 }
 .group-data .fa-arrow-circle-o-right {
@@ -513,7 +529,6 @@ Breadcrumbs Last "Crumb"
     padding-bottom: 100px;
 }
 .reps-header {
-    background-color: white;
     padding-top: 50px;
     padding-bottom: 55px;
 }
@@ -589,7 +604,6 @@ Breadcrumbs Last "Crumb"
 .volumes-header {
     padding-top: 50px;
     padding-bottom: 55px;
-    background-color: white;
 }
 .volumes-title {
     margin-top: 0;
@@ -795,7 +809,7 @@ input[type="number"].nc-input:-moz-placeholder{
     float: right;
 }
 #queue-import-back {
-    background-color: #e8e8e8;
+    background-color: #d8d8d8;
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
@@ -821,7 +835,7 @@ input[type="number"].nc-input:-moz-placeholder{
     font-size: 19px;
 }
 #queue-import-back:hover {
-    background-color: #d9d7d7;
+    background-color: #f8f8f8;
 }
 .queue-nav-row {
     width: 100%;
@@ -855,7 +869,6 @@ Settings Nav
 .settings-heading {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: white;
     text-align: center;
 }
 .settings-title {
@@ -884,7 +897,7 @@ Settings Nav
     padding-right: 20px !important;
 }
 #settings-back { 
-    background-color: #e8e8e8;
+    background-color: #d8d8d8;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
@@ -894,7 +907,7 @@ Settings Nav
     box-shadow: 0px 0px 8px #888888;
 }
 #settings-back:hover {
-    background-color: #d9d7d7;
+    background-color: #f8f8f8;
 }
 #settings-back p {
     margin: 0;
