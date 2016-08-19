@@ -322,14 +322,18 @@ Breadcrumbs Last "Crumb"
     display: inline-block;
     width: 80%;
     height: 58px;
-    background-color: #337ab7;
+    background-color: #00a4d8;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 .gc-title:hover {
-    background-color: #286090;
+    background-color: #0099c9;
+}
+.gc-title.btn .fa-bars {
+    color: white;
+    margin-left: 5px;
 }
 .group-card h3 {
     margin: 0;
@@ -337,7 +341,6 @@ Breadcrumbs Last "Crumb"
     padding-top: 8px;
     padding-left: 10px;
     display: inline-block;
-    float: left;
 }
 .goptions-toggle {
     border-bottom-right-radius: 0 !important;
@@ -369,6 +372,9 @@ Breadcrumbs Last "Crumb"
     text-align: center;
 }
 .group-options .fa-chevron-right {
+    margin-top: 15px;
+}
+.group-options .fa-chevron-down {
     margin-top: 15px;
 }
 .group-data {

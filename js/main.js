@@ -248,7 +248,7 @@ $(document).ready(function() {
             <div class="queue-bar">\    
                 <span>\
                     <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
-                    <span contenteditable="true"><h4 class="queueProfileName">` + queueName + `</h4></span>\
+                    <h4 class="queueProfileName">` + queueName + `</h4>\
                 </span>\
             </div><!--queue-bar-->\
             <div class="queue-data">\
@@ -403,11 +403,14 @@ $('#add-group-form').submit(function(event) {
     //Group button stored in variable (to be added)
     var groupButton = '<div class="group-card">\
                     <div class="gc-title btn">\
-                        <h3>' + groupName + '</h3>\
+                        <span>\
+                            <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
+                            <h3>' + groupName + '</h3>\
+                        </span>\
                     </div><!--gc-title-->\
                     <div class="group-options btn">\
                         <h5 class="hidden-xs">OPTIONS</h5>\
-                        <i class="visible-xs fa fa-chevron-right" aria-hidden="true"></i>\
+                        <i class="visible-xs fa fa-chevron-right chevron-toggle" aria-hidden="true"></i>\
                     </div><!--group-options-->\
                     <div class="group-data">\
                         <h4>Group Name</h4>\
@@ -449,23 +452,46 @@ $('#add-group-form').submit(function(event) {
     
     
      
-//--------Groups Toggle--------
+//--------Groups Cards--------
+    //Allows queue-cards to be sortable
+    $('.group-profiles').sortable();  
+    
     //Toggle group data in group cards
     $('.group-profiles').on('click', '.group-options', function(e) {
-        $(this).parent('.group-card').find('.group-data').slideToggle(100);  
+        //Toggle
+        $(this).parent('.group-card').find('.group-data').slideToggle(100, function() {
         
-        //Toggles class for border-radius when clicked
-        $(this).toggleClass('goptions-toggle');
-        $(this).parent('.group-card').find('.gc-title').toggleClass('gc-title-toggle');
-        
-        
+            //Styles added/removed if button toggled or not    
+            if ( $(this).is(':hidden') ) { 
+                //Adds styles for button toggle
+                $(this).parent('.group-card').find('.group-options').removeClass('goptions-toggle');
+                //Adds styles for button toggle
+                $(this).parent('.group-card').find('.gc-title').removeClass('gc-title-toggle');
+
+                //Toggle chevron right to down on click
+                $(this).parent('.group-card').find('.chevron-toggle').addClass('fa-chevron-right');
+                $(this).parent('.group-card').find('.chevron-toggle').removeClass('fa-chevron-down');
+
+            } else {
+                //Adds styles for button toggle
+                $(this).parent('.group-card').find('.group-options').addClass('goptions-toggle');
+                //Adds styles for button toggle
+                $(this).parent('.group-card').find('.gc-title').addClass('gc-title-toggle');
+
+                //Toggle chevron right to down on click
+                $(this).parent('.group-card').find('.chevron-toggle').removeClass('fa-chevron-right');
+                $(this).parent('.group-card').find('.chevron-toggle').addClass('fa-chevron-down');
+            }//--close if
+        });  
         e.preventDefault();
     });
     //Prevents slideToggle when interacting with group-data
     $('.group-profiles').on('click', '.group-data', function() {
         return false;    
     });    
-    
+    $('.group-profiles').on('click', '.fa-bars', function() {
+        return false;
+    });
   
     
 //--------Import Queues--------
