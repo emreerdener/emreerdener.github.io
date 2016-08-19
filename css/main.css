@@ -303,65 +303,68 @@ Breadcrumbs Last "Crumb"
     font-size: 19px;
 }
 
-.group-card {
-    display: inline-block;
-    margin: 31px;
+.groups-wrapper {
+    max-width: 50em;
+    height: auto;
+}
+
+.group-profiles .group-card {
+    margin: 15px;
     border: 1px solid #000;
     border-radius: 10px;
     box-shadow: 1px 1px 8px #888888;
-    background-color: #fff;
     vertical-align: middle;
     padding: 0;
-}
-.group-title {
-    padding: 0;
-    height: 100px;
-    width: 260px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #337ab7;
-}
-.group-title h3 {
-    margin: 0;
-    padding-top: 35px;
-    color: white;
-}
-.group-select-btn {
+    min-height: 60px;
     width: 100%;
-    padding: 30px !important;
-    border-radius: 0 !important;
-    font-size: 19px !important;
-    font-weight: 500 !important;
-    border-bottom-right-radius: 9px !important;
-    border-bottom-left-radius: 9px !important;
-}
-.group-options-title {
-    background-color: white;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    background-color: #337ab7;
     cursor: pointer;
 }
-.group-options-title:hover {
-    background-color: #f8f8f8;
+.group-card:not(.group-options):hover {
+    background-color: #204d74;
 }
-.group-options-title h5 {
+.group-card h3 {
     margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    color: white;
+    padding-top: 15px;
+    padding-left: 20px;
     display: inline-block;
+    float: left;
 }
-.got-toggle{
+.goptions-toggle {
+    border-bottom-right-radius: 0 !important;
+    background-color: #f8f8f8 !important;
+}
+.group-card .group-options {
+    width: 100px;
+    height: 58px;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid #000;
+}
+.group-options:hover {
     background-color: #f8f8f8;
 }
-.got-toggle:hover {
-    background-color: white;
+.group-options h5 {
+    margin: 0;
+    padding-top: 14px;
+    text-align: center;
 }
+
 .group-data {
     padding: 0;
+    background-color: #f8f8f8;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    margin-top: 58px;
+    width: 100%;
+    height: auto;
 }
 .group-data h4 {
     margin: 0;
@@ -385,7 +388,8 @@ Breadcrumbs Last "Crumb"
     width: 100%;
     border-radius: 0 !important;
     border-top: 1px solid #000 !important;
-    border-bottom: 1px solid #000 !important;
+    border-bottom-left-radius: 9px !important;
+    border-bottom-right-radius: 9px !important;
     font-weight: 500 !important;
 }
 .group-delete p {

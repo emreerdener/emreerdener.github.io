@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
     
     //To Home-Group view (from groups select)
-    $('#groups-view').on('click', '.group-select-btn', function() {
+    $('#groups-view').on('click', '.group-card', function() {
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -402,21 +402,15 @@ $('#add-group-form').submit(function(event) {
         
     //Group button stored in variable (to be added)
     var groupButton = '<div class="group-card">\
-                <div class="group-title">\
                     <h3>' + groupName + '</h3>\
-                </div><!--group-title-->\
-            <div class="group-card-options">\
-                <div class="group-options-title">\
+                    <div class="group-options btn">\
                         <h5>OPTIONS</h5>\
-                        <i class="chevron-toggle fa fa-chevron-right" aria-hidden="true"></i>\
-                    </div><!--group-options-title-->\
+                    </div><!--group-options-->\
                     <div class="group-data">\
                         <h4>Group Name</h4>\
                         <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
                         <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
                     </div><!--group-data-->\
-                    <button type="button" class="btn group-select-btn btn-success">SELECT</button>\
-                </div><!--group-card-options-->\
             </div><!--group-card-->';
     
     //Checks if groupName is already in groups array. if so, it's rejected. If not, it's added to groups array.
@@ -433,7 +427,7 @@ $('#add-group-form').submit(function(event) {
             groups.push(groupName);
 
             //Group Profile added in group-profiles container
-            $('.group-profiles').prepend(groupButton);   
+            $('.group-profiles').append(groupButton);   
             
             //Home-Group title added to groupHome-view
             $('#group-nav-title').append(groupName);
@@ -454,13 +448,11 @@ $('#add-group-form').submit(function(event) {
      
 //--------Groups Toggle--------
     //Toggle group data in group cards
-    $('.group-profiles').on('click', '.group-card-options', function(e) {
-        $(this).find('.group-data').slideToggle(100);
-
-        //Toggle style on click (removes border-radius)
-        $('.group-options-title').toggleClass('got-toggle');
-        //Toggle chevron right to down on click
-        $('.chevron-toggle').toggleClass('fa-chevron-right fa-chevron-down'); 
+    $('.group-profiles').on('click', '.group-options', function(e) {
+        $(this).parent('.group-card').find('.group-data').slideToggle(100);  
+        
+        //Toggles class for border-radius when clicked
+        $(this).toggleClass('goptions-toggle');
         
         e.preventDefault();
     });
