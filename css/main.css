@@ -1351,8 +1351,8 @@ Add New Queue
     .group-profiles {
         margin: 0;
     }
-    
-    /*-----Home-Group-----*/
+ 
+    /*-----Create-----*/
     .create-btn {
         margin-right: 30px;
     }
@@ -1487,7 +1487,7 @@ Add New Queue
         margin-left: 0;
     }
     /*-----Create-----*/
-    #groupHome-view {
+    #create-view {
         margin: 0;
         padding-bottom: 110px;
     }
