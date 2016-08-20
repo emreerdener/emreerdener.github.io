@@ -29,8 +29,9 @@ $(document).ready(function() {
     $('#reps-working-view').hide();
     $('#queue-import-view').hide();
     $('#settings').hide();
+    $('#history-view').hide();
     $('#desktop-cog, #settings-link').hide();
-    $('#groupHome-view').hide();
+    $('#create-view').hide();
     $('#group-nav-title').hide();
     $('#mobile-cog').hide();
     $('.navbar').hide();
@@ -40,7 +41,7 @@ $(document).ready(function() {
         window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
-        $('#groupHome-view').hide();
+        $('#create-view').hide();
         $('#settings').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
@@ -49,13 +50,14 @@ $(document).ready(function() {
         $('#mobile-cog').hide();
         $('.navbar').hide();
         $('.group-data').hide();
+        $('#history-view').hide();
     });
     
-    //To Home-Group view (from groups select)
+    //To Create view (from groups select)
     $('#groups-view').on('click', '.gc-title', function() {
         window.location.hash = '#create'
         $('#desktop-cog, #settings-link').show();
-        $('#groupHome-view').show();
+        $('#create-view').show();
         $('#group-nav-title').show();
         $('#mobile-cog').show();
         $('#groups-view').hide();
@@ -63,13 +65,14 @@ $(document).ready(function() {
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
         $('.navbar').show();
+        $('#history-view').hide();
     });
     
-    //Home-Group view (from navbar)
+    //Create view (from navbar)
     $('.navbar').on('click', '#group-nav-title', function() {
         window.location.hash = '#create'
         $('#desktop-cog, #settings-link').show();
-        $('#groupHome-view').show();
+        $('#create-view').show();
         $('#group-nav-title').show();
         $('#groups-view').hide();
         $('#reps-working-view').hide();
@@ -77,14 +80,15 @@ $(document).ready(function() {
         $('.breadcrumbs').hide();
         $('#settings').hide();
         $('.navbar').show();
+        $('#history-view').hide();
     });
     
-    //Back in groups-home view
+    //Back in create view
     $('#group-home-back').on('click', function() {
         window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
-        $('#groupHome-view').hide();
+        $('#create-view').hide();
         $('#settings').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
@@ -92,18 +96,48 @@ $(document).ready(function() {
         $('#desktop-cog, #settings-link, #mobile-cog').hide();
         $('.navbar').hide();
         $('.group-data').hide();
+        $('#history-view').hide();
     });
     
-    //Create
+    //Create - to reps-working
     $('.create-btn').on('click', function() {
         window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
-        $('#groupHome-view').hide();
+        $('#create-view').hide();
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
         $('.bread-vol').removeClass('bread-active');
         $('.navbar').show();
+        $('#history-view').hide();
+    });
+    
+    $('.history-btn').on('click', function() {
+        window.location.hash = '#history'
+        $('#history-view').show();
+        $('#desktop-cog, #settings-link').show();
+        $('.navbar').show();
+        $('#group-nav-title').show();
+        $('#create-view').hide();
+        $('#groups-view').hide();
+        $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
+        $('.breadcrumbs').hide();
+        $('#settings').hide();
+    });
+    
+    $('#history-back').on('click', function() {
+        window.location.hash = '#create'
+        $('#desktop-cog, #settings-link').show();
+        $('#create-view').show();
+        $('#group-nav-title').show();
+        $('#groups-view').hide();
+        $('#reps-working-view').hide();
+        $('#queue-import-view').hide();
+        $('.breadcrumbs').hide();
+        $('#settings').hide();
+        $('.navbar').show();
+        $('#history-view').hide();
     });
     
     //Reps-working view
@@ -135,11 +169,12 @@ $(document).ready(function() {
         window.location.hash = '#settings'
         $('#settings').show();
         $('#groups-view').hide();
-        $('#groupHome-view').hide();
+        $('#create-view').hide();
         $('.breadcrumbs').hide();
         $('#reps-working-view').hide();
         $('#queue-import-view').hide();
         $('.navbar').show();
+        $('#history-view').hide();
     });  
     
     //Settings back
@@ -150,7 +185,7 @@ $(document).ready(function() {
         $('.breadcrumbs').show();
         $('#desktop-cog, #settings-link').show();
         $('#groups-view').hide();
-        $('#groupHome-view').hide();
+        $('#create-view').hide();
         $('#settings').hide();
         $('#queue-import-view').hide();
         $('.navbar').show();
@@ -447,7 +482,7 @@ $('#add-group-form').submit(function(event) {
             //Group Profile added in group-profiles container
             $('.group-profiles').append(groupButton);   
             
-            //Home-Group title added to groupHome-view
+            //Home-Group title added to create-view
             $('#group-nav-title').append(groupName);
         }//--close if statement
         

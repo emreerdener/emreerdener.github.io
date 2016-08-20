@@ -485,8 +485,8 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------HOME-GROUP--------*/
-#groupHome-view {
+/*--------CREATE / HISTORY--------*/
+#create-view {
     margin-top: 100px;
 }
 .groupsHome-header {
@@ -541,6 +541,51 @@ Breadcrumbs Last "Crumb"
 }
 .fa-arrow-left:hover {
     color: #333;
+}
+
+/*----HISTORY----*/
+.history-wrapper {
+    border: 1px solid #333;
+    border-radius: 2px;
+    height: auto;
+    max-width: 28em;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.history-wrapper .table {
+    margin: 0;
+    text-align: right;
+    background: white;
+}
+.history-btns {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.history-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.history-title {
+    margin: 0;
+}
+#history-back {
+    background-color: #e8e8e8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    cursor: pointer;
+    border-top: 1px solid #333;
+}
+#history-back:hover {
+    background-color: #f8f8f8;
+}
+#history-back p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
 }
 
 /*-----------------------------------------*/
@@ -872,7 +917,7 @@ input[type="number"].nc-input:-moz-placeholder{
 
 /*--------SETTINGS--------*/
 .settings-container {
-    padding-bottom: 58px;
+    padding-bottom: 57px;
 }
 /*----
 Settings Nav
@@ -1441,7 +1486,7 @@ Add New Queue
         margin-right: 0;
         margin-left: 0;
     }
-    /*-----Home-Group-----*/
+    /*-----Create-----*/
     #groupHome-view {
         margin: 0;
         padding-bottom: 110px;
@@ -1471,6 +1516,12 @@ Add New Queue
     }
     .rep-buttons {
         margin: 0;
+    }
+    
+    /*----History----*/
+    .history-wrapper {
+        border-right: 0;
+        border-left: 0;
     }
     
     /*----Volumes----*/
