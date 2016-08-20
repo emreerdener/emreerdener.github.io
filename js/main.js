@@ -19,7 +19,10 @@ $(document).ready(function() {
         $(this).effect('bounce', 'slow');
     });
 
-        
+
+
+    
+
 //----------Navitagion----------    
     //Initial homepage display (show/hide)
     $('.breadcrumbs').hide();
@@ -34,6 +37,7 @@ $(document).ready(function() {
         
     //Groups view
     $('.navbar-brand').on('click', function() {
+        window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
         $('#groupHome-view').hide();
@@ -49,6 +53,7 @@ $(document).ready(function() {
     
     //To Home-Group view (from groups select)
     $('#groups-view').on('click', '.gc-title', function() {
+        window.location.hash = '#create'
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -62,6 +67,7 @@ $(document).ready(function() {
     
     //Home-Group view (from navbar)
     $('.navbar').on('click', '#group-nav-title', function() {
+        window.location.hash = '#create'
         $('#desktop-cog, #settings-link').show();
         $('#groupHome-view').show();
         $('#group-nav-title').show();
@@ -75,6 +81,7 @@ $(document).ready(function() {
     
     //Back in groups-home view
     $('#group-home-back').on('click', function() {
+        window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
         $('#groupHome-view').hide();
@@ -89,6 +96,7 @@ $(document).ready(function() {
     
     //Create
     $('.create-btn').on('click', function() {
+        window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
         $('#groupHome-view').hide();
@@ -100,6 +108,7 @@ $(document).ready(function() {
     
     //Reps-working view
     $('#queue-import-back, .bread-reps').on('click', function() {
+        window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
         $('#queue-import-view').hide();
@@ -111,6 +120,7 @@ $(document).ready(function() {
     
     //Queue import view
     $('#reps-working-next, .bread-vol').on('click', function() {
+        window.location.hash = '#volumes'
         $('#queue-import-view').show();
         $('.breadcrumbs').show();
         $('#reps-working-view').hide();
@@ -122,6 +132,7 @@ $(document).ready(function() {
   
     //Settings view
     $('#desktop-cog, #mobile-cog, #settings-link').on('click', function() {
+        window.location.hash = '#settings'
         $('#settings').show();
         $('#groups-view').hide();
         $('#groupHome-view').hide();
@@ -133,6 +144,7 @@ $(document).ready(function() {
     
     //Settings back
     $('#settings-back').on('click', function() {
+        window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('#group-nav-title').show();
         $('.breadcrumbs').show();
@@ -459,7 +471,7 @@ $('#add-group-form').submit(function(event) {
     //Toggle group data in group cards
     $('.group-profiles').on('click', '.group-options', function(e) {
         //Toggle
-        $(this).parent('.group-card').find('.group-data').slideToggle(100, function() {
+        $(this).parent('.group-card').find('.group-data').slideToggle(80, function() {
         
             //Styles added/removed if button toggled or not    
             if ( $(this).is(':hidden') ) { 

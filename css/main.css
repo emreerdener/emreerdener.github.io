@@ -71,10 +71,11 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     font-size: 23px;
     font-weight: 400;
-    margin-right: 25px;
-    margin-top: 13px;
+    margin-right: 35px;
+    margin-top: 11px;
     cursor: pointer;
     white-space: nowrap;
+    font-size: 25px;
 }
 #group-nav-title:hover {
     font-weight: 500;
@@ -284,7 +285,7 @@ Breadcrumbs Last "Crumb"
     margin-left: 10px;
 }
 #group-home-back { 
-    background-color: #d8d8d8;
+    background-color: #333;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
@@ -294,9 +295,10 @@ Breadcrumbs Last "Crumb"
     box-shadow: 0px 0px 8px #888888;
 }
 #group-home-back:hover {
-    background-color: #f8f8f8;
+    background-color: #222;
 }
 #group-home-back p {
+    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
@@ -344,7 +346,7 @@ Breadcrumbs Last "Crumb"
 }
 .goptions-toggle {
     border-bottom-right-radius: 0 !important;
-    background-color: #f8f8f8 !important;
+    background-color: #286090 !important;
 }
 .gc-title-toggle {
     border-bottom-left-radius: 0 !important;
@@ -353,7 +355,7 @@ Breadcrumbs Last "Crumb"
 .group-card .group-options {
     width: 20%;
     height: 58px;
-    background-color: white;
+    background-color: #337ab7;
     cursor: pointer;
     display: inline-block;
     float: right;
@@ -364,18 +366,21 @@ Breadcrumbs Last "Crumb"
     border-left: 1px solid #000;
 }
 .group-options:hover {
-    background-color: #f8f8f8;
+    background-color: #286090;
 }
 .group-options h5 {
     margin: 0;
     padding-top: 14px;
     text-align: center;
+    color: white;
 }
 .group-options .fa-chevron-right {
     margin-top: 15px;
+    color: white;
 }
 .group-options .fa-chevron-down {
     margin-top: 15px;
+    color: white;
 }
 .group-data {
     padding: 0;
@@ -828,7 +833,7 @@ input[type="number"].nc-input:-moz-placeholder{
     float: right;
 }
 #queue-import-back {
-    background-color: #d8d8d8;
+    background-color: #333;
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
@@ -847,14 +852,14 @@ input[type="number"].nc-input:-moz-placeholder{
     font-size: 19px;
 }
 #queue-import-back p {
-    color: black;
+    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
     font-size: 19px;
 }
 #queue-import-back:hover {
-    background-color: #f8f8f8;
+    background-color: #222;
 }
 .queue-nav-row {
     width: 100%;
@@ -916,7 +921,7 @@ Settings Nav
     padding-right: 20px !important;
 }
 #settings-back { 
-    background-color: #d8d8d8;
+    background-color: #333;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
@@ -926,9 +931,10 @@ Settings Nav
     box-shadow: 0px 0px 8px #888888;
 }
 #settings-back:hover {
-    background-color: #f8f8f8;
+    background-color: #222;
 }
 #settings-back p {
+    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
@@ -1000,6 +1006,7 @@ textarea {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em !important;
     white-space: normal !important;
+    border: 1px solid #00a4d8 !important;
 }
 .delete-rep {
     margin-top: 20px;
@@ -1206,6 +1213,7 @@ Queue Data
     width: 100%;
     height: auto;
     font-weight: 500 !important;
+    margin-top: 10px;
 }
 
 .data-title .fa-archive {
@@ -1404,7 +1412,7 @@ Add New Queue
     }
     #group-nav-title {
         display: block;
-        margin-top: -37px;
+        margin-top: -40px;
         margin-left: 0;
         margin-right: 0;
         padding-right: 45px;
