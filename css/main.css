@@ -285,20 +285,19 @@ Breadcrumbs Last "Crumb"
     margin-left: 10px;
 }
 #group-home-back { 
-    background-color: #333;
+    background-color: #e8e8e8;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
     cursor: pointer;
-    box-shadow: 0px 0px 8px #888888;
+    border-top: 1px solid #333;
 }
 #group-home-back:hover {
-    background-color: #222;
+    background-color: #f8f8f8;
 }
 #group-home-back p {
-    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
@@ -581,7 +580,7 @@ Breadcrumbs Last "Crumb"
     width: 100%;
     bottom: 0;
     cursor: pointer;
-    box-shadow: 0px 0px 8px #888888;
+    border-top: 1px solid #333;
 }
 #reps-working-next:hover {
     background-color: #0099c9;
@@ -833,13 +832,14 @@ input[type="number"].nc-input:-moz-placeholder{
     float: right;
 }
 #queue-import-back {
-    background-color: #333;
+    background-color: #e8e8e8;
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
     cursor: pointer;
     width: 50%;
     float: left;
+    border-right: 1px solid #333;
 }
 #queue-import-next:hover {
     background-color: #0099c9;
@@ -852,20 +852,19 @@ input[type="number"].nc-input:-moz-placeholder{
     font-size: 19px;
 }
 #queue-import-back p {
-    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
     font-size: 19px;
 }
 #queue-import-back:hover {
-    background-color: #222;
+    background-color: #f8f8f8;
 }
 .queue-nav-row {
     width: 100%;
     position: fixed;
     bottom: 0;
-    box-shadow: 0px 0px 8px #888888;
+    border-top: 1px solid #333;
 }
 /*-----------------------------------------*/
 
@@ -921,20 +920,19 @@ Settings Nav
     padding-right: 20px !important;
 }
 #settings-back { 
-    background-color: #333;
+    background-color: #e8e8e8;
     padding-top: 15px;
     padding-bottom: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
     cursor: pointer;
-    box-shadow: 0px 0px 8px #888888;
+    border-top: 1px solid #333;
 }
 #settings-back:hover {
-    background-color: #222;
+    background-color: #f8f8f8;
 }
 #settings-back p {
-    color: white;
     margin: 0;
     text-align: center;
     font-weight: 600;
@@ -1412,7 +1410,7 @@ Add New Queue
     }
     #group-nav-title {
         display: block;
-        margin-top: -40px;
+        margin-top: -39px;
         margin-left: 0;
         margin-right: 0;
         padding-right: 45px;
