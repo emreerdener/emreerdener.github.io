@@ -2,6 +2,7 @@
 body {
 background-color: #fff;
 background-image: url('/images/cream-pixels.png');
+background-repeat: repeat;
 }
 
 /*turns off input number spinner*/
