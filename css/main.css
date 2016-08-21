@@ -1,8 +1,6 @@
 /*--------GENERAL--------*/
 body {
-background-color: #fff;
-background-image: url('/images/cream-pixels.jpg') !important;
-background-repeat: repeat !important;
+background: #fff url('/images/cream-pixels.jpg') repeat;
 }
 
 /*turns off input number spinner*/
