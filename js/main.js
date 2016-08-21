@@ -547,9 +547,6 @@ $('#add-group-form').submit(function(event) {
         $('.import-datestamp').empty();
         //Adds time stamp when button clicked
         $('.volumes-header').before('<span class="import-datestamp text-center">Last Imported: ' + moment().format("l, h:mma") + '</span>');
-        
-//!!!!!!!!!!!!!Toggle button color to indicate import successful
-        $(this).toggleClass('importQueuesBtnClr importQueuesDone');
     });
     
     

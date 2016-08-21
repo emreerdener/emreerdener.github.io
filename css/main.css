@@ -433,7 +433,6 @@ Breadcrumbs Last "Crumb"
     height: 270px;
     width: 250px;
     margin: 31px;
-    box-shadow: 1px 1px 8px #888888;
 }
 .addgroup-title {
     margin: 0;
@@ -660,18 +659,10 @@ Breadcrumbs Last "Crumb"
     padding-bottom: 10px !important;
     font-weight: 600 !important;
     color: white !important;
-}
-.importQueuesBtnClr {
     background-color: #00a4d8;
 }
-.importQueuesBtnClr:hover {
+.importQueuesBtn:hover {
     background-color: #0099c9;
-}
-.importQueuesDone {
-    background-color: #66cc66;
-}
-.importQueuesDone:hover {
-    background-color: #4cae4c;
 }
 .volumes-header {
     padding-top: 50px;
@@ -1105,7 +1096,6 @@ Add New Rep Card
     max-width: 250px;
     min-width: 200px;
     height: auto;
-/*  box-shadow: 0px 2px 5px #888888; */
     vertical-align: top;
 }
 .addRepCard h3 {
