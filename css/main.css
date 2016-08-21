@@ -1,6 +1,7 @@
 /*--------GENERAL--------*/
 body {
-background-color: purple !important;
+background: url('/images/cream-pixels.jpg') repeat !important;
+background-size: 100% auto;
 }
 
 /*turns off input number spinner*/
