@@ -21,8 +21,6 @@ $(document).ready(function() {
 
 
 
-    
-
 //----------Navitagion----------    
     //Initial homepage display (show/hide)
     $('.breadcrumbs').hide();
@@ -546,7 +544,7 @@ $('#add-group-form').submit(function(event) {
         //Removes previous time-stamp
         $('.import-datestamp').empty();
         //Adds time stamp when button clicked
-        $('.volumes-header').before('<span class="import-datestamp text-center">Last Imported: ' + moment().format("l, h:mma") + '</span>');
+        $('.volumes-header').before('<span class="import-datestamp text-center">Last Import: ' + moment().format("l, h:mma") + '</span>');
     });
     
     
