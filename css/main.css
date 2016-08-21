@@ -294,6 +294,7 @@ Breadcrumbs Last "Crumb"
     bottom: 0;
     cursor: pointer;
     border-top: 1px solid #333;
+    opacity: 0.98;
 }
 #group-home-back:hover {
     background-color: #f8f8f8;
@@ -578,6 +579,7 @@ Breadcrumbs Last "Crumb"
     bottom: 0;
     cursor: pointer;
     border-top: 1px solid #333;
+    opacity: 0.98;
 }
 #history-back:hover {
     background-color: #f8f8f8;
@@ -627,6 +629,7 @@ Breadcrumbs Last "Crumb"
     bottom: 0;
     cursor: pointer;
     border-top: 1px solid #333;
+    opacity: 0.98;
 }
 #reps-working-next:hover {
     background-color: #0099c9;
@@ -876,6 +879,7 @@ input[type="number"].nc-input:-moz-placeholder{
     cursor: pointer;
     width: 50%;
     float: right;
+    opacity: 0.98;
 }
 #queue-import-back {
     background-color: #e8e8e8;
@@ -886,6 +890,7 @@ input[type="number"].nc-input:-moz-placeholder{
     width: 50%;
     float: left;
     border-right: 1px solid #333;
+    opacity: 0.98;
 }
 #queue-import-next:hover {
     background-color: #0099c9;
@@ -974,6 +979,7 @@ Settings Nav
     bottom: 0;
     cursor: pointer;
     border-top: 1px solid #333;
+    opacity: 0.98;
 }
 #settings-back:hover {
     background-color: #f8f8f8;
@@ -1432,9 +1438,29 @@ Add New Queue
 /*----IPAD STYLES CLOSE-------------------*/
 
 
+/*--------iPhone 5 & 4 styles--------*/
+@media only screen and (max-width : 320px) {
+    #groups-img {
+        max-height: 32px;
+        margin-left: 5px;
+    }
+    .groups-header h1 {
+        font-size: 43px;   
+    }
+    .queue-volume-input {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+/*----iphone 5 & 4 STYLES CLOSE-------------------*/
+
+
+
+
+
 
 /*--------MOBILE STYLES--------*/
-@media only screen and (max-width : 767px){
+@media only screen and (max-width : 767px) {
     /*----Navbar & Breadcrumbs----*/
     .navbar {
         padding-bottom: 10px;
