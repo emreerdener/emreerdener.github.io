@@ -428,8 +428,8 @@ Breadcrumbs Last "Crumb"
     vertical-align: middle;
     cursor: default;
     display: inline-block;
-    height: 270px;
-    width: 250px;
+    height: 240px;
+    width: 260px;
     margin: 31px;
 }
 .addgroup-title {
@@ -443,23 +443,34 @@ Breadcrumbs Last "Crumb"
     margin-top: 32px;
 }
 #addgroup-btn {
-    display: block;
-    margin: 0 auto;
-    font-size: 2em;
-    padding-top: 0;
-    padding-bottom: 0;
+    font-size: 24px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     padding-left: 0;
     padding-right: 0;
-    background-color: transparent;
-    color: white;
+    
+    border: 1px solid #000;
+    margin-left: -5px;
+    margin-top: -4px;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 #addGroup-name {
     border: 1px solid #000;
     border-radius: 4px;
-    padding: 8px;
-    margin: 10px;
+    padding: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
     text-align: center;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     color: #000;
+    max-width: 65%;
 }
 .groupname-duperror {
     color: red;
@@ -1105,20 +1116,29 @@ Add New Rep Card
 #addrep-name {
     border: 1px solid #000;
     border-radius: 4px;
-    padding: 8px;
-    margin: 10px;
-    text-align: center;
+    padding: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;    
+    max-width: 70%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 #addrep-btn {
-    display: block;
-    margin: 0 auto;
-    font-size: 2em;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: transparent;
-    color: white;
+    font-size: 24px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+    border: 1px solid #000;
+    margin-left: -5px;
+    margin-top: -4px;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .fa-user {
     color: white;
@@ -1312,9 +1332,14 @@ Add New Queue
 #addQueue-name {
     border: 1px solid #000;
     border-radius: 4px;
-    padding: 8px;
-    margin: 10px;
+    padding: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
     text-align: center;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .addnew-queue h3 {
     color: white;
@@ -1324,14 +1349,18 @@ Add New Queue
 }
 #addqueue-btn {
     display: inline-block;
-    margin: 0 auto;
-    font-size: 2em;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: transparent;
-    color: white;
+    font-size: 24px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+    border: 1px solid #000;
+    margin-left: -5px;
+    margin-top: -4px;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .fa-archive {
     color: white;
@@ -1482,7 +1511,7 @@ Add New Queue
     }
     .groups-header {
         padding-top: 30px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
     .addgroup-card {
         border-radius: 0 !important;
@@ -1575,28 +1604,27 @@ Add New Queue
     
     /*----Settings----*/
     .settings-heading {
-        padding-top: 45px;
+        padding-top: 55px;
         padding-bottom: 45px;
+    }
+    .settings-nav {
+        padding-top: 40px;
     }
     .settings-title {
         margin: 0;
-        padding-top: 0;
-		padding-bottom: 0;
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 0;
         display: block;
 	}
     #settings-save {
-        float: none;
-        display: block;
-        margin: 0 auto;
-        margin-top: 30px;
-        margin-bottom: 0;
+        margin-top: -114px;
+        margin-bottom: 42px;
+        width: 100%;
+        border-radius: 0;
     }
     .settings-datestamp {
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        top: 210px;
+        display: none;
     }
     .rep-profiles-wrapper {
         border-left: none;
@@ -1609,16 +1637,17 @@ Add New Queue
         border-radius: 0;
     }
     .queue-settings-container {
-        padding-top: 45px;
+        padding-top: 30px;
         padding-bottom: 0;
     }
     .rep-settings-container {
-        padding-top: 45px;
+        padding-top: 30px;
     }
     .addnew-queue {
         border-left: none;
         border-right: none;
         border-radius: 0;
+        margin-top: 15px;
     }
     .queue-data-input {
         width: 90%;
@@ -1635,7 +1664,7 @@ Add New Queue
         margin-top: -1px;
     }
     .repname-emptyerror, .repname-duperror, .queuename-duperror, .queuename-emptyerror {
-        top: 277px;
+        top: 310px;
     }
 }
 /*----------------------------------------------------------*/
