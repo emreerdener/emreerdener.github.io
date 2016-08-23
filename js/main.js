@@ -33,9 +33,10 @@ $(document).ready(function() {
     $('#group-nav-title').hide();
     $('#mobile-cog').hide();
     $('.navbar').hide();
+    $('#gameplan-view').hide();
         
     //Groups view
-    $('.navbar-brand').on('click', function() {
+    $('.navbar-brand').click(function() {
         window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
@@ -49,6 +50,7 @@ $(document).ready(function() {
         $('.navbar').hide();
         $('.group-data').hide();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });
     
     //To Create view (from groups select)
@@ -64,6 +66,7 @@ $(document).ready(function() {
         $('.breadcrumbs').hide();
         $('.navbar').show();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });
     
     //Create view (from navbar)
@@ -79,10 +82,15 @@ $(document).ready(function() {
         $('#settings').hide();
         $('.navbar').show();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
+        $('.bread-reps').removeClass('bread-completed');
+        $('.bread-reps').addClass('bread-active');
+        $('.bread-vol').removeClass('bread-active bread-completed');
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
     });
     
     //Back in create view
-    $('#group-home-back').on('click', function() {
+    $('#group-home-back').click(function() {
         window.location.hash = '#groups'
         $('#groups-view').show();
         $('#group-nav-title').hide();
@@ -95,22 +103,25 @@ $(document).ready(function() {
         $('.navbar').hide();
         $('.group-data').hide();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });
     
     //Create - to reps-working
-    $('.create-btn').on('click', function() {
+    $('.create-btn').click(function() {
         window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
         $('#create-view').hide();
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
-        $('.bread-vol').removeClass('bread-active');
+        $('.bread-vol').removeClass('bread-active bread-completed');
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
         $('.navbar').show();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });
     
-    $('.history-btn').on('click', function() {
+    $('.history-btn').click(function() {
         window.location.hash = '#history'
         $('#history-view').show();
         $('#desktop-cog, #settings-link').show();
@@ -122,9 +133,10 @@ $(document).ready(function() {
         $('#queue-import-view').hide();
         $('.breadcrumbs').hide();
         $('#settings').hide();
+        $('#gameplan-view').hide();
     });
     
-    $('#history-back').on('click', function() {
+    $('#history-back').click(function() {
         window.location.hash = '#create'
         $('#desktop-cog, #settings-link').show();
         $('#create-view').show();
@@ -136,22 +148,25 @@ $(document).ready(function() {
         $('#settings').hide();
         $('.navbar').show();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });
     
     //Reps-working view
-    $('#queue-import-back, .bread-reps').on('click', function() {
+    $('#queue-import-back, .bread-reps').click(function() {
         window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('.breadcrumbs').show();
         $('#queue-import-view').hide();
         $('.bread-reps').removeClass('bread-completed');
         $('.bread-reps').addClass('bread-active');
-        $('.bread-vol').removeClass('bread-active');
+        $('.bread-vol').removeClass('bread-active bread-completed');
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
         $('.navbar').show();
+        $('#gameplan-view').hide();
     });
     
     //Queue import view
-    $('#reps-working-next, .bread-vol').on('click', function() {
+    $('#reps-working-next, .bread-vol').click(function() {
         window.location.hash = '#volumes'
         $('#queue-import-view').show();
         $('.breadcrumbs').show();
@@ -160,10 +175,45 @@ $(document).ready(function() {
         $('.bread-reps').addClass('bread-completed');
         $('.bread-vol').addClass('bread-active');
         $('.navbar').show();
+        $('#gameplan-view').hide();
     });
   
+    //Gameplan view (from queue-import-next)
+    $('#queue-import-next, .bread-gp').click(function() {
+        window.location.hash = '#gameplan'
+        $('#gameplan-view').show();
+        $('.navbar').show();
+        $('#queue-import-view').hide();
+        $('.breadcrumbs').show();
+        $('#reps-working-view').hide();
+        $('.bread-reps').removeClass('bread-active');
+        $('.bread-reps').addClass('bread-completed');
+        $('.bread-vol').removeClass('bread-active');
+        $('.bread-vol').addClass('bread-completed');
+        $('.bread-gp, .lastcrumb-box').addClass('bread-active');
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-completed');
+    });
+    
+    //Back GP view (to Queue Import)
+    $('#gameplan-back, .bread-vol').click(function() {
+        window.location.hash = '#volumes'
+        $('#queue-import-view').show();
+        $('.breadcrumbs').show();
+        $('#reps-working-view').hide();
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
+        $('.bread-vol').removeClass('bread-completed');
+        $('.bread-vol').addClass('bread-active');
+        $('.navbar').show();
+        $('#gameplan-view').hide();
+    });
+    
+    $('#gameplan-export').click(function() {
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active');
+        $('.bread-gp, .lastcrumb-box').addClass('bread-completed');
+    });
+    
     //Settings view
-    $('#desktop-cog, #mobile-cog, #settings-link').on('click', function() {
+    $('#desktop-cog, #mobile-cog, #settings-link').click(function() {
         window.location.hash = '#settings'
         $('#settings').show();
         $('#groups-view').hide();
@@ -173,10 +223,11 @@ $(document).ready(function() {
         $('#queue-import-view').hide();
         $('.navbar').show();
         $('#history-view').hide();
+        $('#gameplan-view').hide();
     });  
     
     //Settings back
-    $('#settings-back').on('click', function() {
+    $('#settings-back').click(function() {
         window.location.hash = '#reps'
         $('#reps-working-view').show();
         $('#group-nav-title').show();
@@ -187,6 +238,11 @@ $(document).ready(function() {
         $('#settings').hide();
         $('#queue-import-view').hide();
         $('.navbar').show();
+        $('#gameplan-view').hide();
+        $('.bread-reps').removeClass('bread-completed');
+        $('.bread-reps').addClass('bread-active');
+        $('.bread-vol').removeClass('bread-active bread-completed');
+        $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
     });
 
 

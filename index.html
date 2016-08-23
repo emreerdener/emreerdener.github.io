@@ -49,11 +49,18 @@
     
 <!--Breadcrumbs-->
 <ol class="breadcrumbs breadcrumb-arrow text-center">
-    <li><a class="bread-active bread-reps" href="#">Reps</a></li>
-    <li><a class="bread-vol" href="#">Volumes</a></li>
-    <li><a class="last-crumb bread-gp" href="#"><div class="lastcrumb-box"></div>Gameplan</a></li>
+    <li type="button"><a class="bread-active bread-reps" href="#">Reps</a></li>
+    <li type="button"><a class="bread-vol" href="#">Volumes</a></li>
+    <li type="button"><a class="last-crumb bread-gp" href="#"><div class="lastcrumb-box"></div>Gameplan</a></li>
     
 </ol>    
+    
+
+
+    
+    
+    
+    
     
     
 <!--Group View-->    
@@ -87,21 +94,20 @@
 <!--Create View-->
 <div id="create-view" class="text-center">
     
-    <div class="btn create-btn">
+    <div type="button" class="btn create-btn">
         <img src="images/ninja.png"/>
         <h2>Create</h2>
     </div><!--create-btn-->
     
-    <div class="btn history-btn">
+    <div type="button" class="btn history-btn">
         <i class="fa fa-history" aria-hidden="true"></i>
         <h2>History</h2>
     </div><!--history-btn-->
     
-    <div id="group-home-back">
+    <div type="button" id="group-home-back">
         <p>BACK</p>
     </div><!--group-home-back-->   
-</div><!--Create-view-->
-    
+</div><!--Create-view-->  
         
 <!--Reps Working View-->    
 <div id="reps-working-view">    
@@ -116,12 +122,11 @@
         <div class="text-center rep-buttons"></div><!--rep-buttons-->
     </div><!--reps-working-container-->
     
-    <div id="reps-working-next">
+    <div type="button" id="reps-working-next">
         <p>NEXT</p>
     </div><!--reps-working-next-->
     
-</div><!--reps-working-view-->
-    
+</div><!--reps-working-view-->  
         
 <!--Queue Volume View-->
 <div id="queue-import-view">
@@ -130,7 +135,7 @@
         <!--Title-->
         <div class="text-center volumes-header">
             <h1 class="volumes-title">Volumes</h1>
-            <button type="button" class="btn importQueuesBtn importQueuesBtnClr">IMPORT</button>
+            <button type="button" class="btn importQueuesBtn">IMPORT</button>
         </div><!--volumes-header-->
         
     <div class="container non-core-container">
@@ -147,16 +152,63 @@
     </div><!--queue-import-container-->
     
     <div class="queue-nav-row">
-        <div id="queue-import-back">
+        <div type="button" id="queue-import-back">
             <p>BACK</p>
         </div>
-        <div id="queue-import-next">
+        <div type="button" id="queue-import-next">
             <p>NEXT</p>
         </div>
     </div><!--fixed-nav-->
     
 </div><!--queue-import-view-->
- 
+    
+    
+    
+<!--Gameplan View-->
+
+<div id="gameplan-view">
+  <div class="gameplan-container">
+    <!--Title-->
+    <div class="text-center gameplan-header">
+        <h1 class="gameplan-title">Gameplan</h1>
+        <button type="button" class="btn btn-primary gp-save-btn">SAVE</button>
+    </div><!--volumes-header-->
+    
+
+    <div class="gameplan-nav-row">
+        <div type="button" id="gameplan-back">
+            <p>BACK</p>
+        </div>
+        <div type="button" id="gameplan-export" data-toggle="modal" data-target="#gp-saveas">
+            <p>EXPORT & SAVE</p>
+        </div>
+    </div><!--fixed-nav-->    
+
+    <!-- Modal -->
+    <div class="modal fade" id="gp-saveas" tabindex="-1" role="dialog" aria-labelledby="saveas">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center saveas-modal">
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <p>Save as PDF</p>
+            </div>        
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-image-o" aria-hidden="true"></i> <p>Save as JPG</p>
+            </div>
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-excel-o" aria-hidden="true"></i> <p>Save for Excel</p>
+            </div> 
+            <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Close</button>  
+          </div><!--modal-body-->      
+        </div><!--modal-content-->
+      </div><!--modal-dialog-->
+    </div><!--gp-saveas-->        
+   
+    </div><!--gameplan-container-->
+</div><!--gameplan view-->
+
+    
+    
     
 <!--History View-->        
 <div id="history-view">
@@ -236,7 +288,6 @@
     </div><!--history-back-->  
     
 </div><!--history-view-->
-    
        
 <!--Settings-->
 <div class="settings-container" id="settings">
@@ -299,7 +350,7 @@
       
 </div><!--tab-content-->    
 
-    <div id="settings-back">
+    <div type="button" id="settings-back">
         <p>BACK</p>
     </div><!--settings-back-->
     
