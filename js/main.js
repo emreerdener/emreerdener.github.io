@@ -511,7 +511,7 @@ $('#add-group-form').submit(function(event) {
                     </div><!--gc-title-->\
                     <div class="group-options btn">\
                         <h5 class="hidden-xs">OPTIONS</h5>\
-                        <i class="visible-xs fa fa-chevron-right chevron-toggle" aria-hidden="true"></i>\
+                        <i class="visible-xs fa fa-chevron-right fa-lg chevron-toggle" aria-hidden="true"></i>\
                     </div><!--group-options-->\
                     <div class="group-data">\
                         <h4>Group Name</h4>\

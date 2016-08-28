@@ -1,4 +1,6 @@
-/*--------GENERAL--------*/
+/*===================
+GENERAL
+===================*/
 body {
     background: url(css-images/cream-pixels.png) repeat !important;
 }
@@ -17,7 +19,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-/*--------NAVBAR--------*/
+/*===================
+NAVBAR
+====================*/
 #gp-ninja {
     max-height: 27px;
     width: auto;
@@ -86,7 +90,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-/*--------BREADCRUMBS--------*/
+/*===================
+BREADCRUMBS
+===================*/
 .breadcrumbs {
     overflow-x: hidden;
 }
@@ -164,18 +170,16 @@ input[type=number]::-webkit-outer-spin-button {
     border-left-color: #e6e9ed;
 }
 
-/*----
-Breadcrumbs Completed
-----*/
+/*----Breadcrumbs Completed----*/
 .breadcrumbs li .bread-completed {
     color: #fff;
-    background-color: #66cc66;
+    background-color: #337ab7;
     border: 1px solid #00a4d8;
 }
 .breadcrumbs li .bread-completed:before {
     right: -10px;
     z-index: 3;
-    border-left-color: #66cc66;
+    border-left-color: #337ab7;
     border-left-style: solid;
     border-left-width: 11px;
 }
@@ -185,24 +189,23 @@ Breadcrumbs Completed
     border-left: 11px solid #00a4d8;
 }
 .breadcrumbs li .bread-completed:focus, .breadcrumbs li .bread-completed:hover {
-    background-color: #4cae4c;
+    background-color: #2e6da4;
     border: 1px solid #00a4d8;
     color: white;
 }
 .breadcrumb-arrow li .bread-completed:focus:before, .breadcrumb-arrow li .bread-completed:hover:before {
-    border-left-color: #4cae4c;
+    border-left-color: #2e6da4;
 }
 
-/*----
-Breadcrumbs Active
-----*/
+/*----Breadcrumbs Active----*/
 .breadcrumb-arrow li .bread-active {
-    background-color: #e6e9ed;
+    background-color: #66cc66;
+    color: white;
 }
 .breadcrumb-arrow li .bread-active:before {
     right: -10px;
     z-index: 3;
-    border-left-color: #e6e9ed;
+    border-left-color: #66cc66;
     border-left-style: solid;
     border-left-width: 11px;
 }
@@ -212,26 +215,24 @@ Breadcrumbs Active
     border-left: 11px solid #00a4d8;
 }
 .breadcrumb-arrow li .bread-active:focus, .breadcrumb-arrow li .bread-active:hover {
-    background-color: #d9d7d7;
+    background-color: #4cae4c;
     border: 1px solid #00a4d8;
 }
 .breadcrumb-arrow li .bread-active:focus:before, .breadcrumb-arrow li .bread-active:hover:before {
-    border-left-color: #d9d7d7;
+    border-left-color: #4cae4c;
 }
 .breadcrumb-arrow li .bread-active:active {
-    background-color: #e6e9ed;
+    background-color: #66cc66;
     border: 1px solid #00a4d8;
 }
 .breadcrumb-arrow li .bread-active:active:after {
     border-left-color: #00a4d8;
 }
 .breadcrumb-arrow li .bread-active:active:before {
-    border-left-color: #e6e9ed;
+    border-left-color: #66cc66;
 }
 
-/*----
-Breadcrumbs Last "Crumb"
-----*/
+/*----Breadcrumbs Last "Crumb"----*/
 .breadcrumb-arrow li .last-crumb:before, .breadcrumb-arrow li .last-crumb:after {
     border: none;
 }
@@ -260,13 +261,13 @@ Breadcrumbs Last "Crumb"
 }
 
 .bread-active:hover .lastcrumb-box {
-    background-color: #d9d7d7;
+    background-color: #4cae4c;
 }
 .bread-active:active .lastcrumb-box {
-    background-color: #e6e9ed !important;
+    background-color: #66cc66 !important;
 }
 .bread-active:focus .lastcrumb-box {
-    background-color: #d9d7d7;
+    background-color: #4cae4c;
 }
 
 .bread-completed .lastcrumb-box {
@@ -276,21 +277,21 @@ Breadcrumbs Last "Crumb"
     border-right: none !important;
 }
 .bread-completed:hover .lastcrumb-box {
-    background-color: #4cae4c;
+    background-color: #2e6da4;
     border-bottom: 1px solid #00a4d8 !important;
     border-top: 1px solid #00a4d8 !important;
     border-left: none !important;
     border-right: none !important;
 }
 .bread-completed:active .lastcrumb-box {
-    background-color: #4cae4c;
+    background-color: #2e6da4;
     border-bottom: 1px solid #00a4d8 !important;
     border-top: 1px solid #00a4d8 !important;
     border-left: none !important;
     border-right: none !important;
 }
 .bread-completed:focus .lastcrumb-box {
-    background-color: #4cae4c;
+    background-color: #2e6da4;
     border-bottom: 1px solid #00a4d8 !important;
     border-top: 1px solid #00a4d8 !important;
     border-left: none !important;
@@ -300,7 +301,9 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------GROUPS--------*/
+/*===================
+GROUPS
+===================*/
 .group-profiles {
     margin-left: 90px;
     margin-right: 90px;
@@ -533,7 +536,9 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------CREATE / HISTORY--------*/
+/*===================
+CREATE / HISTORY
+===================*/
 #create-view {
     margin-top: 100px;
 }
@@ -591,7 +596,7 @@ Breadcrumbs Last "Crumb"
     color: #333;
 }
 
-/*----HISTORY----*/
+/*-----HISTORY-----*/
 .history-wrapper {
     border: 1px solid #333;
     border-radius: 2px;
@@ -641,7 +646,9 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------REPS WORKING--------*/
+/*===================
+REPS WORKING
+===================*/
 .reps-working-container {
     padding-bottom: 100px;
 }
@@ -691,7 +698,9 @@ Breadcrumbs Last "Crumb"
 
 
 
-/*--------QUEUE VOLMES--------*/
+/*===================
+QUEUE VOLMES
+===================*/
 .queue-import-container {
     padding-bottom: 100px;
 }
@@ -729,9 +738,7 @@ Breadcrumbs Last "Crumb"
     font-size: 10px;
 }
 
-/*----
-Queue Volume Card
-----*/
+/*----Queue Volume Card----*/
 .queue-volume-card {
     max-width: 325px;
     height: auto;
@@ -790,9 +797,7 @@ input[type="number"].qv-input:-moz-placeholder{
     font-weight: 300;
 }
 
-/*----
-Volume Notifications
-----*/
+/*----Volume Notifications----*/
 .qv-alert {
     display: inline-block;
     cursor: pointer;
@@ -824,9 +829,7 @@ Volume Notifications
     text-align: center;
 }
 
-/*----
-Non-Core Work
-----*/
+/*----Non-Core Work----*/
 .non-core-container {
     max-width: 1000px;
     padding-top: 20px;
@@ -908,7 +911,9 @@ input[type="number"].nc-input:-moz-placeholder{
 
 
 
-/*--------QUEUE NAV BTNS (next/back)--------*/
+/*===================
+QUEUE NAV BTNS (next/back)
+===================*/
 #queue-import-next {
     background-color: #00a4d8;
     padding-top: 15px;
@@ -958,7 +963,9 @@ input[type="number"].nc-input:-moz-placeholder{
 
 
 
-/*--------SETTINGS--------*/
+/*===================
+SETTINGS
+===================*/
 .settings-container {
     padding-bottom: 57px;
 }
@@ -1027,9 +1034,7 @@ Settings Nav
     font-weight: 600;
     font-size: 19px;
 }
-/*----
-Input Box
-----*/
+/*----Input Box----*/
 .input-prompt {
     border: 1px solid #1e1e1e;
     display: inline-block;
@@ -1048,7 +1053,9 @@ textarea {
 
 
 
-/*--------REP PROFILES--------*/
+/*===================
+REP PROFILES
+===================*/
 .rep-settings-container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1128,9 +1135,7 @@ textarea {
     margin-bottom: 1em !important;
 }
 
-/*----
-Add New Rep Card
-----*/
+/*----Add New Rep Card----*/
 .addRepCard {
     background-color: #00a4d8;
     display: inline-block;
@@ -1181,9 +1186,7 @@ Add New Rep Card
     color: white;
 }
 
-/*----
-Duplicate Error Msgs
-----*/
+/*----Duplicate Error Msgs----*/
 .repname-duperror {
     color: red;
     position: absolute;
@@ -1206,7 +1209,9 @@ Duplicate Error Msgs
 
 
 
-/*--------Queue Profiles--------*/
+/*===================
+Queue Profiles
+===================*/
 .queue-settings-container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1256,9 +1261,7 @@ Duplicate Error Msgs
     float: right;
     color: white;
 }
-/*----
-Queue Data
-----*/
+/*----Queue Data----*/
 .queue-data {  
     border: 1px solid #1e1e1e;
     border-top: none;
@@ -1328,9 +1331,7 @@ Queue Data
     vertical-align: middle !important;
 }
 
-/*---
-Duplicate Error Msgs (Queues)
-----*/
+/*---Duplicate Error Msgs (Queues)----*/
 .queuename-duperror {
     color: red;
     position: absolute;
@@ -1350,9 +1351,7 @@ Duplicate Error Msgs (Queues)
     font-weight: 500;
 }
 
-/*----
-Add New Queue
-----*/
+/*----Add New Queue----*/
 .addnew-queue {
     max-width: 45em;
     height: auto;
@@ -1405,7 +1404,9 @@ Add New Queue
 /*-----------------------------------------*/
 
 
-/*--------GAMEPLAN--------*/
+/*===================
+GAMEPLAN
+===================*/
 .gameplan-container {
     padding-bottom: 100px;
 }
@@ -1437,9 +1438,7 @@ Add New Queue
 }
 
 
-/*----
-Bottom Nav
-----*/
+/*----Bottom Nav----*/
 .gameplan-nav-row {
     width: 100%;
     position: fixed;
@@ -1489,7 +1488,9 @@ Bottom Nav
 /*-----------------------------------------*/
 
 
-/*--------EXPORT MODAL--------*/
+/*===================
+EXPORT MODAL
+===================*/
 #gp-saveas .modal-dialog {
     margin-top: 150px;
 }
@@ -1519,7 +1520,9 @@ Bottom Nav
 
 
 
-/*--------iPad Styles--------*/
+/*===================
+iPad Styles
+===================*/
 @media only screen and (max-width: 768px) { 
     /*-----Groups-----*/
     .group-profiles {
@@ -1605,7 +1608,9 @@ Bottom Nav
 /*----IPAD STYLES CLOSE-------------------*/
 
 
-/*--------iPhone 5 & 4 styles--------*/
+/*===================
+iPhone 5 & 4 styles
+===================*/
 @media only screen and (max-width : 320px) {
     #groups-img {
         max-height: 32px;
@@ -1626,7 +1631,9 @@ Bottom Nav
 
 
 
-/*--------MOBILE STYLES--------*/
+/*===================
+MOBILE STYLES
+===================*/
 @media only screen and (max-width : 767px) {
     /*----Navbar & Breadcrumbs----*/
     .navbar {
