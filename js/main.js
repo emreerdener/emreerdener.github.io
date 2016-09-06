@@ -6,6 +6,9 @@ $(document).ready(function() {
     var queueNames = [];
     var nonCore = [];
 
+
+    
+    
     
 //---------Navbar----------
     $('#settings-link').hide();
@@ -245,8 +248,7 @@ $(document).ready(function() {
         $('.bread-gp, .lastcrumb-box').removeClass('bread-active bread-completed');
     });
 
-
-
+    
 //---------Settings---------  
     //Settings Save button
     $('#settings-save').on('click', function() {
@@ -256,11 +258,22 @@ $(document).ready(function() {
     
     
   
-//------------------------------------------------------------------    
+//------------------------------------------------------------------ 
+
+    
+    
     
 //--------Rep Working button & Rep Profile
     $('#add-rep-form').submit(function(event) {
-             
+        addNewRep();
+        
+        //Prevents default form submit, causing page reload
+        event.preventDefault(); 
+    });//--close submit rep
+
+    
+    //----------------------   
+    function addNewRep() {
         //Name for Rep from input value. Then assigned to variable
         var repName = $('#addrep-name').val();
         
@@ -325,19 +338,41 @@ $(document).ready(function() {
         //Remove white spaces from ID repName and make all lower-case
         $('[id="' + repName + '"]').attr('id', repName.replace(/ /g, '').toLowerCase());
         //Remove white space for nc-input-card data-nc and make lower-case
-        $('[data-nc="' + repName + '"]').attr('data-nc', repName.replace(/ /g, '').toLowerCase());
-        
-        //Prevents default form submit, causing page reload
-        event.preventDefault(); 
-    });//--close add rep
- 
+        $('[data-nc="' + repName + '"]').attr('data-nc', repName.replace(/ /g, '').toLowerCase()); 
+    }//--close addNewRep function
      
    
+   
+    
+    
+function initExampleReps() {
+    var repsToInit = ["John", "Jack"];
+    
+    for (var i = 0; i < repsToInit.length; i++) {
+        addNewRep(repsToInit[i]);
+    }
+}
+
+initExampleReps();    
+    
+    
+    
+    
+    
+    
     
 //-----Queue button to Rep Profile-----
     $('#add-queue-form').submit(function(event) {
+        addNewQueue();
         
-        //Name for Queue from input value
+        //Prevents default form submit, causing page reload
+        event.preventDefault();
+    });//--close submit queue
+   
+    
+    //----------------------                           
+    function addNewQueue() {
+         //Name for Queue from input value
         var queueName = $('#addQueue-name').val();
         
         //Queue button stored in variable (to be added)
@@ -485,71 +520,73 @@ $(document).ready(function() {
     $('.queue-data').hide();   
     
     //Hides notification circle (to be shown)
-    $('.fa-circle').hide();    
+    $('.fa-circle').hide();  
         
-    //Prevents default form submit, causing page reload
-    event.preventDefault();
-});//--close add queue
-   
-  
+    }//--close addNewQueue function
 //------------------------------------------------------------------
     
     
     
-//-----Group Button submit-----    
-$('#add-group-form').submit(function(event) {
-    //Name for group from input value
-    var groupName = $('#addGroup-name').val();
-        
-    //Group button stored in variable (to be added)
-    var groupButton = '<div class="group-card">\
-                    <div class="gc-title btn">\
-                        <span>\
-                            <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
-                            <h3>' + groupName + '</h3>\
-                        </span>\
-                    </div><!--gc-title-->\
-                    <div class="group-options btn">\
-                        <h5 class="hidden-xs">OPTIONS</h5>\
-                        <i class="visible-xs fa fa-chevron-right fa-lg chevron-toggle" aria-hidden="true"></i>\
-                    </div><!--group-options-->\
-                    <div class="group-data">\
-                        <h4>Group Name</h4>\
-                        <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
-                        <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
-                    </div><!--group-data-->\
-            </div><!--group-card-->';
-    
-    //Checks if groupName is already in groups array. if so, it's rejected. If not, it's added to groups array.
-        if (groups.indexOf(groupName) !== -1) {
-            $('.groups-container').before('<span class="groupname-duperror text-center">Duplicate group. Please enter a different group name.</span>');
-            //Fade out error message
-            $('.groupname-duperror').delay(1200).fadeOut();
-        } else if (groupName === "") {
-            $('.groups-container').before('<span class="groupname-emptyerror text-center">Please input a group name.</span>');
-            //Fade out error message
-           $('.groupname-emptyerror').delay(1200).fadeOut();
-        } else {     
-            //Adds group button to array
-            groups.push(groupName);
+    //-----Group Button submit-----    
+    $('#add-group-form').submit(function(event) {
+        addNewGroup();
 
-            //Group Profile added in group-profiles container
-            $('.group-profiles').append(groupButton);   
-            
-            //Home-Group title added to create-view
-            $('#group-nav-title').append(groupName);
-        }//--close if statement
-        
-    //Clears group input field
-    $('#addGroup-name').val('');
+        //Prevents default form submit, causing page reload
+        event.preventDefault();
+    });//--close submit group
     
-    //Hides group-data to be toggled in drop-down
-    $('.group-data').hide(); 
     
-    //Prevents default form submit, causing page reload
-    event.preventDefault();
-});//--close add type
-    
+    //----------------------
+    function addNewGroup() {
+
+        //Name for group from input value
+        var groupName = $('#addGroup-name').val();
+
+        //Group button stored in variable (to be added)
+        var groupButton = '<div class="group-card">\
+                        <div class="gc-title btn">\
+                            <span>\
+                                <i class="refuseAccordion fa fa-bars fa-2x" aria-hidden="true"></i>\
+                                <h3>' + groupName + '</h3>\
+                            </span>\
+                        </div><!--gc-title-->\
+                        <div class="group-options btn">\
+                            <h5 class="hidden-xs">OPTIONS</h5>\
+                            <i class="visible-xs fa fa-chevron-right fa-lg chevron-toggle" aria-hidden="true"></i>\
+                        </div><!--group-options-->\
+                        <div class="group-data">\
+                            <h4>Group Name</h4>\
+                            <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
+                            <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
+                                </div><!--group-data-->\
+                </div><!--group-card-->';
+
+        //Checks if groupName is already in groups array. if so, it's rejected. If not, it's added to groups array.
+            if (groups.indexOf(groupName) !== -1) {
+                $('.groups-container').before('<span class="groupname-duperror text-center">Duplicate group. Please enter a different group name.</span>');
+                //Fade out error message
+                $('.groupname-duperror').delay(1200).fadeOut();
+            } else if (groupName === "") {
+                $('.groups-container').before('<span class="groupname-emptyerror text-center">Please input a group name.</span>');
+                //Fade out error message
+               $('.groupname-emptyerror').delay(1200).fadeOut();
+            } else {     
+                //Adds group button to array
+                groups.push(groupName);
+
+                //Group Profile added in group-profiles container
+                $('.group-profiles').append(groupButton);   
+
+                //Home-Group title added to create-view
+                $('#group-nav-title').append(groupName);
+            }//--close if statement
+
+        //Clears group input field
+        $('#addGroup-name').val('');
+
+        //Hides group-data to be toggled in drop-down
+        $('.group-data').hide(); 
+    }//--close addNewGroup function    
     
     
      
@@ -586,6 +623,7 @@ $('#add-group-form').submit(function(event) {
         });  
         e.preventDefault();
     });
+    
     //Prevents slideToggle when interacting with group-data
     $('.group-profiles').on('click', '.group-data', function() {
         return false;    
@@ -594,6 +632,7 @@ $('#add-group-form').submit(function(event) {
         return false;
     });
   
+    
     
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
@@ -722,6 +761,10 @@ $('#add-group-form').submit(function(event) {
             $(this).remove();
         });
     });
+    
+    
+    
+    
     
 //--------Delete Queue--------    
 //Removes queue-card on "delete" button click
