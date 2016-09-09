@@ -259,13 +259,32 @@ $(document).ready(function() {
     
   
 //------------------------------------------------------------------ 
-
+function initExampleReps() {
+    var exampleReps = ['Bilgus', 'Antonio', 'Poppins', 'Legolas', 'Amy', 'Elena', 'Mark', 'Leoandra', 'Arya'];
+    
+    for (var i=0; i < exampleReps.length; i++) {
+        addNewRep(exampleReps[i]);
+    }
+}
+initExampleReps();
+    
+    
+function initExampleQueues() {
+    var exampleQueues = ['INT', 'P3P', 'HNRK', 'QST', 'MIMT', 'CANR'];
+    
+    for (var i=0; i < exampleQueues.length; i++) {
+        addNewQueue(exampleQueues[i]);
+    }
+}    
+initExampleQueues();
+//------------------------------------------------------------------     
     
     
     
 //--------Rep Working button & Rep Profile
     $('#add-rep-form').submit(function(event) {
-        addNewRep();
+        //Calls function getting variable value from input field
+        addNewRep($('#addrep-name').val());
         
         //Prevents default form submit, causing page reload
         event.preventDefault(); 
@@ -273,10 +292,7 @@ $(document).ready(function() {
 
     
     //----------------------   
-    function addNewRep() {
-        //Name for Rep from input value. Then assigned to variable
-        var repName = $('#addrep-name').val();
-        
+    function addNewRep(repName) {        
         //Rep Button stored in local variable (to be added)
         var repButton = '<button type="button" id="' + repName + '" class="btn-rep btn btn-lg btn-default">' + repName + '</button>';  
         
@@ -338,32 +354,18 @@ $(document).ready(function() {
         //Remove white spaces from ID repName and make all lower-case
         $('[id="' + repName + '"]').attr('id', repName.replace(/ /g, '').toLowerCase());
         //Remove white space for nc-input-card data-nc and make lower-case
-        $('[data-nc="' + repName + '"]').attr('data-nc', repName.replace(/ /g, '').toLowerCase()); 
+        $('[data-nc="' + repName + '"]').attr('data-nc', repName.replace(/ /g, '').toLowerCase());       
+        
     }//--close addNewRep function
      
    
-   
-    
-    
-function initExampleReps() {
-    var repsToInit = ["John", "Jack"];
-    
-    for (var i = 0; i < repsToInit.length; i++) {
-        addNewRep(repsToInit[i]);
-    }
-}
-
-initExampleReps();    
-    
-    
-    
-    
-    
+        
     
     
 //-----Queue button to Rep Profile-----
     $('#add-queue-form').submit(function(event) {
-        addNewQueue();
+        //Calls function getting variable value from input field
+        addNewQueue($('#addQueue-name').val());
         
         //Prevents default form submit, causing page reload
         event.preventDefault();
@@ -371,10 +373,7 @@ initExampleReps();
    
     
     //----------------------                           
-    function addNewQueue() {
-         //Name for Queue from input value
-        var queueName = $('#addQueue-name').val();
-        
+    function addNewQueue(queueName) {    
         //Queue button stored in variable (to be added)
         var repQueues = '<button class="btn btn-lg btn-block btn-default repQueues-btn">' + queueName + '</button>';
         
@@ -529,7 +528,8 @@ initExampleReps();
     
     //-----Group Button submit-----    
     $('#add-group-form').submit(function(event) {
-        addNewGroup();
+        //Calls function getting variable value from input field
+        addNewGroup($('#addGroup-name').val());
 
         //Prevents default form submit, causing page reload
         event.preventDefault();
@@ -537,11 +537,7 @@ initExampleReps();
     
     
     //----------------------
-    function addNewGroup() {
-
-        //Name for group from input value
-        var groupName = $('#addGroup-name').val();
-
+    function addNewGroup(groupName) {
         //Group button stored in variable (to be added)
         var groupButton = '<div class="group-card">\
                         <div class="gc-title btn">\
