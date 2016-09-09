@@ -5,8 +5,6 @@ $(document).ready(function() {
     var queues = [];
     var queueNames = [];
     var nonCore = [];
-
-
     
     
     
@@ -392,73 +390,73 @@ initExampleQueues();
                 </div>\
                 <div class="queue-data-fields">\
                     
-<table class="queue-table table">\
-<tbody>\
-<tr>\
-<td class="title-right">\
+                    <table class="queue-table table">\
+                    <tbody>\
+                    <tr>\
+                    <td class="title-right">\
                         <h4 class="data-title">Queue Name</h4>\
-</td>\
-<td class="input-left">\
+                    </td>\
+                    <td class="input-left">\
                         <input id="queue-data-name" class="queue-data-input" type="text" placeholder="Name">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right grey">\
+                    <tr>\
+                    <td class="title-right grey">\
                         <h4 class="data-title">Utilization Time</h4>\
-</td>\
-<td class="input-left grey">\
+                    </td>\
+                    <td class="input-left grey">\
                         <input class="queue-data-input" type="text" placeholder="Seconds">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right">\
+                    <tr>\
+                    <td class="title-right">\
                         <h4 class="data-title">Daily Growth</h4>\
-</td>\
-<td class="input-left">\
+                    </td>\
+                    <td class="input-left">\
                         <input class="queue-data-input" type="text" placeholder="Percentage">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right grey">\
+                    <tr>\
+                    <td class="title-right grey">\
                         <h4 class="data-title">Database ID</h4>\
-</td>\
-<td class="input-left grey">\
+                    </td>\
+                    <td class="input-left grey">\
                         <input class="queue-data-input" type="text" placeholder="SQL">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right">\
+                    <tr>\
+                    <td class="title-right">\
                         <h4 class="data-title">Minimum Volume</h4>\
-</td>\
-<td class="input-left">\
+                    </td>\
+                    <td class="input-left">\
                         <input class="queue-data-input" type="text" placeholder="Min Number">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right grey">\
+                    <tr>\
+                    <td class="title-right grey">\
                         <h4 class="data-title">Maximum Volume</h4>\
-</td>\
-<td class="input-left grey">\
+                    </td>\
+                    <td class="input-left grey">\
                         <input class="queue-data-input" type="text" placeholder="Max Number">\
-</td>\
-</tr>\
+                    </td>\
+                    </tr>\
 
-<tr>\
-<td class="title-right">\
+                    <tr>\
+                    <td class="title-right">\
                         <h4 class="data-title">Maximum Assign</h4>\
-</td>\
-<td class="input-left">\
+                    </td>\
+                    <td class="input-left">\
                         <input class="queue-data-input" type="text" placeholder="Max Number">\
-</td>\
+                    </td>\
 
-</tr>\
-</tbody>\
-</table>\
+                    </tr>\
+                    </tbody>\
+                    </table>\
 
                     <button type="button" class="btn btn-danger delete-queue">DELETE</button><!--delete-queue-->\
                 </div><!--queue-data-fields-->\
@@ -555,7 +553,7 @@ initExampleQueues();
                             <input id="groupName-edit" type="text" placeholder="Enter Name"/>\
                             <button type="button" class="btn btn-danger group-delete">DELETE</button><!--group-delete-->\
                                 </div><!--group-data-->\
-                </div><!--group-card-->';
+                        </div><!--group-card-->';
 
         //Checks if groupName is already in groups array. if so, it's rejected. If not, it's added to groups array.
             if (groups.indexOf(groupName) !== -1) {
@@ -640,12 +638,7 @@ initExampleQueues();
     
     
     
-//--------Popover--------  
-    //Initialize popovers for entire page
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-    
+//--------Popover--------      
     //Initialize popover
     $('.queue-imports').on('mouseover', '.qv-alert', function() {
         $(this).popover({
@@ -673,7 +666,7 @@ initExampleQueues();
 
     //Toggles visibility of notification circle for queue volumes
     $('.queue-imports').on('change', '.qv-input', function() {  
-        if ($(this).val() > 10) {
+        if ($(this).val() > 100) {
             $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').show('fast');
         } else {
             $(this).parent('.queue-volume-input').siblings('.qv-alert').find('.fa-circle').hide('fast');
@@ -682,6 +675,7 @@ initExampleQueues();
 
 
  
+    
 //--------Queue Cards--------
     //Allows queue-cards to be sortable
     $('.queue-profiles').sortable();    
