@@ -970,6 +970,9 @@ GAMEPLAN
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 }
+.gameplan-table thead th {
+    text-align: center;
+}
 .table {
     margin-bottom: 0 !important;
 }
