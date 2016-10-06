@@ -788,5 +788,14 @@ $('#date-stamp').append(moment().format('ddd - MMMM D, YYYY'));
         
 
     
+    
+$( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 400 ],
+    });
+
+    
 }); //end of .ready document
 

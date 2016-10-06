@@ -1005,8 +1005,29 @@ GAMEPLAN
 .ncw-row {
     border-top: 3px solid #4cae4c;
     border-bottom: 3px solid #4cae4c;
-    background-color: #fff !important;
-    
+    background-color: #fff !important;  
+}
+.gp-queue {
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.gp-inbox {
+    padding-left: 10px;
+}
+#slider-range {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+/*----Slider---*/
+/*Button active*/
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    background: #337ab7 !important;
+}
+/*Slider bar*/
+.ui-widget-header {
+    background: #00a4d8 !important;
 }
 
 /*-----------------------------------------*/
