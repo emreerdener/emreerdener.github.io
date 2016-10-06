@@ -980,6 +980,10 @@ GAMEPLAN
 .table-bordered {
     border: 0 !important;
 }
+.gameplan-table tr td {
+    font-size: 17px !important;
+}
+
 .gp-hours-input {
     border: 1px solid #000;
     border-radius: 5px;
@@ -1002,27 +1006,32 @@ GAMEPLAN
 .version-btn h3 {
     margin: 0;
 }
+
 .ncw-row {
     border-top: 3px solid #4cae4c;
     border-bottom: 3px solid #4cae4c;
     background-color: #fff !important;  
 }
 .gp-queue {
+    width: 100%;
     display: inline-block;
-    padding-bottom: 5px;
 }
 .gp-inbox {
     padding-left: 10px;
+    padding-right: 10px;
+    float: right;
 }
 
 .table-notworking {
-    background: #000 !important;
+    background: #00a4d8 !important;
+    color: #fff;
 }
 
 #slider-range {
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 /*----Slider---*/
