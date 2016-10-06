@@ -972,7 +972,7 @@ GAMEPLAN
 }
 .gameplan-table .table thead th {
     text-align: center;
-    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .table {
     margin-bottom: 0 !important;
@@ -983,7 +983,7 @@ GAMEPLAN
 .gp-hours-input {
     border: 1px solid #000;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     width: 80px;
     text-align: center;
     font-weight: 500;
@@ -1014,6 +1014,11 @@ GAMEPLAN
 .gp-inbox {
     padding-left: 10px;
 }
+
+.table-notworking {
+    background: #000 !important;
+}
+
 #slider-range {
     margin-left: 5px;
     margin-right: 5px;
