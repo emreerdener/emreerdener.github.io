@@ -977,6 +977,9 @@ GAMEPLAN
 .table {
     margin-bottom: 0 !important;
 }
+.table-bordered {
+    border: 0 !important;
+}
 .gp-hours-input {
     border: 1px solid #000;
     border-radius: 5px;
@@ -990,9 +993,20 @@ GAMEPLAN
     color: #fff;
     text-align: center;
     padding-top: 10px !important;
+    border-left: 0 !important;
+    border-right: 1px solid #000 !important;
 }
 .version-btn:hover {
     background-color: #286090;
+}
+.version-btn h3 {
+    margin: 0;
+}
+.ncw-row {
+    border-top: 3px solid #4cae4c;
+    border-bottom: 3px solid #4cae4c;
+    background-color: #fff !important;
+    
 }
 
 /*-----------------------------------------*/
