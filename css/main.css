@@ -962,6 +962,36 @@ QUEUE NAV BTNS (next/back)
 /*-----------------------------------------*/
 
 
+/*===================
+GAMEPLAN
+===================*/
+.gameplan-table {
+    background-color: #fff;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.table {
+    margin-bottom: 0 !important;
+}
+.gp-hours-input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+    font-weight: 500;
+}
+.version-btn {
+    background-color: #337ab7;
+    color: #fff;
+    text-align: center;
+}
+.version-btn:hover {
+    background-color: #286090;
+}
+
+/*-----------------------------------------*/
+
 
 /*===================
 SETTINGS
