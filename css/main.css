@@ -970,8 +970,9 @@ GAMEPLAN
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 }
-.gameplan-table thead th {
+.gameplan-table .table thead th {
     text-align: center;
+    padding-top: 20px;
 }
 .table {
     margin-bottom: 0 !important;
@@ -988,6 +989,7 @@ GAMEPLAN
     background-color: #337ab7;
     color: #fff;
     text-align: center;
+    padding-top: 10px !important;
 }
 .version-btn:hover {
     background-color: #286090;
