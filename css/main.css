@@ -967,8 +967,8 @@ GAMEPLAN
 ===================*/
 .gameplan-table {
     background-color: #fff;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: 1px solid #000 !important;
+    border-bottom: 1px solid #000 !important;
 }
 .gameplan-table .table thead th {
     text-align: center;
@@ -984,14 +984,33 @@ GAMEPLAN
     font-size: 17px !important;
 }
 
-.gp-hours-input {
-    border: 1px solid #000;
-    border-radius: 5px;
+.gphours-input {
+    border-bottom: 1px solid #00a4d8;
+    border-top: 0; border-left: 0; border-right: 0;
     padding: 5px;
-    width: 80px;
+    width: 55px;
+    font-size: 18px !important;
     text-align: center;
     font-weight: 500;
 }
+input[type="number"].gphours-input::-webkit-input-placeholder {
+    font-weight: 300;
+    font-size: 15px;
+}
+input[type="number"].gphours-input::-moz-placeholder {
+    font-weight: 300;
+    font-size: 15px;
+}
+input[type="number"].gphours-input:-ms-input-placeholder {
+    font-weight: 300;
+    font-size: 15px;
+}
+input[type="number"].gphours-input:-moz-placeholder{
+    font-weight: 300;
+    font-size: 15px;
+}
+
+
 .version-btn {
     background-color: #337ab7;
     color: #fff;
@@ -1862,6 +1881,13 @@ MOBILE STYLES
     }
     #gp-saveas .modal-dialog {
         margin-top: 110px;
+    }
+    .version-btn {
+        padding-bottom: 10px !important;
+    }
+    .version-btn h3 {
+        padding-left: 25px;
+        padding-right: 25px;
     }
     
     /*----Settings----*/
