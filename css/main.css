@@ -1052,6 +1052,7 @@ input[type="number"].gphours-input:-moz-placeholder{
     margin-right: 5px;
     margin-bottom: 10px;
     margin-top: 5px;
+    z-index: 0;
 }
 
 /*----Slider---*/
@@ -1578,15 +1579,18 @@ GAMEPLAN
     width: 50%;
     float: left;
     opacity: 0.98;
+    z-index: 1;
 }
 #gameplan-back p {
     margin: 0;
     text-align: center;
     font-weight: 600;
     font-size: 19px;
+    z-index: 1;
 }
 #gameplan-back:hover {
     background-color: #f8f8f8;
+    z-index: 1;
 }
 
 /*-----------------------------------------*/
