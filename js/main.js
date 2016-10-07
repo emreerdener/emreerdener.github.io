@@ -628,6 +628,14 @@ initExampleQueues();
   
     
     
+
+//---------Gameplan-----------
+    
+    
+    
+    
+    
+    
 //--------Import Queues--------
     $('.importQueuesBtn').on('click', function() {
         //Removes previous time-stamp
@@ -797,5 +805,16 @@ $( "#slider-range" ).slider({
     });
 
     
+    
+    
+    
+    
 }); //end of .ready document
+
+
+
+
+
+
+
 

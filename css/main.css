@@ -975,7 +975,8 @@ GAMEPLAN
     padding-bottom: 20px;
 }
 .table {
-    margin-bottom: 0 !important;
+    margin-bottom: -1px !important;
+    border-collapse: collapse;
 }
 .table-bordered {
     border: 0 !important;
@@ -983,6 +984,7 @@ GAMEPLAN
 .gameplan-table tr td {
     font-size: 17px !important;
 }
+
 
 .gphours-input {
     border-bottom: 1px solid #00a4d8;
@@ -1012,6 +1014,10 @@ input[type="number"].gphours-input:-moz-placeholder{
 }
 
 
+.gpfirst-col {
+    width: 12em;
+}
+
 .version-btn {
     background-color: #337ab7;
     color: #fff;
@@ -1019,6 +1025,7 @@ input[type="number"].gphours-input:-moz-placeholder{
     padding-top: 10px !important;
     border-left: 0 !important;
     border-right: 1px solid #000 !important;
+    cursor: pointer;
 }
 .version-btn:hover {
     background-color: #286090;
@@ -1030,21 +1037,32 @@ input[type="number"].gphours-input:-moz-placeholder{
 .ncw-row {
     border-top: 3px solid #4cae4c;
     border-bottom: 3px solid #4cae4c;
-    background-color: #fff !important;  
+    background-color: #fff !important;
 }
+
 .gp-queue {
     width: 100%;
     display: inline-block;
+    padding-right: 15px;
 }
 .gp-inbox {
     padding-left: 10px;
-    padding-right: 10px;
-    float: right;
+    padding-right: 15px;
+    float: left;
+    cursor: pointer;
+}
+.gp-inbox:hover {
+    color: #00a4d8;
 }
 
 .table-notworking {
     background: #00a4d8 !important;
     color: #fff;
+}
+.table-notworking:hover {
+    background: #fff !important;
+    color: #00a4d8;
+    border: 2px solid #00a4d8;
 }
 
 #slider-range {
