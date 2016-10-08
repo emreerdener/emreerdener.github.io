@@ -806,7 +806,7 @@ $( "#slider-range" ).slider({
 
     
     
-    
+
     
     
 }); //end of .ready document
