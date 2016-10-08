@@ -300,6 +300,11 @@ initExampleQueues();
                 <div class="jtextfill">\  
                     <h3 class="repProfileName"><span>` + repName + `</span></h3>\
                 </div><!--jtextfill-->\
+
+                <div class="rep-options text-center">\
+                    <h4>Hours</h4><input class="rep-options-input" type="number">\
+                </div><!--rep-settings-->\
+
                 <div class="rep-card-queues"></div>\
                 <button type="button" class="delete-rep btn btn-danger">DELETE</button>\
             </div>`;
