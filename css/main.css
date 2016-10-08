@@ -1189,6 +1189,11 @@ EXPORT MODAL
     border-radius: 5px;
     border: 1px solid #000;
 }
+.saveas-modal h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: white;
+}
 .saveas-btn {
     margin-bottom: 20px !important;
     padding-top: 19px !important;
@@ -1204,11 +1209,6 @@ EXPORT MODAL
 }
 .saveas-btn p {
     display: inline-block;
-}
-.saveas-modal h3 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: white;
 }
 .saveas-cancel {
     margin-top: 30px !important;
