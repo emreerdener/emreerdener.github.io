@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link href="css/main.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
@@ -18,7 +19,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>    
     <!-- JavaScript -->
     <script src="js/jquery.textfill.min.js"></script>
-    <script src="js/moment.js"></script>
+    <script src="js/moment.js"></script>    
     <script src="js/main.js"></script>
     
 </head>
@@ -28,8 +29,9 @@
 <!--Navbar-->    
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-      <!--Desktop cog-->
+    <!--Desktop cog-->
     <a class="hidden-xs" href="#settings"><i id="desktop-cog" class="nav-cog fa fa-cog fa-2x" aria-hidden="true"></i></a>
+            
     <div class="navbar-header">
       <a class="navbar-brand">
         <p class="navbar-txt hidden-xs">GAMEPLAN</p>
@@ -38,48 +40,103 @@
         <!--Mobile cog-->
         <a class="visible-xs" href="#settings"><i id="mobile-cog" class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
     </div><!--navbar-header-->
-  </div><!--container-fluid-->
+      
+    <!--Group Title-->
+    <span class="text-center" id="group-nav-title"><i class="fa fa-home" aria-hidden="true"></i></span>
+      
+  </div><!--container-fluid-->  
 </nav>
     
     
 <!--Breadcrumbs-->
 <ol class="breadcrumbs breadcrumb-arrow text-center">
-    <li><a class="bread-active bread-reps" href="#">Reps</a></li>
-    <li><a class="bread-vol" href="#">Volumes</a></li>
-    <li><a class="last-crumb bread-gp" href="#"><div class="lastcrumb-box"></div>Gameplan</a></li>
+    <li type="button"><a class="bread-active bread-reps" href="#">Reps</a></li>
+    <li type="button"><a class="bread-vol" href="#">Volumes</a></li>
+    <li type="button"><a class="last-crumb bread-gp" href="#"><div class="lastcrumb-box"></div>Gameplan</a></li>
     
-</ol>
- 
+</ol>    
+        
 
+<!--Group View-->    
+<div id="groups-view">
+    <!--Groups-->
+    <div class="groups-container text-center">
+        <!--Title-->
+        <div class="groups-header">
+            <h1>GAMEPLAN</h1>
+            <img id="groups-img" src="images/ninja.png"/>
+        </div><!--groups-header-->
+        <!--Groups buttons-->
+        <div class="groups-wrapper container">
+            <div class="group-profiles">
+            </div><!--group-profiles-->         
+        </div><!--groups-wrapper--> 
+        
+        <div class="addgroup-card">
+                <div class="addgroup-title">
+                    <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                    <h3>New Group</h3>
+                    <form id="add-group-form">
+                        <input type="text" id="addGroup-name" class="input-prompt" placeholder="Enter Name">                        
+                        <button type="submit" id="addgroup-btn" class="btn btn-primary input-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </form>
+                </div><!--addgroup-title-->
+            </div><!--addgroup-card-->
+      
+    </div><!--groups-container-->
+</div><!--groups-view-->    
+      
+  
+    
+<!--Create View-->
+<div id="create-view" class="text-center">
+    
+    <div type="button" class="btn create-btn">
+        <img src="images/ninja.png"/>
+        <h2>Create</h2>
+    </div><!--create-btn-->
+    
+    <div type="button" class="btn history-btn">
+        <i class="fa fa-history" aria-hidden="true"></i>
+        <h2>History</h2>
+    </div><!--history-btn-->
+    
+    <div type="button" id="group-home-back">
+        <p>BACK</p>
+    </div><!--group-home-back-->   
+</div><!--Create-view-->  
+        
+  
+    
 <!--Reps Working View-->    
 <div id="reps-working-view">    
     <!--Reps Working-->
-    <div class="reps-working-container container">
+    <div class="reps-working-container">
         <!--Title-->
         <div class="reps-header text-center">
-            <h2 class="title-withside">Reps</h2>
+            <h1 class="reps-title">Reps</h1>
             <p id="date-stamp"></p>
-        </div><!--text-center div-->
+        </div><!--reps-header-->
         <!--Rep buttons-->
         <div class="text-center rep-buttons"></div><!--rep-buttons-->
     </div><!--reps-working-container-->
     
-    <div id="reps-working-next">
+    <div type="button" id="reps-working-next">
         <p>NEXT</p>
-    </div><!--fixed-nav-->
+    </div><!--reps-working-next-->    
+</div><!--reps-working-view-->  
+ 
     
-</div><!--reps-working-view-->
     
-        
 <!--Queue Volume View-->
 <div id="queue-import-view">
     <!--Queue Import-->
     <div class="queue-import-container">
         <!--Title-->
         <div class="text-center volumes-header">
-            <h2 class="volumes-title">Volumes</h2>
+            <h1 class="volumes-title">Volumes</h1>
             <button type="button" class="btn importQueuesBtn">IMPORT</button>
-        </div><!--text-center div-->
+        </div><!--volumes-header-->
         
     <div class="container non-core-container">
         <div class="non-core-card">
@@ -95,23 +152,277 @@
     </div><!--queue-import-container-->
     
     <div class="queue-nav-row">
-        <div id="queue-import-back">
+        <div type="button" id="queue-import-back">
             <p>BACK</p>
         </div>
-        <div id="queue-import-next">
+        <div type="button" id="queue-import-next">
             <p>NEXT</p>
         </div>
-    </div><!--fixed-nav-->
-    
+    </div><!--fixed-nav--> 
 </div><!--queue-import-view-->
     
- 
+    
+    
+<!--Gameplan View-->
+<div id="gameplan-view">
+  <div class="gameplan-container">
+    <!--Title-->
+    <div class="text-center gameplan-header">
+        <h1 class="gameplan-title">Gameplan</h1>
+        <button type="button" class="btn btn-primary gp-save-btn">SAVE</button>
+    </div><!--gameplan-header-->
+
+    <!--Gameplan Table-->  
+    <div class="table-responsive gameplan-table">  
+      <table class="table table-striped table-bordered gp-table">
+        <thead>
+            <th class="version-btn gpfirst-col"><h3>1.0</h3></th>
+
+            <th>
+                <h4>Bilbo</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+            <th>
+                <h4>Sam</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+            <th>
+                <h4>Gandalf</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+            <th>
+                <h4>Sauron</h4>
+                <input type="number" placeholder="Hours" class="gphours-input"> 
+            </th>
+            <th>
+                <h4>Legolas</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+            <th>
+                <h4>Pippin</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+            <th>
+                <h4>Gollum</h4>
+                <input type="number" placeholder="Hours" class="gphours-input">
+            </th>
+        </thead>
+          
+          
+          <tbody class="text-center">   
+            
+            <tr class="spacer"></tr>
+              
+            <tr class="ncw-row">
+                <th scope="row" class="gpfirst-col text-center"><h4>NCW</h4></th>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>1.5</td>
+            </tr>
+              
+            <tr class="spacer"></tr>  
+              
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>INT</h4>
+                    <div id="slider-range"></div>
+                </th>
+                <td>27</td>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+                <td>93</td>
+                <td>235</td>
+                <td>85</td>
+                <td>136</td>
+                <td>608</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>P3P</h4>
+                </th>
+                <td>320</td>
+                <td>491</td>
+                <td>12</td>
+                <td>632</td>
+                <td>84</td>
+                <td>530</td>
+                <td>20</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>HNRK</h4>
+                </th>
+                <td>43</td>
+                <td>634</td>
+                <td>12</td>
+                <td>386</td>
+                <td>55</td>
+                <td>96</td>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>QST</h4>
+                </th>
+                <td>235</td>
+                <td>94</td>
+                <td>647</td>
+                <td>31</td>
+                <td>703</td>
+                <td>84</td>
+                <td>63</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>APE</h4>
+                </th>
+                <td>0</td>
+                <td>0</td>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr> 
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>POP</h4>
+                </th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>YUM</h4>
+                </th>
+                <td>0</td>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+                <td>0</td>
+                <td>0</td>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="gpfirst-col">
+                    <h4 class="gp-queueName"><i class="fa fa-inbox gp-inbox" aria-hidden="true"></i>ANDK</h4>
+                </th>
+                <td class="table-notWorking"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>  
+        </tbody>
+        </table>
+    </div><!--table-responsive-->
+      
+    <div class="gameplan-nav-row">
+        <div type="button" id="gameplan-back">
+            <p>BACK</p>
+        </div>
+        <div type="button" id="gameplan-export" data-toggle="modal" data-target="#gp-saveas">
+            <p>EXPORT & SAVE</p>
+        </div>
+    </div><!--fixed-nav-->    
+
+    <!-- Modal -->
+    <div class="modal fade" id="gp-saveas" tabindex="-1" role="dialog" aria-labelledby="saveas">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center saveas-modal">
+              
+              <h2>Save As</h2>
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <p>PDF</p>
+            </div>        
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-image-o" aria-hidden="true"></i> <p>JPG</p>
+            </div>
+            <div type="button" class="btn btn-default btn-block saveas-btn">
+                <i class="fa fa-file-excel-o" aria-hidden="true"></i> <p>Excel</p>
+            </div> 
+            <!--<button type="button" class="btn btn-default btn-block saveas-cancel" data-dismiss="modal">Close</button>  -->
+          </div><!--modal-body-->      
+        </div><!--modal-content-->
+      </div><!--modal-dialog-->
+    </div><!--gp-saveas-->        
+   
+    </div><!--gameplan-container-->
+</div><!--gameplan view-->
+    
+   
+    
+<!--History View-->        
+<div id="history-view">
+    <!--Title-->
+    <div class="history-header text-center">
+        <h1 class="history-title">History</h1>
+    </div><!--history-header-->
+    <div class="history-wrapper">
+        <table class="table table-striped">
+        <tbody class="text-center">    
+            <tr>
+                <td>8/18/16</td>
+                <td>9:54pm</td>
+                <td><button type="button" class="history-btns btn btn-primary">View</button></td>
+                <td><button type="button" class="history-btns btn btn-success">Export</button></td>
+            </tr>
+            
+            <tr>
+                <td>Date</td>
+                <td>Time</td>
+                <td><button type="button" class="history-btns btn btn-primary">View</button></td>
+                <td><button type="button" class="history-btns btn btn-success">Export</button></td>
+            </tr>
+            
+            <tr>
+                <td>Date</td>
+                <td>Time</td>
+                <td><button type="button" class="history-btns btn btn-primary">View</button></td>
+                <td><button type="button" class="history-btns btn btn-success">Export</button></td>
+            </tr>
+            
+            <tr>
+                <td>Date</td>
+                <td>Time</td>
+                <td><button type="button" class="history-btns btn btn-primary">View</button></td>
+                <td><button type="button" class="history-btns btn btn-success">Export</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </div><!--history-wrapper-->
+    
+    <div id="history-back">
+        <p>BACK</p>
+    </div><!--history-back-->  
+    
+</div><!--history-view-->
+      
+    
     
 <!--Settings-->
 <div class="settings-container" id="settings">
 
 <div class="settings-heading">
-<h2 class="settings-title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h2>
+<h1 class="settings-title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h1>
 
 <button type="button" id="settings-save" class="btn btn-primary btn-save">SAVE</button>
 </div><!--settings heading-->
@@ -128,49 +439,51 @@
     <!--Queue Settings-->    
     <div role="tabpanel" class="tab-pane active" id="qs">  
         <div class="queue-settings-container text-center">
-            <!--New Queue -->
-            <div class="container addQueue">              
-                <form id="add-queue-form">
-                    <input type="text" id="addQueue-name" class="input-prompt" placeholder="Queue Name">  
-                    <button type="submit" class="add-queue btn btn-sm btn-primary input-btn">ADD</button>
-                </form>
-            </div><!--addQueue close-->  
             
             <!--Queue Profiles-->
-            <div class="container queue-profiles-wrapper">
-                <div class="queue-profiles"></div><!--queue-profiles-->
+            <div class="container queue-profiles-wrapper">    
+                <div class="queue-profiles"></div><!--queue-profiles-->                
             </div><!--queue-profile-wrapper-->
             
+                <div class="container text-center addnew-queue">
+                    <i class="fa fa-archive fa-4x" aria-hidden="true"></i>
+                    <h3>New Queue</h3>
+                    <form id="add-queue-form">
+                        <input type="text" id="addQueue-name" class="input-prompt" placeholder="Enter Name">                        
+                        <button type="submit" id="addqueue-btn" class="btn btn-primary input-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </form>
+                </div><!--addnew-queue-->         
         </div><!--queue-settings-container-->              
     </div><!--#qs-->
     
     <!--Rep Settings-->
     <div role="tabpanel" class="tab-pane" id="rs">      
         <div class="rep-settings-container">
-            <!--New Rep -->
-            <div class="container addRep text-center">             
-                <form id="add-rep-form">
-                    <input type="text" id="addrep-name" class="input-prompt" placeholder="Rep Name">
-                    <button type="submit" id="add-rep-btn" class="btn btn-sm btn-primary input-btn">ADD</button>
-                </form>
-            </div><!--addRep-->
+            
             <!--Rep Profiles-->    
             <div class="container rep-profiles-wrapper">
-                <div class="container rep-profiles" id="rep-sortable"></div><!--rep-profiles-->
+                <div class="container rep-profiles">
+                    
+                    <div class="container text-center addRepCard">
+                    <form id="add-rep-form">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                        <h3>New Rep</h3>
+                        <input type="text" id="addrep-name" placeholder="Enter Name">
+                        <button type="submit" id="addrep-btn" class="btn btn-primary input-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </form>
+                    </div><!--addRepCard-->
+                </div><!--rep-profiles-->
             </div><!--rep-profile-wrapper-->   
         </div><!--rep-settings-container-->
       </div><!--#rs-->
+      
 </div><!--tab-content-->    
-</div><!--Settings-container-->    
-    
-    
-    
 
+    <div type="button" id="settings-back">
+        <p>BACK</p>
+    </div><!--settings-back-->
     
-    
-    
-    
-    
+</div><!--Settings-container-->    
+
     </body>
 </html>
-
